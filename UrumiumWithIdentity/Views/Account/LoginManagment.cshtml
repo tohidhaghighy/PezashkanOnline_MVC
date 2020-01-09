@@ -1,0 +1,45 @@
+﻿@model IdentitySample.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginNewDesignLayout.cshtml";
+}
+
+
+<div class="container" style="direction:rtl;">
+    <div class="row" style="margin-top:20px">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <fieldset>
+                <h2 class="text-center">ورود به پنل مدیریت سایت</h2>
+                <hr class="colorgraph">
+                @using (Html.BeginForm("LoginManagment", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "ایمیل را وارد کنید" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                        <div class="form-group">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "پسورد را وارد کنید" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                        <span class="button-checkbox">
+                            <button type="button" class="btn" data-color="info">مرا به خاطر بسپار</button>
+                            @Html.CheckBoxFor(m => m.RememberMe, new { @class = "hidden", id = "remember_me", name = "remember_me" })
+                        </span>
+                        <input type="text" value="09174845121" style="display:none;" id="Mobile" name="Mobile"/>
+                        <a class="btn btn-link text-center" style="color:white;" href="/Account/ForgotPassword"> پسورد خود را فراموش کرده ام؟</a>
+                        <hr class="colorgraph">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <input type="submit" class="btn btn-lg btn-success btn-block" value="ورود">
+                            </div>
+                        </div>
+
+
+                }
+            </fieldset>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,53 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.judge.judge>
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+            @{
+                if (item.Active == true)
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" checked onchange="changeactivefunc(@item.Id)" /></td>
+                }
+                else
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" onchange="changeactivefunc(@item.Id)" /></td>
+                }
+            }
+            <td class="text-center" style="padding:10px;"><img style="width:40px;height:40px;" src="~/uploads/Judge/@item.Image" /></td>
+            <td class="text-center" style="padding:10px;">@item.Name</td>
+            <td class="text-center" style="padding:10px;">
+                @{
+                    if (item.ScanMelliCode != "")
+                    {
+                        <a href="~/uploads/Judge/m/@item.ScanMelliCode">
+                            <img style="width:40px;height:40px;" src="~/uploads/Judge/m/@item.ScanMelliCode" />
+                        </a>
+                    }
+                }
+
+            </td>
+            <td class="text-center" style="padding:10px;">
+                @{
+                    if (item.ScanShenasname != "")
+                    {
+                        <a href="~/uploads/Judge/s/@item.ScanShenasname">
+                            <img style="width:40px;height:40px;" src="~/uploads/Judge/s/@item.ScanShenasname" />
+                        </a>
+                    }
+                }
+            </td>
+            <td class="text-center" style="padding:10px;">
+                @{
+                    if (item.ScanMadrakTahsili != "")
+                    {
+                        <a href="~/uploads/Judge/madrak/@item.ScanMadrakTahsili">
+                            <img style="width:40px;height:40px;" src="~/uploads/Judge/madrak/@item.ScanMadrakTahsili" />
+                        </a>
+                    }
+                }
+            </td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="حذف"><a class="btn btn-danger btn-xs" onclick="deleteitem(@item.Id)"><i class="ion ion-ios-trash"></i></a></p></td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="ویرایش"><a class="btn btn-warning btn-xs" onclick="updateitem(@item.Id,'@item.Name',@item.CityId)"><i class="ion ion-ios-trash"></i></a></p></td>
+        </tr>
+    }
+}

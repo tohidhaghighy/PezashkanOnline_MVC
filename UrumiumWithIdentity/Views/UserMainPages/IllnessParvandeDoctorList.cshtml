@@ -1,0 +1,72 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Visit.VisitTime>
+
+@{
+    ViewBag.Title = "Doctor";
+    Layout = "~/Views/Shared/_ManagmentLayoutDoctor.cshtml";
+}
+
+<div class="row center-block text-center" style="margin-top:10px;width:80%;margin-bottom:100px;">
+    <div class="">
+        <h4 class="text-center">لیست وقت ویزیت ها</h4>
+        <div class="">
+            <div class="">
+                <div class="">
+                    <table id="mytable" class="table table-bordred" style="background-color:white;">
+                        <thead>
+                        <th class="text-center">تاریخ</th>
+                        <th class="text-center">زمان</th>
+                        <th class="text-center">نام دکتر</th>
+                        <th class="text-center">شروع چت با دکتر</th>
+                        <th class="text-center">نسخه بیمار</th>
+                        </thead>
+                        <tbody id="listofpharmacy">
+                            @{
+                                if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="text-center" style="padding:10px;">@item.DayTimes.ReservePersianDatetime</td>
+                                            <td class="text-center" style="padding:10px;">@item.DayTimes.TimeVisit</td>
+                                            <td class="text-center" style="padding:10px;">@item.DayTimes.Doctors.Name</td>
+                                            @{
+                                                if (item.IsVisit == false)
+                                                {
+                                                    <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="شروع چت"><a class="btn btn-success btn-xs" onclick="startchat(@item.Id,@item.UserId,@item.DoctorId)"><i class="ion ion-ios-albums"></i></a></p></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="text-center" style="padding:10px;">اتمام ویزیت</td>
+                                                }
+                                            }
+
+                                            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="مشاهده نسخه"><a class="btn btn-warning btn-xs" onclick="shownoskhe(@item.Id,@item.UserId,@item.DoctorId)"><i class="ion ion-ios-pint"></i></a></p></td>
+                                        </tr>
+                                                    }
+                                                }
+
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    function startchat(visitid, illnessid, doctorid) {
+        window.location.href = "/Question/IllnessAnswerQuestion?visitid=" + visitid + "&&illnessid=" + illnessid + "&&doctorid=" + doctorid;
+    }
+
+    function shownoskhe(visitid, illnessid, doctorid) {
+        window.location.href = "/Noskhe/ClientNoskhe?visitid=" + visitid + "&&illnessid=" + illnessid + "&&doctorid=" + doctorid;
+    }
+
+</script>

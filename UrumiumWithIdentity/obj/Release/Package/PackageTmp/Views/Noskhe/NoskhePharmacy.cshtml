@@ -1,0 +1,81 @@
+﻿@model List<UrumiumMVC.ViewModel.EntityViewModel.PharmacyViewModel.PharmacyListSendedNoskhe>
+@{
+    ViewBag.Title = "NoskhePharmacy";
+    Layout = "~/Views/Shared/_ManagmentLayoutPharmacy.cshtml";
+}
+
+
+<section class="content-header">
+    <h1>
+        داشبرد
+        <small>کنترل پنل</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> خانه</a></li>
+        <li class="active">داشبرد</li>
+    </ol>
+</section>
+
+<section class="content">
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+    <div class="small-box bg-blue">
+        <div class="inner">
+            <h3>@Model.Count()<sup style="font-size: 20px"></sup></h3>
+
+            <p>تعداد نسخه های جدید</p>
+        </div>
+        <div class="icon">
+            <i class="ion ion-ios-list"></i>
+        </div>
+        <a href="/Comment/Index" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-address-book"></i></a>
+    </div>
+</div>
+
+
+
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-center">لیست نسخه های جدید</h4>
+                <div class="table-responsive">
+                    <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                        <thead>
+                        <th class="text-center">نام بیمار</th>
+                        <th class="text-center">نام دکتر</th>
+                        <th class="text-center">مشاهده نسخه</th>
+                        </thead>
+                        <tbody id="listofpharmacy">
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="text-center" style="padding:10px;">@item.IllnessName</td>
+                                        <td class="text-center" style="padding:10px;">@item.DoctorName</td>
+                                        <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="مشاهده نسخه"><a class="btn btn-warning btn-xs" onclick="Shownoskhe(@item.VisitId,@item.IllnessId,@item.DoctorId)"><i class="ion ion-ios-film"></i></a></p></td>
+                                    </tr>
+                                }
+                            }
+                           
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+  
+
+</section>
+
+<script>
+    function Shownoskhe(visitid,illnessid,doctorid) {
+        window.location.href = "/Noskhe/ClientNoskhePharmacy?visitid=" + visitid + "&&illnessid=" + illnessid + "&&doctorid=" + doctorid;
+    }
+</script>

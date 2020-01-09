@@ -1,0 +1,192 @@
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll.config
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.pdb
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.pdb
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.pdb
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll.config
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.csprojResolveAssemblyReference.cache
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\WebApplication2\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.pdb
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll.config
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.pdb
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.pdb
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.pdb
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll.config
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.csprojResolveAssemblyReference.cache
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Helpers.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.dll.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Helpers.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.csprojResolveAssemblyReference.cache
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Helpers.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.dll.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Helpers.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.csprojResolveAssemblyReference.cache
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Helpers.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.dll.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Helpers.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.csprojResolveAssemblyReference.cache
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Helpers.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.Common.dll.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\UrumiumMVC.DomainClasses.dll.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Helpers.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Mvc.Extensions.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.Razor.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\System.Web.WebPages.Razor.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\bin\Debug\Newtonsoft.Json.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.csprojResolveAssemblyReference.cache
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ViewModel\obj\Debug\UrumiumMVC.ViewModel.pdb

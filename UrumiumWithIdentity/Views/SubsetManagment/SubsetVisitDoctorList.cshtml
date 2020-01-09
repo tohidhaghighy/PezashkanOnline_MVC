@@ -1,0 +1,55 @@
+﻿@model List<UrumiumMVC.ViewModel.EntityViewModel.VisitViewModel.VisitWebService>
+@{
+    ViewBag.Title = "SubsetVisitDoctorList";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+<h2 class="text-center" style="padding:50px;">لیست وقت ویزیت ها</h2>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">لیست ویزیت ها</h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">نام بیمار</th>
+                    <th class="text-center">زمان</th>
+                    <th class="text-center">کد پیگیری</th>
+                    <th class="text-center">چت روم</th>
+                    <th class="text-center">نسخه</th>
+                    </thead>
+                    <tbody id="listofarticle">
+                        @{
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="text-center" style="padding:10px;">@item.Illnessname</td>
+                                    <td class="text-center" style="padding:10px;"> @item.ReserveDatetime</td>
+                                    <td class="text-center" style="padding:10px;"> @item.PeigiriCode</td>
+                                    <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="چت روم"><a class="btn btn-success btn-xs" onclick="gotochatpage(@item.Id,@item.DoctorId,@item.IllnessId)"><i class="ion ion-paper-airplane"></i></a></p></td>
+                                    <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="نسخه"><a class="btn btn-danger btn-xs" onclick="gotonoskhepage(@item.Id,@item.DoctorId,@item.IllnessId)"><i class="ion ion-edit"></i></a></p></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function gotochatpage(id,doctorid,illnessid) {
+        window.location.href = '/Chat/Index?visitid=' + id + '&doctorid=' + doctorid + '&illnessid=' + illnessid + '&name=D';
+    }
+
+    function gotonoskhepage(id, doctorid, illnessid) {
+        window.location.href = '/Noskhe/ClientNoskhePharmacy?visitid=' + id + '&doctorid=' + doctorid + '&illnessid=' + illnessid;
+    }
+</script>

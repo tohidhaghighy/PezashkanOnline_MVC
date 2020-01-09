@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urumium-عنصر مدرن ارومیه</title>
+    <meta http-equiv="Content-Language" content="fa" />
+    <link rel="icon" href="~/Content/Managment/dist/img/icon.png">
+    <meta name="description" content="ارومیوم عنصر مدرن ارومیه" />
+    <meta name="robots" content="noodp" />
+    <meta name="description" content="ارومیوم عنصر مدرن کلانشهر ارومیه. طراحی ایده های شما از سطح ساده تا فوق حرفه ای برای پروژه های کلان کشوری توسط کادری کاملا حرفه ای ومجرب" />
+    <meta name="keywords" content="Urumium.ir,اندروید,طراحی,تبلیغات,طراحی تیزر,طراحی سایت,Design,tizer,3D,2D,ارومیوم,Urumium,WebSite,web,tarrahi,ارومیوم,programming,web,android,ios,urmia,ارومیه" />
+    <meta name="author" content="توحید حقیقی 09144967941" />
+    <link rel="canonical" href="Urumium.ir" />
+    <link rel="canonical" href="Urumium" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Urumium | Modern Element Of Urmia" />
+    <meta property="og:description" content="ارومیوم عنصر مدرن کلانشهر ارومیه. طراحی ایده های شما از سطح ساده تا فوق حرفه ای برای پروژه های کلان کشوری توسط کادری کاملا حرفه ای ومجرب" />
+    <meta property="og:url" content="Urumium.ir" />
+    <meta property="og:site_name" content="Urumium.ir" />
+    <meta property="og:image" content="http://Urumium.ir/dist/img/icon.png" />
+    <meta name="twitter:card" content="ارومیوم" />
+    <meta name="twitter:description" content="ارومیوم عنصر مدرن کلانشهر ارومیه. طراحی ایده های شما از سطح ساده تا فوق حرفه ای برای پروژه های کلان کشوری توسط کادری کاملا حرفه ای ومجرب" />
+    <meta name="twitter:title" content="Urumium | Modern Element Of Urmia " />
+    <link rel="stylesheet" type="text/css" href="~/Content/Managment/dist/css/cssbootstrapcustom.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Content/Managment/dist/css/animation.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <style>
+        @@font-face {
+            font-family: 'butifulfont';
+            src: url('/Content/Managment/dist/fonts/Yekan/Yekan.eot');
+            src: url('/Content/Managment/dist/fonts/Yekan/Yekan.eot?#iefix') format('embedded-opentype'), url('/Content/Managment/dist/fonts/Yekan/Yekan.woff') format('woff'), url('/Content/Managment/dist/fonts/Yekan/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        p, a, span, div {
+            font-family: butifulfont;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            color: white;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+
+        .blurset {
+            -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+            filter: blur(5px);
+        }
+
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('~/Content/Managment/dist/img/icon.png') 50% 50% no-repeat rgb(249,249,249);
+            opacity: .8;
+        }
+    </style>
+</head>
+
+
+<body id="parent" style="overflow-x:hidden;">
+
+    @Html.Partial("../Menu/P_SecondMenu")
+
+
+    @RenderBody()
+
+
+    <footer id="footerdiv">
+        <section class="container-fluid sec-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="desc-box">
+                            <div class="card-body">
+                                <div class="card-title">لینک های پر بازدید</div>
+                                <div class="card-text" style="font-family:butifulfont;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-link ml-3"></i>
+                                            <span><a href="/Home/Programming" style="color:white;">دپارتمان برنامه نویسی</a></span>
+                                        </div><!--.col-->
+                                    </div><!--.row-->
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-link ml-3"></i>
+                                            <span><a href="/Home/Programming" style="color:white;">دپارتمان سئو</a></span>
+                                        </div><!--.col-->
+                                    </div><!--.row-->
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-link ml-3"></i>
+                                            <span><a href="/Home/Programming" style="color:white;">دپارتمان طراحی سایت</a></span>
+                                        </div><!--.col-->
+                                    </div><!--.row-->
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-link ml-3"></i>
+                                            <span><a href="/Home/Design" style="color:white;">دپارتمان طراحی</a></span>
+                                        </div><!--.col-->
+                                    </div><!--.row-->
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-link ml-3"></i>
+                                            <span><a href="/Home/Design" style="color:white;">دپارتمان تبلیغات</a></span>
+                                        </div><!--.col-->
+                                    </div><!--.row-->
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-link ml-3"></i>
+                                            <span><a href="/Home/SiteMap" style="color:white;">نقشه سایت</a></span>
+                                        </div><!--.col-->
+                                    </div><!--.row-->
+                                </div>
+                            </div>
+                        </div><!--.card-->
+                    </div><!--.col-->
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="desc-box">
+                            <div class="card-body">
+                                <div class="card-title">ارتباط با ما</div>
+                                <div class="card-text">
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-phone ml-3"></i>
+                                            <span>09144967941  (مهندس حقیقی)</span>
+                                        </div><!--.col-->
+                                    </div><!--.row-->
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-phone ml-3"></i>
+                                            <span>09022299902  (مهندس کرامت)</span>
+                                        </div><!--.col-->
+                                    </div><!--.row-->
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-phone ml-3"></i>
+                                            <span>09148189245  (مهندس اصلاحی)</span>
+                                        </div><!--.col-->
+                                    </div><!--.row-->
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-map-marker ml-3"></i>
+                                            <span>ارومیه</span>
+                                        </div><!--.col-->
+                                    </div><!--.row-->
+                                    <div class="row">
+                                        <div class="col">
+                                            <i class="fas fa-envelope-open ml-3"></i>
+                                            <span>info@urumium.ir</span>
+                                        </div><!--.col-->
+                                    </div><!--.row-->
+                                </div><!--.card-text-->
+                            </div>
+                        </div><!--.card-->
+                    </div><!--.col-->
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center">
+                        <img src="~/Content/Managment/dist/imglow/logoF.png" alt="ارومیوم عنصر مدرن ارومیه" title="ارومیوم" class="mb-3" height="100">
+                        <br class="clearfix">
+                        <a href="#" class="snip1472"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="https://www.instagram.com/urumium/" class="snip1472"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="snip1472"><i class="fab fa-google-plus"></i></a>
+                        @*https://www.aparat.com/urumium*@
+                    </div>
+
+                </div><!--.row-->
+            </div>
+        </section>
+        <section class="container-fluid sec-sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <span style="color:white; font-size:large; ">تمامی حقوق سایت متعلق به ارومیوم می باشد.</span>
+                    </div><!--.col-->
+                    <div class="col-lg-6 col-md-6 col-sm-12 text-left">
+                        <a href="/" class="f-light text-light" style="color:white; font-size:large;">طراحی و توسعه:</a>
+                        <a href="/" class="f-light text-light" style="color:white; font-size:large;">دپارتمان توسعه نرم افزار ارومیوم</a>
+                    </div><!--.col-->
+                </div><!--.row-->
+            </div>
+        </section>
+    </footer>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+
+                </div>
+                <div class="modal hide" id="myModal">
+
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                </div>
+                <div class="modal-body" align="center" style="direction:rtl;">
+                    <div class="row">
+                        <h4 class="col text-success">برای سفارش پروژه با شماره های زیر تماس بگیرید</h4>
+                    </div>
+                    <div class="row">
+                        <hr />
+                        <br />
+                        <br />
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <i class="fas fa-phone ml-3"></i>
+                            <span>09144967941  (مهندس حقیقی)</span>
+                        </div><!--.col-->
+                    </div><!--.row-->
+                    <div class="row">
+                        <div class="col">
+                            <i class="fas fa-phone ml-3"></i>
+                            <span>09022299902  (مهندس کرامت)</span>
+                        </div><!--.col-->
+                    </div><!--.row-->
+                    <div class="row">
+                        <div class="col">
+                            <i class="fas fa-phone ml-3"></i>
+                            <span>09148189245  (مهندس اصلاحی)</span>
+                        </div><!--.col-->
+                    </div><!--.row-->
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <img height="70" src="~/Content/Managment/dist/img/up-arrow.png" class="animated1 tada" onclick="topFunction()" id="myBtn" />
+    <script src="~/Content/Managment/dist/js/jsmenu.js"></script>
+    <script src="~/Content/Managment/dist/js/jsbootstrap4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+
+        $("#dbprogrammenu").hover(
+            function () {
+                $('#dbprogrammenu', this).stop(true, true).delay(200).fadeIn(500);
+                $(this).toggleClass('open');
+            },
+            function () {
+                $('#dbprogrammenu', this).stop(true, true).delay(200).fadeOut(500);
+                $(this).toggleClass('open');
+            }
+        );
+        //if (document.layers) {
+        //    //Capture the MouseDown event.
+        //    document.captureEvents(Event.MOUSEDOWN);
+
+        //    //Disable the OnMouseDown event handler.
+        //    $(document).mousedown(function () {
+        //        return false;
+        //    });
+        //}
+        //else {
+        //    //Disable the OnMouseUp event handler.
+        //    $(document).mouseup(function (e) {
+        //        if (e != null && e.type == "mouseup") {
+        //            //Check the Mouse Button which is clicked.
+        //            if (e.which == 2 || e.which == 3) {
+        //                //If the Button is middle or right then disable.
+        //                return false;
+        //            }
+        //        }
+        //    });
+        //}
+
+        ////Disable the Context Menu event.
+        //$(document).contextmenu(function () {
+        //    return false;
+        //});
+
+
+        $(function () {
+
+
+            //$("#itimage").hover(function () {
+            //    $("#cgiimage").css("filter", "blur(5px)");
+            //});
+            //$("#itimage").mouseleave(function () {
+            //    $("#cgiimage").css("filter", "blur(0px)");
+            //});
+            //$("#cgiimage").hover(function () {
+            //    $("#itimage").css("filter", "blur(5px)");
+            //});
+            //$("#cgiimage").mouseleave(function () {
+            //    $("#itimage").css("filter", "blur(0px)");
+            //});
+                $(document).scroll(function () {
+                    var $nav = $(".navbar-fixed-top");
+                    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                });
+            });
+
+            window.onscroll = function () { scrollFunction();  };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+
+            function showitemdeparteman() {
+
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    $("#imgshowitem").show(500);
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            }
+
+            function clicktofooter() {
+                $('html, body').animate({
+                    scrollTop: $("#footerdiv").offset().top
+                }, 2000);
+            }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104223336-1"></script>
+    <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-104223336-1');
+    </script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+
+

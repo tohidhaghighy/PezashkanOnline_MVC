@@ -1,0 +1,386 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+@model UrumiumMVC.ViewModel.EntityViewModel.MainPageViewModel.MainPageViewModel
+@{
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>۲۵۹۹۱۱</title>
+    <meta http-equiv="Content-Language" content="fa" />
+    <link rel="icon" href="~/Content/NewDesign/img/icons.png">
+    <meta name="enamad" content="۴۱۶۶۷۲" />
+    <meta name="robots" content="noodp" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="دکتر برمودا" />
+    <link rel="canonical" href="" />
+    <link rel="canonical" href="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="دکتر برمودا" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="~/Content/NewDesign/img/Image1 (1).png" />
+    <meta name="twitter:card" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="" />
+    <link rel="stylesheet" href="~/Content/NewDesign/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/NewDesign/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="~/Content/NewDesign/css/style.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <!--javascript-->
+    <script src="~/Content/NewDesign/js/jquery-3.3.1.js"></script>
+    <script src="~/Content/NewDesign/js/bootstrap.js"></script>
+    <script src="~/Content/NewDesign/js/custom-js.js"></script>
+
+    <link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+    <meta name="theme-color" content="#2196f3" />
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body style="overflow-x: hidden;">
+    <!------------header----------->
+    <div class="container-fluid-header">
+        <div class="row ">
+            <div class="col-12 col-md-12">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-md navbar-light ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="mynavbar">
+                            <ul class="navbar-nav">
+                                <li class="nav_item">
+                                    <a href="/" class="text-red-hover nav-link mr-1 "><i class='fas fa-home'></i></a>
+                                </li>
+                                <p class="text-color-menu my-2">|</p>
+                                <li class="nav_item">
+                                    <a href="/Account/Login" class=" nav-link mx-1">ورود کاربران</a>
+                                </li>
+                                <p class="text-color-menu my-2">|</p>
+                                <li class="nav_item">
+                                    <a href="/Account/Register" class="nav-link mx-1 ">ثبت نام</a>
+                                </li>
+                                <p class="text-color-menu my-2">|</p>
+                                <li class="nav_item">
+                                    <a href="/DoctorHome/ListDoctor?groupid=0" class="nav-link mx-1 ">پزشکان برمودا درمان</a>
+                                </li>
+                                <p class="text-color-menu my-2">|</p>
+                                <li class="nav_item ">
+                                    <a href="/DoctorHome/Download" class="nav-link mx-1 ">دانلود اپلیکیشن اندروید </a>
+                                </li>
+                                @{
+                                    if (User.Identity.IsAuthenticated)
+                                    {
+                                        <li class="nav_item ">
+                                            <a class="nav-link mx-1" style="cursor:pointer;" onclick="showmodalpeigiri()">ثبت شکایت</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="nav_item ">
+                                            <a class="nav-link mx-1 " style="cursor:pointer;" onclick="showmodalsabtenam()">ثبت شکایت</a>
+                                        </li>
+                                    }
+                                }
+                                
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+    <!-------body--------->
+    <div class="container-fluid">
+        <img src="/Content/NewDesign/img/Image1%20(6).png" class="img img-fluid " style="height:250px;">
+    </div>
+    @*<div class="container img-header mt-5">
+        <img src="/Content/NewDesign/img/Logo_2018.svg" class="img img-fluid mx-auto d-block ">
+    </div>*@
+    <div class="container" style="margin-top:40px;">
+        <div class="row padding">
+            <div class="col-12 col-md-12">
+                <div class="input-group ">
+                    <div class="input-group-append">
+                        <select class="form-control mr-1 rounded-0" id="cmbcity" name="cmbcity">
+                            @{
+                                foreach (var item in Model.Cities)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            }
+                            
+                        </select>
+                    </div>
+                    <input type="text" class="form-control" placeholder="نام پزشک یا تخصص  مورد نظر را وارد کنید" id="txtsearch" name="txtsearch">
+                    <div class="input-group-append">
+                        <a class="btn btn-violet" onclick="doctorcitylist()"><i class="fa fa-search" ></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+     
+        <div class="">
+            <img src="/Content/NewDesign/img/flag.png" class="opacity-img img-fluid mt-5">
+            <div class="container">
+                <div class="row padding-faction mt-5">
+                    <div class="col-3 col-md-4 mt-2 ">
+                        <a href="/DoctorHome/ListDoctor?groupid=0"><img src="/Content/NewDesign/img/Image1%20(5).png" class="img-faction img-fluid"></a>
+                        <a href="/DoctorHome/ListDoctor?groupid=0" class="font-weight-bold  "><P class="p-style mt-3 font-weight-bold ml-3">مشاوره با پزشک </P></a>
+                    </div>
+                    <div class="col-3 col-md-4 mt-2">
+                        <a href="/DoctorHome/ListJudge"><img src="/Content/NewDesign/img/Image1%20(4).png" class="img-faction img-fluid"></a>
+                        <a href="/DoctorHome/ListJudge" class="font-weight-bold "><P class="p-style mt-3">کارشناس آزمایشگاه</P></a>
+                    </div>
+                    <div class="col-3 col-md-4 mt-2">
+                        <a href="/DoctorHome/ListPharmacy"><img src="/Content/NewDesign/img/Image1%20(1).png" class="img-faction img-fluid"></a>
+                        <a href="/DoctorHome/ListPharmacy" class="font-weight-bold "><P class="p-style-drugstore mt-3 "> داروخانه </P></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--------img-text----------->
+        <div class="container-fluid img-text mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4 mt-4">
+                        <img src="/Content/NewDesign/img/1.jpg" class="img-fluid mx-auto d-block" style="height:400px;">
+                    </div>
+                    <div class="col-12 col-md-8 mt-5">
+                        <h3 class="font-weight-bold mt-5 "> اپلیکیشن کاربران</h3>
+                        <p class="mt-5 ">به سادگی پزشک، کلینیک، مرکز درمانی یا بیمارستان مورد نظر خود را پیدا کنید و در عرض چند ثانیه بدون هزینه اضافی رزرو نمایید.</p>
+                        <p><i class="fa fa-check mr-2"></i>پیدا کردن پزشک</p>
+                        <p><i class="fa fa-check mr-2"></i>امکان نوبت گیری</p>
+                        <p><i class="fa fa-check mr-2"></i>بیش از ۵۰۰ پزشک</p>
+                        <p><i class="fa fa-check mr-2"></i>بیش از ۳۰۰۰ داروخانه</p>
+
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div class="container img-text-font-size mt-5">
+            <div class="row">
+                <div class="col-12 col-md-8 mt-5">
+                    <h3 class="font-weight-bold mt-5"> اپلیکیشن پزشکان</h3>
+                    <p class="mt-5 ">آیا شما پزشک هستید؟ برای دستیابی به میلیون‌ها بیمار، لیست تخصص‌های خود را در شفاداک وارد نمایید.</p>
+                    <p><i class="fa fa-check mr-2"></i>بیش از ۱ میلیون کاربر فعال</p>
+                    <p><i class="fa fa-check mr-2"></i>بیش از ۱۰.۰۰۰ رزرو روزانه</p>
+                    <p><i class="fa fa-check mr-2"></i>مدیریت زمان‌های خالی و رزرو شده</p>
+                    <p><i class="fa fa-check mr-2"></i>افزایش محبوبیت آنلاین خود</p>
+
+                </div>
+                <div class="col-12 col-md-4 mt-4">
+                    <img src="/Content/NewDesign/img/2.jpg" class="img-fluid mx-auto d-block" style="height:400px;">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid img-text mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4 mt-4">
+                        <img src="/Content/NewDesign/img/3.jpg" class="img-fluid mx-auto d-block" style="height:400px;">
+                    </div>
+                    <div class="col-12 col-md-8 mt-5">
+                        <h3 class="font-weight-bold mt-5 "> اپلیکیشن کارشناس آزمایشگاه</h3>
+                        <p class="mt-5 ">به سادگی پزشک، کلینیک، مرکز درمانی یا بیمارستان مورد نظر خود را پیدا کنید و در عرض چند ثانیه بدون هزینه اضافی رزرو نمایید.</p>
+                        <p><i class="fa fa-check mr-2"></i>پیدا کردن نزدیک‌ترین پزشک</p>
+                        <p><i class="fa fa-check mr-2"></i>امکان لغو نوبت و عودت وجه</p>
+                        <p><i class="fa fa-check mr-2"></i>بیش از ۵۰۰ مرکز درمانی</p>
+                        <p><i class="fa fa-check mr-2"></i>بیش از ۳۰۰۰ پزشک</p>
+
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    <div class="container-fluid">
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+    <div class="container-fluid back-color">
+        <div class="container">
+         
+        </div>
+    </div>
+    <!----------footer------>
+    <div class="container-fluid footer">
+        <div class="row ">
+            <div class="col-5 col-md-7">
+                <div class="row ml-5">
+                    <nav class="navbar navbar-expand-md ">
+                        <ul class="navbar-nav">
+                            <li class="nav_item">
+                                <a href="/DoctorHome/SiteRolles" class="text-red-hover nav-link mr-1 ">قوانین</a>
+                            </li>
+                            <p class="text-dark my-2 d-none d-sm-block">|</p>
+
+                            <li class="nav_item">
+                                <a href="/DoctorHome/SiteAboutUs" class="nav-link mx-1 ">درباره ما</a>
+                            </li>
+                            <p class="text-dark my-2 d-none d-sm-block">|</p>
+                            <li class="nav_item">
+                                <a href="/DoctorHome/SiteCooperationwithus" class="nav-link mx-1 ">همکاری با ما</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 ">
+                <div class="row float-right mt-2">
+                    <a href="#" class="mx-1 my-2 text-dark"><i class='fab fa-telegram-plane'></i></a>
+                    <p class="my-2 d-none d-sm-block">|</p>
+                    <a href="#" class="mx-1 my-2 text-dark"><i class='fab fa-instagram'></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div id="myModalshekaiat" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">ثبت شکایت</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="">
+                                <div class="col-12 text-center center-block">
+                                    <div class="row">
+                                        <strong></strong>
+                                        <h4 class="text-center">شما میتوانید شکایت های خود را به ما ارسال کنید</h4>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="text" id="txtpeigiri" name="txtpeigiri" typeof="nu" class="form-control" placeholder="شماره پیگیری را وارد کنید" />
+                            </div>
+
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-12">
+                                <textarea id="txtdespei" name="txtdespei" class="form-control" placeholder="متن شکایت خود را وارد کنید"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <a name="btninsert" class="btn btn-success" value="ثبت تخلف" onclick="Addtakhalof()">ثبت تخلف</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="myModalsabtenam" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">ثبت نام در سایت</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="">
+                                <div class="col-12 text-center center-block">
+                                    <div class="row">
+                                        <strong></strong>
+                                        <h4 class="text-center">شما برای ارسال گزارش تخلف باید ثبت نام کنید</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <a name="btninsert" class="btn btn-warning" value="ثبت نام" href="/Account/Register">ثبت نام</a>
+                        <a name="btninsert" class="btn btn-success" value="ورود به سایت" href="/Account/Login">ورود به سایت</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <script>
+
+        function showmodalpeigiri() {
+            $("#myModalshekaiat").modal();
+        }
+
+
+        function showmodalsabtenam() {
+            $("#myModalsabtenam").modal();
+        }
+
+        function showmodal() {
+            $("#myModal").modal();
+        }
+
+
+        function doctorcitylist() {
+            var text = $("#txtsearch").val();
+            var e = document.getElementById("cmbcity");
+            var cityid = e.options[e.selectedIndex].value;
+            window.location.href = '/DoctorHome/ListDoctorWithCity?groupid=0&cityid=' + cityid + '&text=' + text;
+        }
+
+
+        function Addtakhalof() {
+            var txtpeigiri = $("#txtpeigiri").val();
+            var txtdespei = $("#txtdespei").val();
+            $.ajax({
+                type: "Post",
+                url: '/ViolationManagment/AddTakhalof',
+                data: { peigiri: txtpeigiri, despei: txtdespei },
+                success: function (data) {
+                    if (data.success == true) {
+                        swal("موفق شد", "گزارش تخلف با موفقیت ارسال شد", "success");
+                    }
+                    else {
+                        swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                    }
+
+                }
+            });
+        }
+    </script>
+
+        <script>
+              if ('serviceWorker' in navigator) {
+                  navigator.serviceWorker
+                      .register('/serviceworker.js')
+                      .then(function () { console.log('Service Worker Registered'); });
+              }
+        </script>
+</body>
+</html>

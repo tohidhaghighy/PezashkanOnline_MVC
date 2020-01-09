@@ -1,0 +1,138 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.ProductViewModel.ProductPageModel
+
+<link href="~/Content/Managment/dist/css/ManagmentIndexStyle.css" rel="stylesheet" />
+<script src="~/Scripts/ckeditor4.12/adapters/jquery.js"></script>
+<script src="~/Scripts/ckeditor4.12/ckeditor.js"></script>
+<link href="~/Content/Common/taginput/bootstrap-tagsinput.css" rel="stylesheet" />
+<script src="~/Content/Common/taginput/bootstrap-tagsinput.js"></script>
+<style>
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+</style>
+<div class="contact-form">
+    @using (Html.BeginForm("Create", "ProductManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="نام را وارد کنید" id="name" name="name" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="عنوان را وارد کنید" id="title" name="title" />
+                </div>
+
+                <div class="form-group">
+                    <div class="col-4">
+                        <p class="text-center" style="font-size:18px;font-weight:bold;">دسته بندی</p>
+                    </div>
+                    <div class="col-8">
+                        <select class="form-control text-center" style="height:50px;" id="ArticleGroupId" name="ArticleGroupId">
+                            @{
+                                foreach (var item in Model.Groups)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            }
+
+                        </select>
+                    </div>
+                   
+                    
+                </div>
+                <div class="form-group">
+                    <div class="col-4">
+                        <p class="text-center" style="font-size:18px;font-weight:bold;">دسته بندی</p>
+                    </div>
+                    <div class="col-8">
+
+                        <select class="form-control text-center" style="height:50px;" id="ArticleGroupId" name="ArticleGroupId">
+                            @{
+                                foreach (var item in Model.Languages)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            }
+
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control ckeditor" id="text" name="text"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="قیمت را به ريال وارد کنید ">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" placeholder="درصد تخفیف را وارد کنید" id="off" name="off" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="number" name="number" class="form-control center-block" style="height:50px;" value="" data-role="tagsinput" placeholder="شماره ها را وارد کنید" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="tags" name="tags" class="form-control center-block" style="height:50px;" value="" data-role="tagsinput" placeholder="تگ های مربوطه را وارد کنید" />
+                </div>
+
+                <div class="form-group">
+                    <label class="container">
+                        میخواهید پیشنهاد شگفت انگیز شود
+                        <input type="checkbox" checked="checked">
+                    </label>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" name="btnSubmit" class="btnContact btn-success" value="ثبت محصول جدید" />
+                </div>
+            </div>
+
+
+
+        </div>
+       }
+</div>
+
+

@@ -1,0 +1,490 @@
+﻿@using Microsoft.AspNet.Identity;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> پنل مدیریت</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="fa" />
+    <link rel="icon" href="~/Content/NewDesign/img/Image1 (1).png">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="~/Content/Managment/dist/css/bootstrap-theme.css">
+    <!-- Bootstrap rtl -->
+    <link rel="stylesheet" href="~/Content/Managment/dist/css/rtl.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/Managment/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/Content/Managment/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/Managment/dist/css/AdminLTE.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="~/Content/Managment/dist/css/skins/_all-skins.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini" onload="loadpage()">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini">پنل</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>ورود به صفحه اصلی سایت</b></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success">1</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">1 پیام خوانده نشده</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li>
+                                            <!-- start message -->
+                                            <a href="#">
+                                                <div class="pull-right">
+                                                    <img src="~/uploads/tohid.jpg" class="img-circle" alt="User Image">
+                                                </div>
+                                                <h4>
+                                                    <br />
+                                                    <small><i class="fa fa-user"></i> توحید حقیقی</small>
+                                                </h4>
+                                                <p>به پنل مدیریت خوش آمدید</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">نمایش تمام پیام ها</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="~/uploads/team.png" width="160" height="160" class="user-image" alt="User Image">
+                                <span class="hidden-xs">@User.Identity.GetUserName()</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="~/uploads/team.png" width="160" height="160" class="img-circle" alt="User Image">
+
+                                    <p>
+                                        <small>مدیریت کل سایت</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a href="/Account/ChangePassword?id=@User.Identity.GetUserId()" class="btn btn-default btn-flat">پروفایل</a>
+                                    </div>
+                                    <div class="pull-left">
+                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+
+
+                                            <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-danger">خروج</a>
+
+                                        }
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- right side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-right image">
+                        <img src="~/uploads/team.png" width="160" height="160" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-right info">
+                        <p>@User.Identity.GetUserName()</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> آنلاین</a>
+                    </div>
+                </div>
+                <!-- search form -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+
+                    </div>
+                </form>
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">منو</li>
+                    <li id="groupmanagment" class="active treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> مدیریت دسته بندی</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/GroupManagment/Index"><i class="fa fa-circle-o"></i> دسته بندی</a></li>
+                        </ul>
+                    </li>
+                    <li id="doctormanagment" class="treeview" >
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> مدیریت دکتر ها</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/DoctorManagment/Index"><i class="fa fa-circle-o"></i> مدیریت دکتر</a></li>
+                            <li><a href="/BimeManagment/Index"><i class="fa fa-circle-o"></i> مدیریت بیمه ها</a></li>
+                        </ul>
+                    </li>
+
+                    <li id="illnessmanagment" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> مدیریت بیماران</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/IllnessManagment/Index"><i class="fa fa-circle-o"></i> مدیریت بیماران</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li id="judgemanagment" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> مدیریت کارشناسان</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/JudgeManagment/Index"><i class="fa fa-circle-o"></i> مدیریت کارشناسان</a></li>
+                        </ul>
+                    </li>
+
+                    
+
+                    
+
+                    <li id="commonmanagment" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> مدیریت شهر و استان</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/CityState/City"><i class="fa fa-circle-o"></i> مدیریت شهر</a></li>
+                            <li class="active"><a href="/CityState/State"><i class="fa fa-circle-o"></i> مدیریت استان</a></li>
+                        </ul>
+                    </li>
+
+                    <li id="dragmanagment" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> مدیریت داروخانه ها</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/PharmacyManagment/Index"><i class="fa fa-circle-o"></i> مدیریت داروخانه</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li id="accountpersendmanagment" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> درصد پرداخت ها</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/CostPersendManagment/Index"><i class="fa fa-circle-o"></i> درصد پرداخت ها</a></li>
+                        </ul>
+                    </li>
+                    <li id="adminmanagment" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> مدیریت ادمین ها</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/AdminManagment/Index"><i class="fa fa-circle-o"></i> مدیریت ادمین</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview" id="usermanagment" style="display:none;">
+                        <a href="#">
+                            <i class="fa fa-user"></i> <span> کاربران</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/UsersAdmin/Index"><i class="fa fa-circle-o"></i> مدیریت کاربران</a></li>
+                            <li><a href="/RolesAdmin/Index"><i class="fa fa-circle-o"></i> مدیریت نقش ها</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview" id="takhalofmanagment">
+                        <a href="#">
+                            <i class="fa fa-user"></i> <span> گزارش تخلف ها</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/ViolationManagment/Index"><i class="fa fa-circle-o"></i>گزارش تخلف</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview" id="mainpagemanagment">
+                        <a href="#">
+                            <i class="fa fa-user"></i> <span> مدیریت صفحات سایت</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/SitePageInfoManagment/Index"><i class="fa fa-circle-o"></i>مدیریت صفحات سایت</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview" id="subsetmanagment">
+                        <a href="#">
+                            <i class="fa fa-user"></i> <span> مدیریت زیرمجموعه ها</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/SubsetManagment/Index"><i class="fa fa-circle-o"></i>مدیریت زیرمجموعه ها</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview" id="accountmanagment">
+                        <a href="#">
+                            <i class="fa fa-user"></i> <span> حسابداری</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/Accounting/Index"><i class="fa fa-circle-o"></i>حسابداری</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-user"></i> <span> تغییر پسورد</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/Account/ChangePassword?id=@User.Identity.GetUserId()"><i class="fa fa-circle-o"></i>تغییر پسورد</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <!-- Main content -->
+
+
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer text-left">
+            <strong>Copyleft &copy; 2020 <a href="http://urumium.ir">هیوا وب</a></strong>
+        </footer>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane" id="control-sidebar-home-tab">
+
+
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Stats tab content -->
+                <div class="tab-pane" id="control-sidebar-stats-tab">وضعیت</div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">تنظیمات عمومی</h3>
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                گزارش کنترلر پنل
+                                <input type="checkbox" class="pull-left" checked>
+                            </label>
+
+                            <p>
+                                ثبت تمامی فعالیت های مدیران
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                ایمیل مارکتینگ
+                                <input type="checkbox" class="pull-left" checked>
+                            </label>
+
+                            <p>
+                                اجازه به کاربران برای ارسال ایمیل
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                در دست تعمیرات
+                                <input type="checkbox" class="pull-left" checked>
+                            </label>
+
+                            <p>
+                                قرار دادن سایت در حالت در دست تعمیرات
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <h3 class="control-sidebar-heading">تنظیمات گفتگوها</h3>
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                آنلاین بودن من را نشان نده
+                                <input type="checkbox" class="pull-left" checked>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                اعلان ها
+                                <input type="checkbox" class="pull-left">
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                حذف تاریخته گفتگوهای من
+                                <a href="javascript:void(0)" class="text-red pull-left"><i class="fa fa-trash-o"></i></a>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+        </aside>
+
+    </div>
+    <script>
+        function loadpage() {
+                $.ajax({
+                    type: "Post",
+                    url: '/AdminManagment/GetAdmin',
+                    data: { userid: '@User.Identity.GetUserId()' },
+                    success: function (data) {
+                        if (data.AccountManagment == false) {
+                            document.getElementById("accountmanagment").style.display = "none";
+                            document.getElementById("accountpersendmanagment").style.display = "none";
+                        }
+                        if (data.DoctorManagment == false) {
+                            document.getElementById("doctormanagment").style.display = "none";
+                        }
+                        if (data.IllnessManagment == false) {
+                            document.getElementById("illnessmanagment").style.display = "none";
+                        }
+                        if (data.JudgeManagment == false) {
+                            document.getElementById("judgemanagment").style.display = "none";
+                        }
+                        if (data.AdminManagment == false) {
+                            document.getElementById("adminmanagment").style.display = "none";
+                            document.getElementById("groupmanagment").style.display = "none";
+                            document.getElementById("accountpersendmanagment").style.display = "none";
+                            document.getElementById("takhalofmanagment").style.display = "none";
+                            document.getElementById("mainpagemanagment").style.display = "none";
+                        }
+                        if (data.CommonManagment == false) {
+                            document.getElementById("commonmanagment").style.display = "none";
+                        }
+                        if (data.PharmacyManagment == false) {
+                            document.getElementById("dragmanagment").style.display = "none";
+                        }
+                    }
+                });
+        }
+    </script>
+    <!-- jQuery 3 -->
+    <script src="~/Content/Managment/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="~/Content/Managment/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+
+        $.widget.bridge('uibutton', $.ui.button);
+
+    </script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/Content/Managment/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Content/Managment/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content/Managment/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="~/Content/Managment/dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Content/Managment/dist/js/demo.js"></script>
+    <script src="~/Content/Common/CurrencyJquary.js"></script>
+    <script src="~/Content/PersianCalender/bootstrap-datepicker.js"></script>
+    <script src="~/Content/PersianCalender/bootstrap-datepicker.fa.min.js"></script>
+   
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,47 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.Marketing.Marketing
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayoutDoctor.cshtml";
+}
+
+<h1 style="margin-top:10px;padding-top:30px;" class="text-center">بازاریابی زیر مجموعه ای</h1>
+<div class="row container" style="margin-top:40px;">
+    <div class="col-lg-3 col-xs-6">
+        <div class="small-box bg-blue">
+            <div class="inner">
+                <h3>@Model.CountZirmajmoee<sup style="font-size: 20px"></sup></h3>
+                <p>تعداد دکتر های زیر مجموعه</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-ios-list"></i>
+            </div>
+            <a href="#" class="small-box-footer"> <i class="fa fa-address-book"></i></a>
+        </div>
+    </div>
+  
+    
+</div>
+<hr />
+<br />
+<div class="alert alert-success" style="padding:20px;">
+    <h3 class="text-center ">نام دکتر های زیر مجموعه</h3>
+    @{
+        foreach (var item in Model.DoctorList)
+        {
+            <p style="padding:10px;">@item.Userid</p>
+        }
+    }
+</div>
+<div class="alert alert-info" style="padding:20px;">
+    <h3 class="text-center ">کد زیر را به دوستان خود بدهید تا از هر تراکنش آن درآمد داشته باشید</h3>
+
+</div>
+
+@{
+    if (Model != null)
+    {
+        <h2 style="margin-top:40px;" class="text-center">@Model.Doctors.BusinessKey<a></a></h2>
+    }
+}
+
+

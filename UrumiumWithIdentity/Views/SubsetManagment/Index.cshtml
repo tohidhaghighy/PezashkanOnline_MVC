@@ -1,0 +1,81 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Doctor.Doctor>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<h2 class="text-center" style="padding:50px;">مدیریت زیر مجموعه ها</h2>
+
+<div style="padding:30px;margin-top:20px;margin-bottom:20px;">
+    <div class="col-lg-12 col-sm-12 col-md-12 container">
+        <input type="text" placeholder="نام دکتر را برای جستجو وارد کنید ..." class="form-control" id="txtsearch" onchange="changetext()" />
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 container">
+            <h4 class="text-center">مدیریت زیر مجموعه ها</h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">نام دکتر</th>
+                    <th class="text-center">تخصص</th>
+                    <th class="text-center">درج یادداشت</th>
+                    <th class="text-center">محاسبه زیر مجموعه ها و ویزیت ها</th>
+                    </thead>
+                    <tbody id="listofdoctor">
+                      @{Html.RenderPartial("_DoctorListAjax", Model);}
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+
+    function gotonotepage(id) {
+        window.location.href = "/SubsetManagment/SubsetNotes?doctorid=" + id ;
+    }
+
+    function gotovisitpage(id) {
+        window.location.href = "/SubsetManagment/SubsetVisitDoctor?doctorid=" + id;
+    }
+
+    function changetext() {
+        var text = $('#txtsearch').val();
+        if (text != "") {
+            $.ajax({
+                type: "Post",
+                url: '/SubsetManagment/SearchItem',
+                data: { text: text },
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#listofdoctor').empty();
+                        $('#listofdoctor').append(data.View);
+                    }
+                    else {
+                        swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                    }
+                }
+            });
+        }
+
+    }
+</script>

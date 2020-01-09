@@ -1,0 +1,11 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Insurance.Insurance>
+
+<select class="form-control" id="cmbbimeupdate" name="bimeid">
+    @{
+        foreach (var item in Model)
+        {
+            <option value="@item.Id" class="text-center">@item.Name</option>
+        }
+    }
+</select>
+

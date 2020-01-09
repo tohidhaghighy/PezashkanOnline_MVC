@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2CF442A-5632-476F-9578-FB6DC32B47C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UrumiumMVC.ViewModel</RootNamespace>
+    <AssemblyName>UrumiumMVC.ViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc.Extensions, Version=1.1.0.6, Culture=neutral, PublicKeyToken=d631f4e4b226a032, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Mvc.Extensions.1.1.1.2\lib\net45\System.Web.Mvc.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityViewModel\AccountingViewModel\AccountingMainData.cs" />
+    <Compile Include="EntityViewModel\AccountingViewModel\AccountingViewModel.cs" />
+    <Compile Include="EntityViewModel\ChatViewModel\ChatJudgeUser.cs" />
+    <Compile Include="EntityViewModel\ChatViewModel\ChatUser.cs" />
+    <Compile Include="EntityViewModel\CityState\CityViewModel.cs" />
+    <Compile Include="EntityViewModel\CityState\CityWebService.cs" />
+    <Compile Include="EntityViewModel\CityState\CityWithoutFroegnkey.cs" />
+    <Compile Include="EntityViewModel\CityState\StateViewModel.cs" />
+    <Compile Include="EntityViewModel\CommentViewModel\CommentViewModel.cs" />
+    <Compile Include="EntityViewModel\DoctorNoteViewModel\DoctorNoteViewModel.cs" />
+    <Compile Include="EntityViewModel\DoctorViewModel\DoctorDetailViewModel.cs" />
+    <Compile Include="EntityViewModel\DoctorViewModel\DoctorDetailWebService.cs" />
+    <Compile Include="EntityViewModel\DoctorViewModel\Doctorlistmoaref.cs" />
+    <Compile Include="EntityViewModel\DoctorViewModel\DoctorListViewModel.cs" />
+    <Compile Include="EntityViewModel\DoctorViewModel\DoctorManagmentViewModel.cs" />
+    <Compile Include="EntityViewModel\DoctorViewModel\DoctorViewModel.cs" />
+    <Compile Include="EntityViewModel\DoctorViewModel\DoctorVisitList.cs" />
+    <Compile Include="EntityViewModel\DoctorViewModel\TimeVisitDoctorWebService.cs" />
+    <Compile Include="EntityViewModel\IllnessViewModel\IllnessListViewModel.cs" />
+    <Compile Include="EntityViewModel\IllnessViewModel\IllnessViewModel.cs" />
+    <Compile Include="EntityViewModel\IllnessViewModel\IllnessWebService.cs" />
+    <Compile Include="EntityViewModel\InsuranceViewModel\InsuranceWithOutForegnkey.cs" />
+    <Compile Include="EntityViewModel\JudgeManagmentViewModel\JudgeListViewModel.cs" />
+    <Compile Include="EntityViewModel\JudgeManagmentViewModel\JudgeValidate.cs" />
+    <Compile Include="EntityViewModel\JudgeManagmentViewModel\JudgeViewModel.cs" />
+    <Compile Include="EntityViewModel\JudgeViewModel\CostJudgeList.cs" />
+    <Compile Include="EntityViewModel\JudgeViewModel\JudgeIllnessVisitWebService.cs" />
+    <Compile Include="EntityViewModel\JudgeViewModel\JudgeViewModel.cs" />
+    <Compile Include="EntityViewModel\LoginViewModel\LoginViewModel.cs" />
+    <Compile Include="EntityViewModel\MainPageViewModel\MainPageViewModel.cs" />
+    <Compile Include="EntityViewModel\ManagmentViewModel\ManagmentCountViewModel.cs" />
+    <Compile Include="EntityViewModel\Marketing\Marketing.cs" />
+    <Compile Include="EntityViewModel\MedicineViewModel\MedicineVM.cs" />
+    <Compile Include="EntityViewModel\NoskheViewModel\NoskheViewModel.cs" />
+    <Compile Include="EntityViewModel\PharmacyMassage\PharmacyMassageInfoViewModel.cs" />
+    <Compile Include="EntityViewModel\PharmacyMassage\PharmacyMassegeListViewModel.cs" />
+    <Compile Include="EntityViewModel\PharmacyViewModel\PharmacyListSendedNoskhe.cs" />
+    <Compile Include="EntityViewModel\PharmacyViewModel\PharmacyViewModel.cs" />
+    <Compile Include="EntityViewModel\PharmacyViewModel\PharmacyVM.cs" />
+    <Compile Include="EntityViewModel\PharmacyViewModel\PharmacyWebService.cs" />
+    <Compile Include="EntityViewModel\PharmacyViewModel\Webserviceinfopharmacy.cs" />
+    <Compile Include="EntityViewModel\ProductViewModel\ProductPageModel.cs" />
+    <Compile Include="EntityViewModel\QuestionViewModel\AnswerQuestionViewModel.cs" />
+    <Compile Include="EntityViewModel\QuestionViewModel\QuestionDoctorWebService.cs" />
+    <Compile Include="EntityViewModel\QuestionViewModel\QuestionListInfoViewModel.cs" />
+    <Compile Include="EntityViewModel\QuestionViewModel\QuestionViewModel.cs" />
+    <Compile Include="EntityViewModel\SubsetViewModel\SubsetViewModel.cs" />
+    <Compile Include="EntityViewModel\ViolationViewModel\ViolationViewModel.cs" />
+    <Compile Include="EntityViewModel\VisitViewModel\NoskheInfoWebService.cs" />
+    <Compile Include="EntityViewModel\VisitViewModel\NoskheMedicineWebService.cs" />
+    <Compile Include="EntityViewModel\VisitViewModel\VisitListViewModel.cs" />
+    <Compile Include="EntityViewModel\VisitViewModel\VisitWebService.cs" />
+    <Compile Include="EntityViewModel\WebServiceClasses\DoctorWebService.cs" />
+    <Compile Include="EntityViewModel\WebServiceClasses\GroupWebService.cs" />
+    <Compile Include="EntityViewModel\WebServiceClasses\JudgeWebService.cs" />
+    <Compile Include="EntityViewModel\WebServiceClasses\PharmacyWebService.cs" />
+    <Compile Include="EntityViewModel\WebServiceClasses\TimeVisiDoctorWebService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UrumiumMVC.Common\UrumiumMVC.Common.csproj">
+      <Project>{2FB9B057-9FC3-4DF1-98C9-1F1B1B7BF713}</Project>
+      <Name>UrumiumMVC.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UrumiumMVC.DomainClasses\UrumiumMVC.DomainClasses.csproj">
+      <Project>{c4d36c31-beb0-4de9-984b-1105b0f5c176}</Project>
+      <Name>UrumiumMVC.DomainClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

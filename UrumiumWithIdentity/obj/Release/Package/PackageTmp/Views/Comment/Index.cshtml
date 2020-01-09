@@ -1,0 +1,147 @@
+﻿@model List<UrumiumMVC.ViewModel.EntityViewModel.CommentViewModel.CommentViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            CurrentMenu("HeaderImage");
+        });
+    </script>
+}
+<script src="~/Scripts/ckeditor4.12/adapters/jquery.js"></script>
+<script src="~/Scripts/ckeditor4.12/ckeditor.js"></script>
+<section class="content-header">
+    <h1>
+        داشبرد
+        <small>کنترل پنل</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Managment/Index"><i class="fa fa-dashboard"></i> خانه</a></li>
+        <li class="active">مدیریت کامنت ها</li>
+    </ol>
+</section>
+@Html.AntiForgeryToken()
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-title text-center wow zoomIn">
+                <h1>مدیریت کامنت ها</h1>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                جستجو کامنت ها
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            @Html.Partial("_Search")
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div><!--- END COL -->
+    </div><!--- END ROW -->
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">لیست کامنت ها</h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">تایید شده</th>
+                    <th class="text-center">کامنت</th>
+                    <th class="text-center">نام</th>
+                    <th class="text-center">ایمیل</th>
+                    <th class="text-center">پاسخ به پیام</th>
+                    <th class="text-center">حذف</th>
+                    </thead>
+                    <tbody>
+                        @{Html.RenderPartial("_ListAjax", Model);}
+                    </tbody>
+
+                </table>
+                <div class="clearfix"></div>
+                <ul class="pagination pull-right">
+                    <li class="disabled"><a href="#"><i class="ion ion-ios-arrow-right"></i></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#"><i class="ion ion-ios-arrow-left"></i></a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@*modals*@
+
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="ion ion-ios-close"></i></button>
+                <h4 class="modal-title custom_align" id="Heading">درج جواب </h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <textarea name="text" id="text" class="form-control ckeditor">متن مورد نظر خود را وارد کنید</textarea>
+                </div>
+               
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"> درج</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="ion ion-ios-close"></i></button>
+                <h4 class="modal-title custom_align" id="Heading">حذف مورد</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> ایا میخواهید حذف کنید؟</div>
+
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-success"><i class="ion ion-ios-checkmark"></i> بله</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="ion ion-ios-close"></i> خیر</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+@*end modals*@
+
+
+<script src="~/Content/Common/Commonadditem.js"></script>
+

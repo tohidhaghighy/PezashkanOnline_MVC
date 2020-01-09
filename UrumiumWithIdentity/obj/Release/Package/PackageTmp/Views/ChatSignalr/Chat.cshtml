@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Chat";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+<div class="container">
+    <h2> Chat room</h2>
+    <hr />
+    <input type="hidden" id="displayName" />
+    <textarea class="form-control" id="message" cols="60" rows="8"></textarea>
+    <p>
+        <input type="button" class="btn btn-success" value="Send" id="btnsend" />
+    </p>
+
+
+    <ul id="chats"></ul>
+</div>
+
+

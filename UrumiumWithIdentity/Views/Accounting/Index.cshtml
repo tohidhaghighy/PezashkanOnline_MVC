@@ -1,0 +1,87 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.AccountingViewModel.AccountingMainData
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<link href="~/Content/PersianCalender/userclass/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/PersianCalender/userclass/bootstraptheme.css" rel="stylesheet" />
+<link href="~/Content/PersianCalender/jquery.Bootstrap-PersianDateTimePicker.css" rel="stylesheet" />
+<script src="~/Content/PersianCalender/userclass/jqueay.js"></script>
+<script src="~/Content/PersianCalender/userclass/bootstrapjqueay.js"></script>
+
+<style type="text/css">
+    body, table {
+        font-family: 'Segoe UI', Tahoma;
+        font-size: 14px;
+    }
+</style>
+<h2 class="text-center" style="padding:50px;">حسابداری</h2>
+
+<div class="container" style="width:60%;">
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInput3">تاریخ</label>
+                <div class="input-group">
+                    <div class="input-group-addon" data-MdDateTimePicker="true" data-trigger="click" data-targetselector="#exampleInput3">
+                        <span> تاریخ شروع</span>
+                    </div>
+                    <input type="text" class="form-control" id="exampleInput3" name="starttime" placeholder="تاریخ شروع را مشخص کنید" data-MdDateTimePicker="true" data-placement="right" />
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInput3">تاریخ</label>
+                <div class="input-group">
+                    <div class="input-group-addon" data-MdDateTimePicker="true" data-trigger="click" data-targetselector="#exampleInput3">
+                        <span> تاریخ پایان</span>
+                    </div>
+                    <input type="text" class="form-control" id="exampleInput2" name="finishtime" placeholder="تاریخ پایان را مشخص کنید" data-MdDateTimePicker="true" data-placement="right" />
+                </div>
+            </div>
+        </div>
+        <h6 class="text-light mt-2 font-weight-bold">نقش:</h6>
+        <select class="form-control  register mt-2" id="rollid" name="rollid">
+            <option value="1">دکتر</option>
+            <option value="2">کارشناس</option>
+        </select>
+        <a class="btn btn-success btn-block" style="margin-top:20px;" onclick="searchvalue()">جستجو کن ...</a>
+    </div>
+</div>
+
+<div class="container" id="accountinglist">
+    @{Html.RenderPartial("_Accountinglist", Model);}
+</div>
+
+<script src="~/Content/PersianCalender/calendar.js"></script>
+<script src="~/Content/PersianCalender/jquery.Bootstrap-PersianDateTimePicker.js"></script>
+<script>
+    function searchvalue() {
+        var start = $('#exampleInput3').val();
+        var finish = $('#exampleInput2').val();
+        var e = document.getElementById("rollid");
+        var rollids = e.options[e.selectedIndex].value;
+        $.ajax({
+            type: "Post",
+            url: '/Accounting/SearchValue',
+            data: { start: start, finish: finish, rollid: rollids },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#accountinglist').empty();
+                    $('#accountinglist').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+            }
+        });
+    }
+</script>

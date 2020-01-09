@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEE84FE3-5172-4170-A9A8-0D5789E9748F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UrumiumMVC.ServiceLayer</RootNamespace>
+    <AssemblyName>UrumiumMVC.ServiceLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contract\AdminInterface\IAdminService.cs" />
+    <Compile Include="Contract\AnswerQuestionInterface\IAnswerQuestionService.cs" />
+    <Compile Include="Contract\BimeDoctorInterface\IBimeDoctorService.cs" />
+    <Compile Include="Contract\BimeInterface\IBimeService.cs" />
+    <Compile Include="Contract\CityStateService\ICityService.cs" />
+    <Compile Include="Contract\CityStateService\IStateService.cs" />
+    <Compile Include="Contract\CostsPersendInterface\ICostPersendService.cs" />
+    <Compile Include="Contract\DayTimeDoctorInterface\IDayDoctorService.cs" />
+    <Compile Include="Contract\DoctorInterface\IDoctorNoteService.cs" />
+    <Compile Include="Contract\DoctorInterface\IDoctorService.cs" />
+    <Compile Include="Contract\FooterInterface\IFooterService.cs" />
+    <Compile Include="Contract\GroupInterface\IGroupService.cs" />
+    <Compile Include="Contract\IllnessInterface\IIllnessService.cs" />
+    <Compile Include="Contract\JudgeInterface\IJudgeService.cs" />
+    <Compile Include="Contract\JVTimeInterface\IJVTimeService.cs" />
+    <Compile Include="Contract\LanguageInterface\ILanguageService.cs" />
+    <Compile Include="Contract\MassageIllnessInterface\IMassageIService.cs" />
+    <Compile Include="Contract\MassageJudgeInterface\IMassageJService.cs" />
+    <Compile Include="Contract\MassagePharmacyInterface\IMassagePharmacyService.cs" />
+    <Compile Include="Contract\MedicineInterface\IMedicineService.cs" />
+    <Compile Include="Contract\MenuInterface\IMenuService.cs" />
+    <Compile Include="Contract\NoskheInterface\INoskheService.cs" />
+    <Compile Include="Contract\NurseInterface\INurseService.cs" />
+    <Compile Include="Contract\PharmacyInterface\IPharmacyService.cs" />
+    <Compile Include="Contract\PharmacyInterface\IPharmacy_MassageService.cs" />
+    <Compile Include="Contract\ProductInterface\IProductService.cs" />
+    <Compile Include="Contract\QuestionInterface\IQuestionService.cs" />
+    <Compile Include="Contract\SearchDayInterface\IDayService.cs" />
+    <Compile Include="Contract\SettingInterface\ISettingService.cs" />
+    <Compile Include="Contract\SettingInterface\ISitePageInfoService.cs" />
+    <Compile Include="Contract\TicketInterface\ITicketService.cs" />
+    <Compile Include="Contract\TimeDateDrInterface\ITimeDayDrService.cs" />
+    <Compile Include="Contract\UserInterface\IUserService.cs" />
+    <Compile Include="Contract\ViolationInterface\IViolationService.cs" />
+    <Compile Include="Contract\VisitInterface\IVisitService.cs" />
+    <Compile Include="EFServices\AdminService\AdminService.cs" />
+    <Compile Include="EFServices\AnswerQuestionService\AnswerQuestionService.cs" />
+    <Compile Include="EFServices\BimeDoctorService\BimeDoctorService.cs" />
+    <Compile Include="EFServices\BimeService\BimeService.cs" />
+    <Compile Include="EFServices\CityStateService\CityService.cs" />
+    <Compile Include="EFServices\CityStateService\StateService.cs" />
+    <Compile Include="EFServices\CostPersendService\CostPersendService.cs" />
+    <Compile Include="EFServices\DayTimeDoctorService\DayDoctorService.cs" />
+    <Compile Include="EFServices\DoctorService\DoctorNoteService.cs" />
+    <Compile Include="EFServices\DoctorService\DoctorService.cs" />
+    <Compile Include="EFServices\FooterService\FooterService.cs" />
+    <Compile Include="EFServices\GroupService\GroupService.cs" />
+    <Compile Include="EFServices\IllnessService\IllnessService.cs" />
+    <Compile Include="EFServices\JudgeService\JudgeService.cs" />
+    <Compile Include="EFServices\JVTimeService\JVTimeService.cs" />
+    <Compile Include="EFServices\LanguageService\LanguageService.cs" />
+    <Compile Include="EFServices\MassageIllnessService\MassageIService.cs" />
+    <Compile Include="EFServices\MassageJudgeService\MassageJService.cs" />
+    <Compile Include="EFServices\MassagePharmacyService\MassagePharmacyService.cs" />
+    <Compile Include="EFServices\MedicineService\MedicineService.cs" />
+    <Compile Include="EFServices\MenuService\MenuService.cs" />
+    <Compile Include="EFServices\NoskheService\NoskheService.cs" />
+    <Compile Include="EFServices\NurseService\NurseService.cs" />
+    <Compile Include="EFServices\PharmacyService\PharmacyService.cs" />
+    <Compile Include="EFServices\PharmacyService\Pharmacy_MassageService.cs" />
+    <Compile Include="EFServices\ProductService\ProductService.cs" />
+    <Compile Include="EFServices\QuestionService\QuestionService.cs" />
+    <Compile Include="EFServices\SearchDayService\DayService.cs" />
+    <Compile Include="EFServices\SettingService\SettingService.cs" />
+    <Compile Include="EFServices\SettingService\SitePageInfoService.cs" />
+    <Compile Include="EFServices\TicketService\TicketService.cs" />
+    <Compile Include="EFServices\TimeDayDrService\TimeDayDrService.cs" />
+    <Compile Include="EFServices\UserService\UserService.cs" />
+    <Compile Include="EFServices\ViolationService\ViolationService.cs" />
+    <Compile Include="EFServices\VisitService\VisitService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{0B7B69A5-9377-4E7D-97B0-C37304004AA7}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UrumiumMVC.Common\UrumiumMVC.Common.csproj">
+      <Project>{2FB9B057-9FC3-4DF1-98C9-1F1B1B7BF713}</Project>
+      <Name>UrumiumMVC.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UrumiumMVC.DataLayer\UrumiumMVC.DataLayer.csproj">
+      <Project>{ceb29319-8201-49c9-bc06-a47537f15521}</Project>
+      <Name>UrumiumMVC.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UrumiumMVC.DomainClasses\UrumiumMVC.DomainClasses.csproj">
+      <Project>{c4d36c31-beb0-4de9-984b-1105b0f5c176}</Project>
+      <Name>UrumiumMVC.DomainClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UrumiumMVC.ViewModel\UrumiumMVC.ViewModel.csproj">
+      <Project>{a2cf442a-5632-476f-9578-fb6dc32b47c3}</Project>
+      <Name>UrumiumMVC.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

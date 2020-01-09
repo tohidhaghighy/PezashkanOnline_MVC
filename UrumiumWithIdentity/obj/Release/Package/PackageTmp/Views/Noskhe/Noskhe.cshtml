@@ -1,0 +1,353 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.NoskheViewModel.NoskheViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayoutDoctor.cshtml";
+}
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+<link href="~/Content/PersianCalender/bootstrap-datepicker.css" rel="stylesheet" charset="UTF-8" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+}
+
+@{
+    if (Model.Is_Finaly == true)
+    {
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="col-md-12">
+                <h1 class="text-center">نسخه بیمار</h1>
+                <div class="table-responsive">
+                    <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                        <thead>
+                        <th class="text-center">نام دارو</th>
+                        <th class="text-center">تعداد</th>
+                        </thead>
+                        <tbody id="listofnoskhe">
+                            @{Html.RenderPartial("_NoskheListDoctorWithoutDeleted", Model.NoskheMedicines);}
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+                                }
+                                else
+                                {
+                                    <h2 class="text-center" style="padding-top:50px;">درج نسخه</h2>
+                                    <div class="container">
+                                        <div class="row" style="margin-top:20px;margin-bottom:20px;padding-left:50px;padding-right:50px;">
+                                            <a class="btn btn-success btn-block" onclick="finalnoskhe(@Model.visitid,@Model.doctorid,@Model.illnessid)">نهایی کردن نسخه</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="row">
+                                                <div style="padding:30px;margin-top:20px;margin-bottom:10px;">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder=" متن را جستجو کن ..." class="form-control" id="txtsearch" onchange="changetextvalue(@Model.doctorid)" />
+                                                        <a class="btn btn-success btn-block" style="margin-top:10px;" onclick="addmedicine()">افزودن دارو جدید  </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="number" style="display:none" id="visitid" name="visitid" value="@Model.visitid" />
+                                            <input type="number" style="display:none" id="doctorid" name="doctorid" value="@Model.doctorid" />
+                                            <input type="number" style="display:none" id="illnessid" name="illnessid" value="@Model.illnessid" />
+                                            <div class="row">
+                                                <div class="col-md-12" style="padding:20px;">
+                                                    <h4 class="text-center">لیست جستجو داروها </h4>
+                                                    <div class="table-responsive">
+                                                        <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                                                            <thead>
+                                                            <th class="text-center">نام دارو</th>
+                                                            <th class="text-center">افزودن دارو به لیست</th>
+                                                            </thead>
+                                                            <tbody id="listofdrag">
+                                                                @{Html.RenderPartial("_NoskheDoctorListAjax");}
+                                                            </tbody>
+
+                                                        </table>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="col-md-12">
+                                                <h4 class="text-center">نسخه بیمار</h4>
+                                                <div class="table-responsive">
+                                                    <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                                                        <thead>
+                                                        <th class="text-center">نام دارو</th>
+                                                        <th class="text-center">تعداد</th>
+                                                        <th class="text-center">حذف دارو</th>
+                                                        </thead>
+                                                        <tbody id="listofnoskhe">
+                                                            @{Html.RenderPartial("_NoskheListDoctorWithDeleted", Model.NoskheMedicines);}
+                                                        </tbody>
+
+                                                    </table>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                }
+}
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">افزودن دارو</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        نام دارو
+                    </div>
+                    <div class="col-lg-8">
+                        <input id="txtmedicinename" name="name" type="text" class="form-control" placeholder="متن را وارد کنید" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        تعداد دارو
+                    </div>
+                    <div class="col-lg-8">
+                        <input id="txtmedicinecount" name="name" type="number" class="form-control" placeholder="تعداد را وارد کنید" />
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                <a name="btninsert" class="btn btn-success" value="درج" onclick="addmedicinenew()">درج</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="myModalMedicin" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">درج دارو جدید</h4>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        نام دارو جدید
+                    </div>
+                    <div class="col-lg-8">
+                        <input id="txtname" name="txtname" class="form-control" placeholder="نام دارو را وارد کنید" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-4">
+                        توضیحات دارو جدید
+                    </div>
+                    <div class="col-lg-8">
+                        <input id="txtdes" name="txtdes" class="form-control" placeholder="توضیحات دارو را وارد کنید" />
+                    </div>
+                </div>
+                <br />
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                <a name="btninsert" class="btn btn-success" value="درج" onclick="addmedicinetonoskhe()">درج</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+        $("#datepicker1").datepicker();
+    });
+
+
+    function finalnoskhe(visitid,doctorid,illnessid) {
+        swal({
+            title: "آیا میخواهید نسخه را نهایی کنید؟",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-success",
+            confirmButtonText: "بله نهایی شود",
+            cancelButtonText: "خیر",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+            function (isConfirm) {
+                if (isConfirm) {
+                    sendtoservertofinal(visitid, doctorid,illnessid);
+                    swal.close();
+
+                } else {
+                    swal("صرف نظر", "حذف نشد", "error");
+                }
+            });
+    }
+
+
+    function sendtoservertofinal(visitid, doctorid, illnessid) {
+        $.ajax({
+            type: "Post",
+            url: '/Noskhe/FinalMedicinetoNoskhe',
+            data: { doctorid: doctorid, visitid: visitid, illnessid: illnessid },
+            success: function (data) {
+                if (data.success == true) {
+                    window.location.reload();
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+
+
+    function deleteitem(id, visitid) {
+        swal({
+            title: "آیا میخواهید حذف شود؟",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "بله حذف شود",
+            cancelButtonText: "خیر",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+            function (isConfirm) {
+                if (isConfirm) {
+                    sendtoservertodelete(id, visitid);
+                    swal.close();
+
+                } else {
+                    swal("صرف نظر", "حذف نشد", "error");
+                }
+            });
+    }
+
+    function sendtoservertodelete(id,visitid) {
+        $.ajax({
+            type: "Post",
+            url: '/Noskhe/DeleteMedicineFromNoskhe',
+            data: { id: id ,visitid:visitid},
+            success: function (data) {
+                if (data.success == true) {
+                    $('#listofnoskhe').empty();
+                    $('#listofnoskhe').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+
+
+    function addmedicine() {
+        $("#myModalMedicin").modal();
+    }
+
+    function modalshowaddmedicinetonoskhe(name) {
+        $("#txtmedicinename").val(name);
+        $("#txtmedicinecount").val("1");
+        $("#myModal").modal();
+    }
+
+    function changetextvalue(doctorid) {
+        var text = $('#txtsearch').val();
+        $.ajax({
+            type: "Post",
+            url: '/MedicineManagment/SearchItemForNoskhe',
+            data: { doctorid: doctorid ,text:text},
+            success: function (data) {
+                if (data.success == true) {
+                    $('#listofdrag').empty();
+                    $('#listofdrag').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+
+
+
+    function addmedicinenew() {
+        var medicinname = $('#txtmedicinename').val();
+        var medicinecount = $('#txtmedicinecount').val();
+        var illnessid = $('#illnessid').val();
+        var doctorid = $('#doctorid').val();
+        var visitid = $('#visitid').val();
+        $.ajax({
+            type: "Post",
+            url: '/Noskhe/AddMedicineToNoskhe',
+            data: { illnessid: illnessid, doctorid: doctorid, visitid: visitid, text: medicinname, count: medicinecount },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#listofnoskhe').empty();
+                    $('#listofnoskhe').append(data.View);
+                    $('#myModal').modal('hide');
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+
+
+    function addmedicinetonoskhe() {
+        var itemname = $("#txtname").val();
+        var itemdes = $("#txtdes").val();
+        var doctorid = $('#doctorid').val();
+        if (itemname != "" && itemdes != "") {
+            $.ajax({
+                type: "Post",
+                url: '/MedicineManagment/AddItemSearch',
+                data: { doctorid: doctorid, name: itemname, description: itemdes },
+                success: function (data) {
+                    $('#listofdrag').empty();
+                    $('#listofdrag').append(data.View);
+                    $('#myModalMedicin').modal('hide');
+                }
+            });
+        }
+        else {
+            alert("نام وتوضیحات وارد کنید");
+        }
+
+    }
+</script>

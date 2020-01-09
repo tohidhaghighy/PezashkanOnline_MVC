@@ -1,0 +1,187 @@
+﻿
+@model UrumiumMVC.ViewModel.EntityViewModel.ProductViewModel.ProductPageModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+
+@section Scripts
+{
+    <script src="~/Scripts/plugins/tag/prism.min.js"></script>
+    <script src="~/Scripts/plugins/tag/tagsinput.min.js"></script>
+    <script src="~/Scripts/plugins/tag/tokenfield.min.js"></script>
+    <script src="~/Scripts/plugins/tag/typeahead.bundle.min.js"></script>
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+    <script>
+        $(document).ready(function () {
+         $('.tokenfield').tokenfield();
+        });
+    </script>
+}
+<style>
+    .modal-dialog {
+        width: 90%;
+        height: 90%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .modal-content {
+        height: auto;
+        min-height: 100%;
+        border-radius: 0;
+    }
+</style>
+
+<section class="content-header">
+    <h1>
+        داشبرد
+        <small>کنترل پنل</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Managment/Index"><i class="fa fa-dashboard"></i> خانه</a></li>
+        <li class="active">مدیریت فروشگاه</li>
+    </ol>
+</section>
+
+@Html.AntiForgeryToken()
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-title text-center wow zoomIn">
+                <h1>مدیریت فروشگاه ها</h1>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <section class="content row">
+        <!-- /.row -->
+        <div class="row">
+            @Html.Partial("_AllProductCount", Model.Products)
+            @Html.Partial("_ImportentProductCount", Model.Products)
+            @Html.Partial("_OffProductCount", Model.Products)
+        </div>
+
+    </section>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                درج محصول جدید
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            @Html.Partial("_Create", Model)
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                جستجو محصولات
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            @Html.Partial("_Search")
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div><!--- END COL -->
+    </div><!--- END ROW -->
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">لیست محصولات </h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">پیشنهاد ویژه</th>
+                    <th class="text-center">نام</th>
+                    <th class="text-center">توضیحات کوتاه</th>
+                    <th class="text-center">قیمت</th>
+                    <th class="text-center">درصد تخفیف</th>
+                    <th class="text-center">تعداد بازدید  </th>
+                    <th class="text-center">افزودن گالری </th>
+                    <th class="text-center">ویرایش</th>
+                    <th class="text-center">حذف</th>
+                    </thead>
+                    <tbody id="listofarticle">
+                        @{Html.RenderPartial("_ListAjax", Model.Products);}
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    function addmodalforinsert() {
+        $("#myModal").modal();
+    }
+
+    function deleteitem(deleteid) {
+        swal({
+            title: "آیا میخواهید حذف شود؟",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "بله حذف شود",
+            cancelButtonText: "خیر",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+            function (isConfirm) {
+                if (isConfirm) {
+                    deletearticleitem(deleteid);
+
+                } else {
+                    swal("صرف نظر", "حذف نشد", "error");
+                }
+            });
+
+    }
+
+    function deletearticleitem(id) {
+        $.ajax({
+            type: "Post",
+            url: '/TicketManagment/DeleteTicket',
+            data: { id: id },
+            success: function (data) {
+                location.reload(true);
+            }
+        });
+
+    }
+
+
+</script>
+<script src="~/Content/Common/Commonadditem.js"></script>
+
+
+
+
+

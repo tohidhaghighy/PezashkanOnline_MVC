@@ -1,0 +1,71 @@
+﻿@model IdentitySample.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginNewDesignLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row mt-4 ml-5">
+        @*<div class="login-box col-12 col-md-4 border my-5">
+@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h3 class="center-block text-center" style="color:white;margin-top:20px;">ورود با ایمیل</h3>
+            <div class="form-group">
+                <input type="text" placeholder="ایمیل خود را وارد کنید" id="Email" name="Email" class="form-control mt-5" />
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="پسورد خود را وارد کنید" id="Password" name="Password" class="form-control mt-5" />
+            </div>
+            <p class="mt-5 text-light">توجه: به صورت پیش فرض نام کاربری و رمز عبور به ترتیب ایمیل و پسورد ثبت شده در سامانه است.</p>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <input type="submit" class="btn btn-warning text-light my-5" value="ورود">
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <a href="/Account/Register" class="btn btn-default text-light my-5">ثبت نام</a>
+                </div>
+            </div>
+}
+        </div>*@
+
+        <div class="col-md-3 ml-3 ">
+            
+        </div>
+
+        <div class="login-box col-12 col-md-4 border my-5">
+            @using (Html.BeginForm("LoginMobile", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <h3 class="center-block text-center" style="color:white;margin-top:20px;">ورود با موبایل</h3>
+                <div class="form-group">
+                    <input type="text" placeholder="موبایل خود را وارد کنید" id="Mobile" name="Mobilesms" class="form-control mt-5"/>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="پسورد خود را وارد کنید" id="Password" name="Passwordsms" class="form-control mt-5" />
+                </div>
+                <h6 class="text-light mt-2 font-weight-bold">نقش:</h6>
+                <select class="form-control  register mt-2" id="rollid" name="rollidsms">
+                    <option value="3">بیمار</option>
+                    <option value="1">دکتر</option>
+                    <option value="2">کارشناس</option>
+                    <option value="4">داروخانه</option>
+                    <option value="5">پرستار</option>
+                </select>
+                <p class="mt-5 text-light">توجه: به صورت پیش فرض نام کاربری و رمز عبور به ترتیب موبایل و پسورد ثبت شده در سامانه است.</p>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="submit" class="btn btn-warning text-light my-5" value="ورود">
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <a href="/Account/Register" class="btn btn-default text-light my-5">ثبت نام</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+
+
+

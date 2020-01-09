@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RefactorThis.GraphDiff</name>
+    </assembly>
+    <members>
+        <member name="T:RefactorThis.GraphDiff.GraphDiffConfiguration">
+            <summary>
+            Static configuration class for GraphDiff options
+            </summary>
+        </member>
+        <member name="P:RefactorThis.GraphDiff.GraphDiffConfiguration.ReloadAssociatedEntitiesWhenAttached">
+            <summary>
+            If an entity is attached as an associated entity it will be automatically reloaded from the database
+            to ensure the EF local cache has the latest state.
+            </summary>
+        </member>
+        <member name="M:RefactorThis.GraphDiff.Internal.Extensions.GetEntityTypeByType(System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace,System.Type)">
+            <summary>A MetadataWorkspace extension method that gets entity type by type.</summary>
+            <param name="metadataWorkspace">The metadataWorkspace to act on.</param>
+            <param name="entityType">Type of the entity.</param>
+            <returns>The entity type by type.</returns>
+            not support class in generic class
+        </member>
+        <member name="T:RefactorThis.GraphDiff.Internal.GraphDiffer`1">
+            <summary>
+            GraphDiff main access point.
+            </summary>
+            <typeparam name="T">The root agreggate type</typeparam>
+        </member>
+        <member name="T:RefactorThis.GraphDiff.Internal.ConfigurationVisitor`1">
+            <summary>
+            Reads an IUpdateConfiguration mapping and produces an GraphNode graph.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:RefactorThis.GraphDiff.IUpdateConfiguration`1">
+            <summary>
+            Mapping configuration for a merge graph
+            </summary>
+            <typeparam name="T">The type of the parent entity</typeparam>
+        </member>
+        <member name="M:RefactorThis.GraphDiff.UpdateConfigurationExtensions.OwnedEntity``2(RefactorThis.GraphDiff.IUpdateConfiguration{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            States that the child entity is a part of the aggregate and will be updated, added or removed if changed in the parent's
+            navigational property.
+            </summary>
+            <typeparam name="T">The parent entity type</typeparam>
+            <typeparam name="T2">The child entity type </typeparam>
+            <param name="config">The configuration mapping</param>
+            <param name="expression">An expression specifying the right hand side entity</param>
+            <returns>Updated configuration mapping</returns>
+        </member>
+        <member name="M:RefactorThis.GraphDiff.UpdateConfigurationExtensions.AssociatedEntity``2(RefactorThis.GraphDiff.IUpdateConfiguration{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            States that the child entity is not a part of the aggregate. The parent's navigation property will be updated, but changes to the
+            child will not be saved.
+            </summary>
+            <typeparam name="T">The parent entity type</typeparam>
+            <typeparam name="T2">The child entity type </typeparam>
+            <param name="config">The configuration mapping</param>
+            <param name="expression">An expression specifying the child entity</param>
+            <returns>Updated configuration mapping</returns>
+        </member>
+        <member name="M:RefactorThis.GraphDiff.UpdateConfigurationExtensions.OwnedEntity``2(RefactorThis.GraphDiff.IUpdateConfiguration{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{RefactorThis.GraphDiff.IUpdateConfiguration{``1},System.Object}})">
+            <summary>
+            States that the child entity is a part of the aggregate and will be updated, added or removed if changed in the parent's
+            navigational property.
+            </summary>
+            <typeparam name="T">The parent entity type</typeparam>
+            <typeparam name="T2">The child entity type </typeparam>
+            <param name="config">The configuration mapping</param>
+            <param name="expression">An expression specifying the right hand side entity</param>
+            <param name="mapping">Any further mapping for the children of this relation</param>
+            <returns>Updated configuration mapping</returns>
+        </member>
+        <member name="M:RefactorThis.GraphDiff.UpdateConfigurationExtensions.OwnedCollection``2(RefactorThis.GraphDiff.IUpdateConfiguration{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Collections.Generic.ICollection{``1}}})">
+            <summary>
+            States that the child collection is a part of the aggregate and the entities inside will be updated,
+            added or removed if changed in the parent's navigational property.
+            </summary>
+            <typeparam name="T">The parent entity type</typeparam>
+            <typeparam name="T2">The child collection type </typeparam>
+            <param name="config">The configuration mapping</param>
+            <param name="expression">An expression specifying the right hand side entity</param>
+            <returns>Updated configuration mapping</returns>
+        </member>
+        <member name="M:RefactorThis.GraphDiff.UpdateConfigurationExtensions.AssociatedCollection``2(RefactorThis.GraphDiff.IUpdateConfiguration{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Collections.Generic.ICollection{``1}}})">
+            <summary>
+            States that the child collection is not a part of the aggregate. The parent's navigation property will be updated, but entity changes to the
+            child entities will not be saved.
+            </summary>
+            <typeparam name="T">The parent entity type</typeparam>
+            <typeparam name="T2">The child entity type </typeparam>
+            <param name="config">The configuration mapping</param>
+            <param name="expression">An expression specifying the child entity</param>
+            <returns>Updated configuration mapping</returns>
+        </member>
+        <member name="M:RefactorThis.GraphDiff.UpdateConfigurationExtensions.OwnedCollection``2(RefactorThis.GraphDiff.IUpdateConfiguration{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Collections.Generic.ICollection{``1}}},System.Linq.Expressions.Expression{System.Func{RefactorThis.GraphDiff.IUpdateConfiguration{``1},System.Object}})">
+            <summary>
+            States that the child collection is a part of the aggregate and the entities inside will be updated,
+            added or removed if changed in the parent's navigational property.
+            </summary>
+            <typeparam name="T">The parent entity type</typeparam>
+            <typeparam name="T2">The child collection type </typeparam>
+            <param name="config">The configuration mapping</param>
+            <param name="expression">An expression specifying the right hand side entity</param>
+            <param name="mapping">Any further mapping for the children of this relation</param>
+            <returns>Updated configuration mapping</returns>
+        </member>
+        <member name="M:RefactorThis.GraphDiff.DbContextExtensions.UpdateGraph``1(System.Data.Entity.DbContext,``0,System.Linq.Expressions.Expression{System.Func{RefactorThis.GraphDiff.IUpdateConfiguration{``0},System.Object}},System.Boolean)">
+            <summary>
+                Merges a graph of entities with the data store.
+            </summary>
+            <typeparam name="T">The type of the root entity</typeparam>
+            <param name="context">The database context to attach / detach.</param>
+            <param name="entity">The root entity.</param>
+            <param name="mapping">The mapping configuration to define the bounds of the graph</param>
+            <param name="allowDelete">Allow to delete from graph.</param>
+            <returns>The attached entity graph</returns>
+        </member>
+        <member name="M:RefactorThis.GraphDiff.DbContextExtensions.UpdateGraph``1(System.Data.Entity.DbContext,``0,System.Boolean)">
+            <summary>
+                Merges a graph of entities with the data store.
+            </summary>
+            <typeparam name="T">The type of the root entity</typeparam>
+            <param name="context">The database context to attach / detach.</param>
+            <param name="entity">The root entity.</param>
+            <param name="allowDelete">Allow to delete from graph.</param>
+            <returns>The attached entity graph</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,353 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Admin.Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<h2 class="text-center" style="padding:50px;">مدیریت ادمین ها</h2>
+
+<p style="margin-right:50px;">
+    <a class="btn btn-link" onclick="showmodal()">افزودن ادمین جدید</a>
+</p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">لیست ادمین ها</h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">نام</th>
+                    <th class="text-center">دسترسی به دکتر</th>
+                    <th class="text-center">دسترسی به بیمار</th>
+                    <th class="text-center">دسترسی به کارشناس</th>
+                    <th class="text-center">دسترسی به داروخانه</th>
+                    <th class="text-center">دسترسی به عمومی</th>
+                    <th class="text-center">دسترسی به حسابداری</th>
+                    <th class="text-center">دسترسی به دارو</th>
+                    <th class="text-center">دسترسی به کاربران</th>
+                    <th class="text-center">حذف</th>
+                    </thead>
+                    <tbody id="listofarticle">
+                        @{Html.RenderPartial("_AdminListAjax", Model);}
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+@using (Html.BeginForm("AddItem", "AdminManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">درج ادمین جدید</h4>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        نام ادمین جدید
+                    </div>
+                    <div class="col-lg-8">
+                        <input id="txtcityname" name="name" class="form-control" placeholder="نام ادمین را وارد کنید" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        ایمیل 
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="text" id="txtcityname" name="username" class="form-control" placeholder="نام کاربری را وارد کنید" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        پسورد 
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="password" id="txtcityname" name="password" class="form-control" placeholder="پسورد را وارد کنید" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        دسترسی به ادمین
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="checkbox" id="txtcityname" name="AdminManagment" checked value="true"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        دسترسی به بیمار
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="checkbox" id="txtcityname" name="IllnessManagment" checked value="true"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        دسترسی به دکتر
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="checkbox" id="txtcityname" name="DoctorManagment" checked value="true"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        دسترسی به داروخانه
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="checkbox" id="txtcityname" name="PharmacyManagment" checked value="true"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        دسترسی به کارشناس
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="checkbox" id="txtcityname" name="JudgeManagment" checked value="true"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        دسترسی به عمومی
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="checkbox" id="txtcityname" name="CommonManagment" checked value="true"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        دسترسی به حسابداری
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="checkbox" id="txtcityname" name="AccountManagment" checked value="true"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        دسترسی به دارو
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="checkbox" id="txtcityname" name="MedicineManagment" checked value="true"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        دسترسی به کاربر
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="checkbox" id="txtcityname" name="UserManagment" checked value="true" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                <button name="btninsert" class="btn btn-success" value="درج">درج</button>
+            </div>
+        </div>
+}
+    </div>
+</div>
+
+<div id="myModalUpdate" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        @using (Html.BeginForm("UpdateItem", "AdminManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+        <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">درج ادمین جدید</h4>
+                </div>
+
+                <div class="modal-body">
+                    <input id="txtid" name="id" class="form-control" style="display:none;" />
+                    <div class="row">
+                        <div class="col-lg-4">
+                            نام ادمین جدید
+                        </div>
+                        <div class="col-lg-8">
+                            <input id="txtname" name="name" class="form-control" placeholder="نام ادمین را وارد کنید" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            دسترسی به ادمین
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="checkbox" id="accessadminupdate" name="AdminManagment" class="" placeholder=" دسترسی به ادمین"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            دسترسی به بیمار
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="checkbox" id="accessillnessupdate" name="IllnessManagment" class="" placeholder=" دسترسی به بیمار"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            دسترسی به دکتر
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="checkbox" id="accessdoctorupdate" name="DoctorManagment" class="" placeholder=" دسترسی به دکتر"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            دسترسی به داروخانه
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="checkbox" id="accesspharmacyupdate" name="PharmacyManagment" class="" placeholder=" دسترسی به داروخانه"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            دسترسی به کارشناس
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="checkbox" id="accessjudgeupdate" name="JudgeManagment" class="" placeholder=" دسترسی به کارشناس" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            دسترسی به عمومی
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="checkbox" id="accesscommonupdate" name="CommonManagment" class="" placeholder=" دسترسی به عمومی"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            دسترسی به حسابداری
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="checkbox" id="accessaccountupdate" name="AccountManagment" class="" placeholder=" دسترسی به حسابداری"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            دسترسی به دارو
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="checkbox" id="accessmedicineupdate" name="MedicineManagment" class="" placeholder=" دسترسی به دارو"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            دسترسی به کاربران
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="checkbox" id="accessuserupdate" name="UserManagment" class="" placeholder=" دسترسی به کاربر" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                    <button name="btninsert" class="btn btn-success" value="درج">ویرایش</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script>
+
+    function showmodal() {
+        $("#myModal").modal();
+
+    };
+
+    function deleteitem(id) {
+        swal({
+            title: "آیا میخواهید حذف شود؟",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "بله حذف شود",
+            cancelButtonText: "خیر",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+            function (isConfirm) {
+                if (isConfirm) {
+                    sendtoservertodelete(id);
+
+                } else {
+                    swal("صرف نظر", "حذف نشد", "error");
+                }
+            });
+    }
+
+    function sendtoservertodelete(id) {
+    $.ajax({
+            type: "Post",
+            url: '/AdminManagment/DeleteItem',
+            data: { id: id },
+            success: function (data) {
+                    window.location.reload();
+
+            }
+        });
+    }
+
+    function updateitem(id,name,accessdoctor,accessillness,accessjudge,accessmedicine,accessuser,accesspharmacy,accesscommon,accessaccount,accessadmin) {
+        $('#txtid').val(id);
+        $('#txtname').val(name);
+        if (accessdoctor == "onclick") {
+            document.getElementById("accessdoctorupdate").checked = true;
+        }
+        if (accessadmin == "onclick") {
+            document.getElementById("accessadminupdate").checked = true;
+        }
+        if (accessillness == "onclick") {
+            document.getElementById("accessillnessupdate").checked = true;
+        }
+        if (accessjudge == "onclick") {
+            document.getElementById("accessjudgeupdate").checked = true;
+        }
+        if (accessmedicine == "onclick") {
+            document.getElementById("accessmedicineupdate").checked = true;
+        }
+        if (accessuser == "onclick") {
+            document.getElementById("accessuserupdate").checked = true;
+        }
+        if (accesspharmacy == "onclick") {
+            document.getElementById("accesspharmacyupdate").checked = true;
+        }
+        if (accesscommon == "onclick") {
+            document.getElementById("accesscommonupdate").checked = true;
+        }
+        if (accessaccount == "onclick") {
+            document.getElementById("accessaccountupdate").checked = true;
+        }
+        
+        $("#myModalUpdate").modal();
+    }
+
+</script>
+
+
+

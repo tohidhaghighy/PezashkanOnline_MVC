@@ -1,0 +1,16 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Illness.Illness>
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center" style="padding:10px;"><img style="width:40px;height:40px;" src="~/uploads/Illness/@item.Image" /></td>
+            <td class="text-center" style="padding:10px;">@item.Name</td>
+            <td class="text-center" style="padding:10px;">@item.Cities.Name</td>
+            <td class="text-center" style="padding:10px;">@item.Insurances.Name</td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="حذف"><a class="btn btn-danger btn-xs" onclick="deleteitem(@item.Id)"><i class="ion ion-ios-trash"></i></a></p></td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="ویرایش"><a class="btn btn-warning btn-xs" onclick="updateitem(@item.Id,'@item.Name',@item.Age,@item.InsuranceId,'@item.InsuranceSerial',@item.PressureBlood,@item.Weight,@item.Sugar,@item.CityId,@item.Cities.StateId)"><i class="ion ion-ios-trash"></i></a></p></td>
+        </tr>
+    }
+
+}
+

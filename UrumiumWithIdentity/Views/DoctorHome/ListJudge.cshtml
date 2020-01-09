@@ -1,0 +1,289 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.JudgeViewModel.CostJudgeList
+@using Microsoft.AspNet.Identity;
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>۲۵۹۹۱۱</title>
+    <meta http-equiv="Content-Language" content="fa" />
+    <link rel="icon" href="~/Content/NewDesign/img/icons.png">
+    <meta name="enamad" content="۴۱۶۶۷۲" />
+    <meta name="robots" content="noodp" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="دکتر برمودا" />
+    <link rel="canonical" href="" />
+    <link rel="canonical" href="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="دکتر برمودا" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="~/Content/NewDesign/img/Image1 (1).png" />
+    <meta name="twitter:card" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="" />
+    <link rel="stylesheet" href="~/Content/NewDesign/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/NewDesign/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="~/Content/NewDesign/css/style.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <!--javascript-->
+    <link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+    <script src="~/Content/NewDesign/js/jquery-3.3.1.js"></script>
+    <script src="~/Content/NewDesign/js/bootstrap.js"></script>
+    <script src="~/Content/NewDesign/js/custom-js.js"></script>
+    <meta name="theme-color" content="#2196f3" />
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body style="overflow-x: hidden;">
+    <!------------header----------->
+    <div class="container-fluid-header">
+        <div class="row ">
+            <div class="col-12 col-md-12">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-md navbar-light ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="mynavbar">
+                            <ul class="navbar-nav">
+                                <li class="nav_item">
+                                    <a href="/" class="text-red-hover nav-link mr-1 "><i class='fas fa-home'></i></a>
+                                </li>
+                                <p class="text-color-menu my-2">|</p>
+                                <li class="nav_item">
+                                    <a href="/Account/Login" class=" nav-link mx-1">ورود کاربران</a>
+                                </li>
+                                <p class="text-color-menu my-2">|</p>
+                                <li class="nav_item">
+                                    <a href="/Account/Register" class="nav-link mx-1 ">ثبت نام</a>
+                                </li>
+                                <p class="text-color-menu my-2">|</p>
+                                <li class="nav_item">
+                                    <a href="/DoctorHome/ListDoctor?groupid=0" class="nav-link mx-1 ">پزشکان برمودا درمان</a>
+                                </li>
+                                <p class="text-color-menu my-2">|</p>
+                                <li class="nav_item ">
+                                    <a href="/DoctorHome/Download" class="nav-link mx-1 ">دانلود اپلیکیشن اندروید </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+    <!----------body--------->
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 col-md-3">
+                <button type="button" class="btn btn-secondary mt-3"></button>
+                @{
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        <button type="button" class="btn btn-light mt-1 rounded-0 font-weight-bold border-0 " onclick="showmodalPayment()">رزرو وقت ویریت از کارشناسان</button>
+                    }
+                    else
+                    {
+                        <button type="button" class="btn btn-light mt-1 rounded-0 font-weight-bold border-0 " onclick="showmodal()">رزرو وقت ویریت از کارشناسان</button>
+                    }
+                }
+                
+
+            </div>
+
+            <div class="col-12 col-md-9">
+                @{
+                    foreach (var item in Model.Judges)
+                    {
+                        <div class="row">
+                            <div class="col-12 col-md-6 mt-4">
+                                <div class="row">
+                                    <a href="hospital.html"><h4 class="text-danger ml-3 ">دکتر</h4></a>
+                                    <a href="hospital.html"><h4 class="ml-2 ">@item.Name</h4></a>
+                                </div>
+                                <a href="#"><h6></h6></a>
+
+                            </div>
+                            <div class="col-6 col-md-3 mt-5 ">
+                                <p><i class='far fa-calendar-alt'></i> شبانه روزی</p>
+                                <img src="/Content/NewDesign/img/allow_cal.png" class="img-faction-size img-fluid" data-toggle="tooltip" data-placement="left" title="امکان رزرو اینترنتی وجود دارد">
+                            </div>
+                            <div class="col-6 col-md-3 mt-3">
+                                <img src="/Content/Managment/dist/img/avatar.png" class="img-fluid" style="border-radius:100px;">
+                            </div>
+                        </div>
+                        <div class="progress faction">
+                            <div class="progress-bar faction"></div>
+                        </div>
+                    }
+                }
+            </div>
+
+        </div>
+    </div>
+    <!----------footer------>
+    <div class="container-fluid footer mt-5">
+        <div class="row ">
+            <div class="col-55 col-md-7">
+                <div class="row ml-5">
+                    <nav class="navbar navbar-expand-md ">
+                        <ul class="navbar-nav">
+                            <li class="nav_item">
+                                <a href="/DoctorHome/SiteRolles" class="text-red-hover nav-link mr-1 ">قوانین</a>
+                            </li>
+                            <p class="text-dark my-2 d-none d-sm-block">|</p>
+
+                            <li class="nav_item">
+                                <a href="/DoctorHome/SiteAboutUs" class="nav-link mx-1 ">درباره ما</a>
+                            </li>
+                            <p class="text-dark my-2 d-none d-sm-block">|</p>
+                            <li class="nav_item">
+                                <a href="/DoctorHome/SiteCooperationwithus" class="nav-link mx-1 ">همکاری با ما</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 ">
+                <div class="row float-right mt-2">
+                    <a href="#" class="mx-1 my-2 text-dark"><i class='fab fa-telegram-plane'></i></a>
+                    <p class="my-2 d-none d-sm-block">|</p>
+                    <a href="#" class="mx-1 my-2 text-dark"><i class='fab fa-instagram'></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="">
+                            <div class="col-12 text-center center-block">
+                                <div class="row">
+                                    <strong></strong>
+                                    <h4 class="text-center">برای رزرو وقت پزشکی باید در سایت ثبت نام کنید</h4>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br />
+
+
+                </div>
+                <div class="modal-footer">
+                    <a name="btninsert" class="btn btn-warning" value="ثبت نام" href="/Account/Register">ثبت نام</a>
+                    <a name="btninsert" class="btn btn-success" value="ورود به سایت" href="/Account/Login">ورود به سایت</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="myModalPayment" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+
+                <div class="modal-body">
+                    <input type="number" class="form-control" style="display:none;" id="txtvisitid">
+                    <input type="text" class="form-control" style="display:none;" id="txtdatetime">
+                    <input type="number" class="form-control" style="display:none;" id="txtdoctorid">
+                    <div class="row">
+                        <div class="">
+                            <div class="col-12 text-center center-block">
+                                <div class="row">
+                                    <strong></strong>
+                                    <h3 class="text-center">شما برای رزرو کارشناس ازمایشگاه باید مبلغ زیر را واریز کنید</h3>
+                                </div>
+                                <h4 class="" style="padding:20px;">مبلغ پرداختی</h4>
+                                <h4 class="" style="color:red;margin-top:5px;">@Model.CostJudge </h4>
+                                <h4 class="" style="color:red;margin-top:5px;"> تومان</h4>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                    <a name="btninsert" class="btn btn-warning" value="پرداخت" onclick="payjudgevisit()">پرداخت</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        function showmodal() {
+            $("#myModal").modal();
+        }
+
+        function showmodalPayment() {
+            $("#myModalPayment").modal();
+        }
+
+        function payjudgevisit() {
+            $.ajax({
+                type: "Post",
+                url: '/JVTime/AddVisitJudge',
+                data: { illnessid: '@User.Identity.GetUserId()', cost: @Model.CostJudge },
+                success: function (data) {
+                    if (data.success) {
+                        $("#myModalPayment").modal('hide');
+                        swal("انجام شد", "پرداخت با موفقیت انجام شد", "success");
+                    }
+                }
+            });
+        }
+    </script>
+
+
+    <script>
+          if ('serviceWorker' in navigator) {
+              navigator.serviceWorker
+                  .register('/serviceworker.js')
+                  .then(function () { console.log('Service Worker Registered'); });
+          }
+    </script>
+
+</body>
+</html>
+

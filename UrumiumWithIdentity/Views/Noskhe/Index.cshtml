@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayoutDoctor.cshtml";
+}
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+<link href="~/Content/PersianCalender/bootstrap-datepicker.css" rel="stylesheet" charset="UTF-8" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<h2 class="text-center" style="padding-top:50px;">مدیریت ویزیت ها</h2>
+
+<div style="padding:30px;margin-top:20px;margin-bottom:20px;">
+    <div class="form-group">
+        <input type="text" placeholder=" متن را جستجو کن ..." class="form-control" id="txtsearch" onchange="changetextvalue()" />
+        <div class="center-block text-center">
+            <div class="controls">
+                <div class="input-append">
+                    <input id="datepicker1" class="form-control" type="text" name="date" onchange="changedatevalue()" placeholder="تاریخ را برای جستجو انتخاب کن">
+                    <button id="datepicker1btn" class="btn" type="button"><i class="icon-calendar"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">لیست ویزیت ها</h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">نام بیمار</th>
+                    <th class="text-center">ویزیت شده</th>
+                    <th class="text-center">تاریخ و ساعت ویزیت</th>
+                    <th class="text-center">پرونده بیمار</th>
+                    <th class="text-center">درج نسخه</th>
+                    </thead>
+                    <tbody id="listofpharmacy">
+                        @{Html.RenderPartial("_VisitDoctorListAjax");}
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+    $(document).ready(function () {
+        $("#datepicker1").datepicker();
+
+    });
+
+    function changetextvalue() {
+        $.ajax({
+            type: "Post",
+            url: '/DoctorManagment/ChangeComboItemUpdate',
+            data: { stateid: stateid },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#citylistview').empty();
+                    $('#citylistview').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+
+
+    function changedatevalue() {
+        $.ajax({
+            type: "Post",
+            url: '/DoctorManagment/ChangeComboItemUpdate',
+            data: { stateid: stateid },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#citylistview').empty();
+                    $('#citylistview').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+</script>

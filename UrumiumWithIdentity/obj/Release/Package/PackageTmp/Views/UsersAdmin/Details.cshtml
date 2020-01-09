@@ -1,0 +1,46 @@
+﻿@model DataLayer.Context.ApplicationUser
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+<h2 class="text-center" style="padding:30px;">جزیات کاربران</h2>
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            نام کاربری
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+    </dl>
+</div>
+<h4 class="text-center">لیست نقش های کاربران</h4>
+@if (ViewBag.RoleNames.Count == 0)
+{
+    <hr />
+    <p style="margin-right:50px;">هیچ نقشی برای این کاربر وجود ندارد</p>
+}
+
+<table class="table" style="margin-right:50px;">
+
+    @foreach (var item in ViewBag.RoleNames)
+    {
+        <tr>
+            <td>
+                @item
+            </td>
+        </tr>
+    }
+</table>
+<p style="margin-right:50px;">
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("بازگشت ", "Index")
+</p>
+
+
+

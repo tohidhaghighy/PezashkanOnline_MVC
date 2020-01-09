@@ -1,0 +1,41 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Product.Product>
+@{
+    if (Model.Count() > 0)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center" style="padding:50px;">
+                    @{
+                        if (item.IsImportant == true)
+                        {
+                            <input type="checkbox" name="ckitem" checked="checked" />
+                        }
+                        else
+                        {
+                            <input type="checkbox" name="ckitem" class="cbaddtoslider" />
+                        }
+                    }
+
+                </td>
+                <td class="text-center" style="padding:50px;">@item.Name</td>
+                <td class="text-center" style="padding:50px;">@item.Tittle</td>
+                <td class="text-center" style="padding:50px;">@item.Cost</td>
+                <td class="text-center" style="padding:50px;">@item.Off</td>
+                <td class="text-center" style="padding:50px;">@item.ViewerCount</td>
+                <td class="text-center" style="padding:50px;">
+
+                    <p data-placement="top" data-toggle="tooltip" title="افزودن گالری">
+                        <a class="btn btn-primary btn-xs" href="#">
+                            <i class="ion ion-ios-albums"></i>
+                        </a>
+                    </p>
+                </td>
+                <td class="text-center" style="padding:50px;"><p data-placement="top" data-toggle="tooltip" title="ویرایش"><a class="btn btn-primary btn-xs" href="/TicketManagment/TicketChatroom?ticketid=@item.Id"><i class="ion ion-ios-book"></i></a></p></td>
+                <td class="text-center" style="padding:50px;"><p data-placement="top" data-toggle="tooltip" title="حذف"><a class="btn btn-danger btn-xs" onclick="deleteitem(@item.Id)"><i class="ion ion-ios-trash"></i></a></p></td>
+            </tr>
+                            }
+
+                        }
+
+}

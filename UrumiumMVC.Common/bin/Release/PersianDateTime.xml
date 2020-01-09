@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PersianDateTime</name>
+    </assembly>
+    <members>
+        <member name="T:PersianDateTimeFormat">
+            <summary>
+            Specifies the date and time format
+            </summary>
+        </member>
+        <member name="T:PersianDateTimeMode">
+            <summary>
+            Specifies the persian date and time mode to determining the PersianDateTime.Now.
+            </summary>
+        </member>
+        <member name="F:PersianDateTimeMode.System">
+            <summary>
+            Using the current time zone.
+            </summary>
+        </member>
+        <member name="F:PersianDateTimeMode.PersianTimeZoneInfo">
+            <summary>
+            Using the persian time zone.
+            </summary>
+        </member>
+        <member name="F:PersianDateTimeMode.UtcOffset">
+            <summary>
+            Using the UTC date and time with custom daylight saving time.
+            </summary>
+        </member>
+        <member name="T:PersianDateTime">
+            <summary>
+            Represents an instant in time, typically expressed as a date and time of day in the persian calendar.
+            </summary>
+        </member>
+        <member name="F:PersianDateTime.Mode">
+            <summary>
+            Specifies the persian date and time mode to determining the PersianDateTime.Now.
+            </summary>
+        </member>
+        <member name="F:PersianDateTime.PersianTimeZoneInfo">
+            <summary>
+            A System.TimeZoneInfo object that represents the persian time zone.
+            </summary>
+        </member>
+        <member name="M:PersianDateTime.op_Subtraction(PersianDateTime,PersianDateTime)">
+            <summary>
+            Subtracts a specified date and time from another specified date and time and returns a time interval.
+            </summary>
+            <param name="d1">The date and time value to subtract from (the minuend).</param>
+            <param name="d2">The date and time value to subtract (the subtrahend).</param>
+            <returns>The time interval between d1 and d2; that is, d1 minus d2.</returns>
+        </member>
+        <member name="M:PersianDateTime.op_GreaterThan(PersianDateTime,PersianDateTime)">
+            <summary>
+            Determines whether one specified PersianDateTime is greater than another specified PersianDateTime.
+            </summary>
+            <param name="d1">The first object to compare.</param>
+            <param name="d2">The second object to compare.</param>
+            <returns>true if d1 is greater than d2; otherwise, false.</returns>
+        </member>
+        <member name="M:PersianDateTime.op_GreaterThanOrEqual(PersianDateTime,PersianDateTime)">
+            <summary>
+            Determines whether one specified PersianDateTime is greater than or equal to another specified PersianDateTime.
+            </summary>
+            <param name="d1">The first object to compare.</param>
+            <param name="d2">The second object to compare.</param>
+            <returns>true if d1 is greater than or equal to d2; otherwise, false.</returns>
+        </member>
+        <member name="M:PersianDateTime.op_LessThanOrEqual(PersianDateTime,PersianDateTime)">
+            <summary>
+            Determines whether one specified PersianDateTime is less than or equal to another specified PersianDateTime.
+            </summary>
+            <param name="d1">The first object to compare.</param>
+            <param name="d2">The second object to compare.</param>
+            <returns>true if d1 is less than or equal to d2; otherwise, false.</returns>
+        </member>
+        <member name="M:PersianDateTime.op_Subtraction(PersianDateTime,System.TimeSpan)">
+            <summary>
+            Subtracts a specified time interval from a specified date and time and returns a new date and time.
+            </summary>
+            <param name="d">The date and time value to subtract from.</param>
+            <param name="t">The time interval to subtract.</param>
+            <returns>An object whose value is the value of d minus the value of t.</returns>
+        </member>
+        <member name="M:PersianDateTime.op_Addition(PersianDateTime,System.TimeSpan)">
+            <summary>
+            Adds a specified time interval to a specified date and time, yielding a new date and time.
+            </summary>
+            <param name="d">The date and time value to add.</param>
+            <param name="t">The time interval to add.</param>
+            <returns>An object that is the sum of the values of d and t.</returns>
+        </member>
+        <member name="M:PersianDateTime.op_LessThan(PersianDateTime,PersianDateTime)">
+            <summary>
+            Determines whether one specified PersianDateTime is less than another specified PersianDateTime.
+            </summary>
+            <param name="d1">The first object to compare.</param>
+            <param name="d2">The second object to compare.</param>
+            <returns>true if d1 is less than d2; otherwise, false.</returns>
+        </member>
+        <member name="M:PersianDateTime.op_Equality(PersianDateTime,PersianDateTime)">
+            <summary>
+            Determines whether two specified instances of PersianDateTime are equal.
+            </summary>
+            <param name="d1">The first object to compare.</param>
+            <param name="d2">The second object to compare.</param>
+            <returns>true if d1 and d2 represent the same date and time; otherwise, false.</returns>
+        </member>
+        <member name="M:PersianDateTime.op_Inequality(PersianDateTime,PersianDateTime)">
+            <summary>
+            Determines whether two specified instances of PersianDateTime are not equal.
+            </summary>
+            <param name="d1">The first object to compare.</param>
+            <param name="d2">The second object to compare.</param>
+            <returns>true if d1 and d2 do not represent the same date and time; otherwise, false.</returns>
+        </member>
+        <member name="M:PersianDateTime.GetMonthName(System.Int32)">
+            <summary>
+            Returns the name of the specified month.
+            </summary>
+            <param name="month">An integer that represents the month, and ranges from 1 through 12.</param>
+            <returns>The name of the specified month.</returns>
+        </member>
+        <member name="M:PersianDateTime.GetDayName(System.Int32)">
+            <summary>
+            Returns the name of the specified day.
+            </summary>
+            <param name="day">An integer that represents the day, and ranges from 0 through 6.</param>
+            <returns>The name of the specified day.</returns>
+        </member>
+        <member name="M:PersianDateTime.IsLeapYear(System.Int32)">
+            <summary>
+            Determines whether the specified year is a leap year. The number of days is 366 in a leap year.
+            </summary>
+            <param name="year">An integer from 1 through 9378 that represents the year.</param>
+            <returns>true if the specified year is a leap year; otherwise, false.</returns>
+        </member>
+        <member name="M:PersianDateTime.GetDaysInYear(System.Int32)">
+            <summary>
+            Returns the number of days in the specified year.
+            </summary>
+            <param name="year">An integer from 1 through 9378 that represents the year.</param>
+            <returns>The number of days in the specified year. The number of days is 365 in a common year or 366 in a leap year.</returns>
+        </member>
+        <member name="M:PersianDateTime.GetDaysInMonth(System.Int32,System.Int32)">
+            <summary>
+            Returns the number of days in the specified month of the specified year.
+            </summary>
+            <param name="year">An integer from 1 through 9378 that represents the year.</param>
+            <param name="month">An integer that represents the month, and ranges from 1 through 12.</param>
+            <returns>The number of days in the specified month of the specified year.</returns>
+        </member>
+        <member name="M:PersianDateTime.Parse(System.String)">
+            <summary>
+            Converts the specified string representation of a date to its PersianDateTime equivalent.
+            </summary>
+            <param name="persianDate">A string containing a date to convert.</param>
+        </member>
+        <member name="M:PersianDateTime.Parse(System.String,System.String)">
+            <summary>
+            Converts the specified string representation of a date and time to its PersianDateTime equivalent.
+            </summary>
+            <param name="persianDate">A string containing a date to convert.</param>
+            <param name="time">A string containing a time to convert.</param>
+        </member>
+        <member name="M:PersianDateTime.#ctor(System.DateTime)">
+            <summary>
+            Initializes a new instance of the PersianDateTime class to a specified dateTime.
+            </summary>
+            <param name="dateTime">A date and time in the Gregorian calendar.</param>
+        </member>
+        <member name="M:PersianDateTime.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the PersianDateTime class to the specified persian date.
+            </summary>
+            <param name="persianDate">The persian date</param>
+        </member>
+        <member name="M:PersianDateTime.#ctor(System.Int32,System.Int16)">
+            <summary>
+            Initializes a new instance of the PersianDateTime class to the specified persian date and time.
+            </summary>
+            <param name="persianDate">The persian date.</param>
+            <param name="time">The time.</param>
+        </member>
+        <member name="M:PersianDateTime.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the PersianDateTime class to the specified persian date and time.
+            </summary>
+            <param name="persianDate">The persian date.</param>
+            <param name="time">The time.</param>
+        </member>
+        <member name="M:PersianDateTime.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the PersianDateTime class to the specified year, month, and day.
+            </summary>
+            <param name="year">The year (1 through 9999).</param>
+            <param name="month">The month (1 through 12).</param>
+            <param name="day">The day (1 through the number of days in month).</param>
+        </member>
+        <member name="M:PersianDateTime.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the PersianDateTime class to the specified year, month, day, hour, minute, and second.
+            </summary>
+            <param name="year">The year (1 through 9999).</param>
+            <param name="month">The month (1 through 12).</param>
+            <param name="day">The day (1 through the number of days in month).</param>
+            <param name="hour">The hours (0 through 23).</param>
+            <param name="minute">The minutes (0 through 59).</param>
+            <param name="second">The seconds (0 through 59).</param>
+        </member>
+        <member name="M:PersianDateTime.IsLeapYear">
+            <summary>
+            Determines whether the year represented by this instance is a leap year. The number of days is 366 in a leap year.
+            </summary>
+            <returns>true if the year represented by this instance is a leap year; otherwise, false.</returns>
+        </member>
+        <member name="M:PersianDateTime.GetWeekOfYear(System.Globalization.CalendarWeekRule)">
+            <summary>
+            Returns the week of the year that includes the date represented by this instance.
+            </summary>
+            <param name="rule">An enumeration value that defines a calendar week.</param>
+            <returns>A positive integer that represents the week of the year that includes the date represented by this instance.</returns>
+        </member>
+        <member name="M:PersianDateTime.AddSeconds(System.Double)">
+            <summary>
+            Returns a new PersianDateTime that adds the specified number of seconds to the value of this instance.
+            </summary>
+            <param name="value">A number of whole and fractional seconds. The value parameter can be negative or positive.</param>
+            <returns>An object whose value is the sum of the date and time represented by this instance and the number of seconds represented by value.</returns>
+        </member>
+        <member name="M:PersianDateTime.AddMinutes(System.Double)">
+            <summary>
+            Returns a new PersianDateTime that adds the specified number of minutes to the value of this instance.
+            </summary>
+            <param name="value">A number of whole and fractional minutes. The value parameter can be negative or positive.</param>
+            <returns>An object whose value is the sum of the date and time represented by this instance and the number of minutes represented by value.</returns>
+        </member>
+        <member name="M:PersianDateTime.AddHours(System.Double)">
+            <summary>
+            Returns a new PersianDateTime that adds the specified number of hours to the value of this instance.
+            </summary>
+            <param name="value">A number of whole and fractional hours. The value parameter can be negative or positive.</param>
+            <returns>An object whose value is the sum of the date and time represented by this instance and the number of hours represented by value.</returns>
+        </member>
+        <member name="M:PersianDateTime.AddYears(System.Int32)">
+            <summary>
+            Returns a new PersianDateTime that adds the specified number of years to the value of this instance.
+            </summary>
+            <param name="value">A number of years. The value parameter can be negative or positive.</param>
+            <returns>An object whose value is the sum of the date and time represented by this instance and the number of years represented by value.</returns>
+        </member>
+        <member name="M:PersianDateTime.AddMonths(System.Int32)">
+            <summary>
+            Returns a new PersianDateTime that adds the specified number of months to the value of this instance.
+            </summary>
+            <param name="value">A number of months. The months parameter can be negative or positive.</param>
+            <returns>An object whose value is the sum of the date and time represented by this instance and months.</returns>
+        </member>
+        <member name="M:PersianDateTime.AddDays(System.Double)">
+            <summary>
+            Returns a new PersianDateTime that adds the specified number of days to the value of this instance.
+            </summary>
+            <param name="value">A number of whole and fractional days. The value parameter can be negative or positive.</param>
+            <returns>An object whose value is the sum of the date and time represented by this instance and the number of days represented by value.</returns>
+        </member>
+        <member name="M:PersianDateTime.Add(System.TimeSpan)">
+            <summary>
+            Returns a new PersianDateTime that adds the value of the specified System.TimeSpan to the value of this instance.
+            </summary>
+            <param name="value">A positive or negative time interval.</param>
+            <returns>An object whose value is the sum of the date and time represented by this instance and the time interval represented by value.</returns>
+        </member>
+        <member name="M:PersianDateTime.ToDateTime">
+            <summary>
+            Returns a System.DateTime object that is set to the date and time represented by this instance.
+            </summary>
+            <returns>A System.DateTime object that is set to the date and time represented by this instance</returns>
+        </member>
+        <member name="M:PersianDateTime.ToInt">
+            <summary>
+            Converts the date represented by this instance to an equivalent 32-bit signed integer.
+            </summary>
+            <returns>n 32-bit signed integer equivalent to the date represented by this instance.</returns>
+        </member>
+        <member name="M:PersianDateTime.ToString">
+            <summary>
+            Converts the value of the current PersianDateTime object to its equivalent string representation.
+            </summary>
+            <returns>A string representation of the value of the current PersianDateTime object.</returns>
+        </member>
+        <member name="M:PersianDateTime.ToString(System.String)">
+            <summary>
+            Converts the value of the current PersianDateTime object to its equivalent string representation using the specified format.
+            </summary>
+            <param name="format">A custom date and time format string.</param>
+            <returns>A string representation of value of the current PersianDateTime object as specified by format.</returns>
+        </member>
+        <member name="M:PersianDateTime.ToString(PersianDateTimeFormat)">
+            <summary>
+            Converts the value of the current PersianDateTime object to its equivalent string representation using the specified format.
+            </summary>
+            <param name="format">A persian date and time format string.</param>
+            <returns>A string representation of value of the current PersianDateTime object as specified by format.</returns>
+        </member>
+        <member name="M:PersianDateTime.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="M:PersianDateTime.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified object.
+            </summary>
+            <param name="value">An object to compare to this instance.</param>
+            <returns>true if value is an instance of PersianDateTime and equals the value of this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:PersianDateTime.Equals(PersianDateTime)">
+            <summary>
+            Returns a value indicating whether this instance is equal to the specified PersianDateTime instance.
+            </summary>
+            <param name="value">A PersianDateTime instance to compare to this instance.</param>
+            <returns>true if the value parameter equals the value of this instance; otherwise, false.</returns>
+        </member>
+        <member name="P:PersianDateTime.Now">
+            <summary>
+            Gets a PersianDateTime object that is set to the current date and time in the persian calendar on this computer.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.Year">
+            <summary>
+            Gets the year component of the date represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.Month">
+            <summary>
+            Gets the month component of the date represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.Day">
+            <summary>
+            Gets the day of the month represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.Hour">
+            <summary>
+            Gets the hour component of the date represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.Minute">
+            <summary>
+            Gets the minute component of the date represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.Second">
+            <summary>
+            Gets the seconds component of the date represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.Millisecond">
+            <summary>
+            Gets the milliseconds component of the date represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.Ticks">
+            <summary>
+            Gets the number of ticks that represent the date and time of this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.TimeOfDay">
+            <summary>
+            Gets the time of day for this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.TimeOfYear">
+            <summary>
+            Gets the time of year for this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.TimeOfMonth">
+            <summary>
+            Gets the time of month for this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.TimeOfWeek">
+            <summary>
+            Gets the time of week for this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.DaysInYear">
+            <summary>
+            Returns the number of days in the year represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.DaysInMonth">
+            <summary>
+            Returns the number of days in the month represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.DayOfYear">
+            <summary>
+            Gets the day of the year represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.DayOfWeek">
+            <summary>
+            Gets the day of the week represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.DayName">
+            <summary>
+            Gets the name of the day of the week represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.MonthName">
+            <summary>
+            Gets the name of the month represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.Date">
+            <summary>
+            Gets the date component of this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.FirstDayOfYear">
+            <summary>
+            Gets the first day of the year represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.LastDayOfYear">
+            <summary>
+            Gets the last day of the year represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.FirstDayOfMonth">
+            <summary>
+            Gets the first day of the month represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.LastDayOfMonth">
+            <summary>
+            Gets the last day of the month represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.FirstDayOfWeek">
+            <summary>
+            Gets the first day of the week represented by this instance.
+            </summary>
+        </member>
+        <member name="P:PersianDateTime.LastDayOfWeek">
+            <summary>
+            Gets the last day of the week represented by this instance.
+            </summary>
+        </member>
+    </members>
+</doc>

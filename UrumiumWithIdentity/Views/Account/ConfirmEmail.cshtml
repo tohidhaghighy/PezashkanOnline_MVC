@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Confirm Email";
+    Layout = "~/Views/Shared/_LoginNewDesignLayout.cshtml";
+}
+
+<h2 class="text-center" style="margin-top:90px; color:green;">تایید ایمیل</h2>
+<div class="text-center" style="margin-top:20px; margin-bottom:30px;">
+    <p>
+        ایمیل با موفقیت تایید شد لطفا برای استفاده وارد صفحه ورود شوید @Html.ActionLink("ورود به صفحه ورود به سایت", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    </p>
+</div>

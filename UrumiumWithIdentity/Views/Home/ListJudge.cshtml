@@ -1,0 +1,129 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.judge.judge>
+@{
+    ViewBag.Title = "ListDoctor";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/Content/CardViewAnimated.css" rel="stylesheet" />
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .input-container {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .icon {
+        padding: 0px;
+        background: dodgerblue;
+        color: white;
+        min-width: 50px;
+        text-align: center;
+        font-size: 15px;
+        font-style: oblique;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid black;
+    }
+
+        .input-field:focus {
+            border: 2px solid dodgerblue;
+        }
+
+    /* Set a style for the submit button */
+    .btn {
+        background-color: #2980b9;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+        .btn:hover {
+            opacity: 1;
+        }
+
+    .blog .carousel-indicators {
+        left: 0;
+        top: auto;
+        bottom: -40px;
+    }
+
+        /* The colour of the indicators */
+        .blog .carousel-indicators li {
+            background: #a3a3a3;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+        }
+
+        .blog .carousel-indicators .active {
+            background: #707070;
+        }
+</style>
+<div class="row">
+
+    <div class="col-lg-12" style="background-color:white;text-align:center;direction:rtl;background-image:url(../../Content/icons/111.jpg);object-fit:contain;">
+        <div class="container">
+            <div class="col-lg-12"><p style="color:white;font-size:xx-large;padding-top:10px;margin-top:70px;">کارشناسان ما</p></div>
+            <div class="col-lg-12"><p style="color:#808080;font-size:large;padding-top:10px;"></p></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="" style="margin-bottom:100px;">
+    <div class="row blog">
+        <div class="container">
+            <div class="col-lg-12 col-md-12 col-sm-12" data-aos="fade-left">
+
+                <div class="container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12  text-center">
+                                <br><br>
+                                <hr>
+                                <h1 class="tagline"> کارشناس ها</h1>
+                                <hr>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @{
+                            foreach (var item in Model)
+                            {
+                                @Html.Partial("_ListItemJudge", item)
+                            }
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+
+        
+
+    </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,611 @@
+﻿@using Microsoft.AspNet.Identity;
+@model UrumiumMVC.ViewModel.EntityViewModel.ChatViewModel.ChatUser
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+<script src="~/Content/Common/alert/sweetalert.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style>
+    .container {
+        max-width: 1170px;
+        margin: auto;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .inbox_people {
+        background: #f8f8f8 none repeat scroll 0 0;
+        float: left;
+        overflow: hidden;
+        width: 40%;
+        border-right: 1px solid #c4c4c4;
+    }
+
+    .inbox_msg {
+        border: 1px solid #c4c4c4;
+        clear: both;
+        overflow: hidden;
+    }
+
+    .top_spac {
+        margin: 20px 0 0;
+    }
+
+
+    .recent_heading {
+        float: left;
+        width: 40%;
+    }
+
+    .srch_bar {
+        display: inline-block;
+        text-align: right;
+        width: 60%;
+        padding:
+    }
+
+    .headind_srch {
+        padding: 10px 29px 10px 20px;
+        overflow: hidden;
+        border-bottom: 1px solid #c4c4c4;
+    }
+
+    .recent_heading h4 {
+        color: #05728f;
+        font-size: 21px;
+        margin: auto;
+    }
+
+    .srch_bar input {
+        border: 1px solid #cdcdcd;
+        border-width: 0 0 1px 0;
+        width: 80%;
+        padding: 2px 0 4px 6px;
+        background: none;
+    }
+
+    .srch_bar .input-group-addon button {
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border: medium none;
+        padding: 0;
+        color: #707070;
+        font-size: 18px;
+    }
+
+    .srch_bar .input-group-addon {
+        margin: 0 0 0 -27px;
+    }
+
+    .chat_ib h5 {
+        font-size: 15px;
+        color: #464646;
+        margin: 0 0 8px 0;
+    }
+
+        .chat_ib h5 span {
+            font-size: 13px;
+            float: right;
+        }
+
+    .chat_ib p {
+        font-size: 14px;
+        color: #989898;
+        margin: auto
+    }
+
+    .chat_img {
+        float: left;
+        width: 11%;
+    }
+
+    .chat_ib {
+        float: left;
+        padding: 0 0 0 15px;
+        width: 88%;
+    }
+
+    .chat_people {
+        overflow: hidden;
+        clear: both;
+    }
+
+    .chat_list {
+        border-bottom: 1px solid #c4c4c4;
+        margin: 0;
+        padding: 18px 16px 10px;
+    }
+
+    .inbox_chat {
+        height: 550px;
+        overflow-y: scroll;
+    }
+
+    .active_chat {
+        background: #ebebeb;
+    }
+
+    .incoming_msg_img {
+        display: inline-block;
+        width: 6%;
+    }
+
+    .received_msg {
+        display: inline-block;
+        padding: 0 0 0 10px;
+        vertical-align: top;
+        width: 92%;
+    }
+
+    .received_withd_msg p {
+        background: #ebebeb none repeat scroll 0 0;
+        border-radius: 3px;
+        color: #646464;
+        font-size: 14px;
+        margin: 0;
+        padding: 5px 10px 5px 12px;
+        width: 100%;
+    }
+
+    .time_date {
+        color: #747474;
+        display: block;
+        font-size: 12px;
+        margin: 8px 0 0;
+    }
+
+    .received_withd_msg {
+        width: 57%;
+    }
+
+    .mesgs {
+        float: left;
+        padding: 30px 15px 0 25px;
+        width: 60%;
+    }
+
+    .sent_msg p {
+        background: #05728f none repeat scroll 0 0;
+        border-radius: 3px;
+        font-size: 14px;
+        margin: 0;
+        color: #fff;
+        padding: 5px 10px 5px 12px;
+        width: 100%;
+    }
+
+    .outgoing_msg {
+        overflow: hidden;
+        margin: 26px 0 26px;
+    }
+
+    .sent_msg {
+        float: right;
+        width: 46%;
+    }
+
+    .input_msg_write input {
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border: medium none;
+        color: #4c4c4c;
+        font-size: 15px;
+        min-height: 48px;
+        width: 100%;
+    }
+
+    .type_msg {
+        border-top: 1px solid #c4c4c4;
+        position: relative;
+    }
+
+    .msg_send_btn {
+        background: #05728f none repeat scroll 0 0;
+        border: medium none;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        font-size: 17px;
+        height: 33px;
+        position: absolute;
+        right: 0;
+        top: 11px;
+        width: 33px;
+    }
+
+    .msg_send_btn1 {
+        background: #05728f none repeat scroll 0 0;
+        border: medium none;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        font-size: 17px;
+        height: 33px;
+        position: absolute;
+        right: 40px;
+        top: 11px;
+        width: 33px;
+    }
+
+    .msg_send_btn2 {
+        background: #05728f none repeat scroll 0 0;
+        border: medium none;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        font-size: 17px;
+        height: 33px;
+        position: absolute;
+        right: 80px;
+        top: 11px;
+        width: 33px;
+    }
+
+    .messaging {
+        padding: 0 0 50px 0;
+    }
+
+    .msg_history {
+        height: 516px;
+        overflow-y: auto;
+    }
+</style>
+<html>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"
+
+</head>
+<body>
+    <div class="container">
+        @{
+            if (Model.Sendername == "D")
+            {
+                <p style="margin-right:50px;text-align:center;margin-top:20px;" class="text-center">
+                    <a class="btn btn-success btn-block" onclick="finishvisit(@Model.Groupname)">اتمام وقت ویزیت </a>
+                </p>
+            }
+        }
+        <h3 class=" text-center" style="padding:20px;">چت روم</h3>
+        <input type="text" style="display:none;" value="@Model.Groupname" id="grouptxt" />
+        <input type="number" style="display:none;" value="@Model.illnessid" id="illnessidtxt" />
+        <input type="number" style="display:none;" value="@Model.doctorid" id="illnessidtxt" />
+        <input type="text" style="display:none;" value="@Model.Sendername" id="sendernametxt" />
+        <input type="text" style="display:none;" value="@User.Identity.GetUserId()" id="useridtxt" />
+
+        <div class="messaging">
+            <div class="inbox_msg">
+                <div class="inbox_people">
+                    <div class="headind_srch">
+                        <div class="recent_heading">
+                            <h4>چت روم</h4>
+                        </div>
+                        <div class="srch_bar">
+
+                        </div>
+                    </div>
+                    <div class="inbox_chat">
+                        <div class="chat_list active_chat">
+                            <div class="chat_people">
+                                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                                <div class="chat_ib">
+                                    <h5>دکتر حسامی<span class="chat_date"></span></h5>
+                                    <p>
+                                        از انتخاب شما متشکریم
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat_list">
+                            <div class="chat_people">
+                                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                                <div class="chat_ib">
+                                    <h5>توحید حقیقی <span class="chat_date"></span></h5>
+                                    <p>
+                                        بیمار
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mesgs">
+                    <div class="msg_history" id="chatid">
+                        
+                        @{
+                            if (Model.Allmassages.Count() == 0)
+                            {
+                                <div class="incoming_msg">
+                                    <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                                    <div class="received_msg">
+                                        <div class="received_withd_msg">
+                                            <p>
+                                                خوش آمدید منتظر حضور دکتر بمانید
+                                            </p>
+                                            <span class="time_date"> کاربر</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            foreach (var item in Model.Allmassages)
+                            {
+                                HtmlString msg = new HtmlString(item.Text);
+                                if (item.UserDoctor == true)
+                                {
+                                    <div class="incoming_msg">
+                                        <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                                        <div class="received_msg">
+                                            <div class="received_withd_msg">
+                                                <p>
+                                                    @msg
+                                                </p>
+                                                <span class="time_date"> کاربر</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="outgoing_msg">
+                                        <div class="sent_msg">
+                                            <p>
+                                                @msg
+                                            </p>
+                                            <span class="time_date">دکتر  </span>
+                                        </div>
+                                    </div>
+                                  
+                                }
+                            }
+                        }
+                        
+                        
+                       
+                    </div>
+                    <div class="type_msg">
+                        <div class="input_msg_write">
+                            <input id="chat" type="text" class="write_msg" placeholder="متن خود را وارد کنید" />
+                            <button id="sendmessage" class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true" title="ارسال"></i></button>
+                            <button id="sendimage" class="msg_send_btn1" type="button"><i class="fa fa-file" aria-hidden="true" title="عکس"></i></button>
+                            <button id="recordButton" class="msg_send_btn2" type="button"><i class="fa fa-file-video-o" aria-hidden="true" title="صدا"></i></button>
+                            <input type="file" id="imgupload" style="display:none" name="imgupload" />
+                            <div id="showitem" name="showitem">
+
+                            </div>
+                            <div id="controls" class="row" style="display:none;">
+                                <button class="btn btn-warning" id="pauseButton" disabled>ایست</button>
+                                <button class="btn btn-warning" id="stopButton" disabled>پایان ضبط</button>
+                            </div>
+                            <div id="records" style="display:none;margin-bottom:30px;">
+                                <div id="formats" class="text-center center-block" style="padding:10px;"></div>
+                                <h3 class="text-center center-block" style="padding:10px;">ضبط شده ها</h3>
+                                <ol id="recordingsList" class="text-center center-block"></ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <p class="text-center top_spac"> Design by <a target="_blank" href="#">T.H</a></p>
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="~/Content/recorder/js/app.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script>
+        $('#sendimage').click(function () {
+            $('#imgupload').trigger('click');
+        });
+
+        $("#imgupload").on('change', function () {
+
+            if (typeof (FileReader) != "undefined") {
+
+                var image_holder = $("#showitem");
+                image_holder.empty();
+
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("<img />", {
+                        "src": e.target.result,
+                        "class": "thumb-image",
+                        "style": "width:70px;height:70px;paddign:10px;"
+                    }).appendTo(image_holder);
+                }
+                image_holder.show();
+                reader.readAsDataURL($(this)[0].files[0]);
+            } else {
+                alert("This browser does not support FileReader.");
+            }
+        });
+
+        var chat = $.connection.chatHub;
+        $(function () {
+            var chat = $.connection.chatHub;
+            $.connection.hub.start().done(function () {
+                var name = $('#sendernametxt').val();
+                var group = $('#grouptxt').val();
+                chat.server.adduser(name, group);
+
+                $("#sendmessage").click(function () {
+                    var txt = $("#chat").val();
+
+                    if (txt != "") {
+                        chat.server.sendgroup('@User.Identity.GetUserId()', $("#chat").val(), group, $("#sendernametxt").val());
+                        addchattokhodam($("#chat").val());
+                        $("#chat").val("").focus();
+                    }
+
+
+                });
+
+            });
+
+            chat.client.addNewItem = function (name, message) {
+                addchattouser(name,message);
+            }
+
+            chat.client.groupmassage = function (message) {
+                addchattouser('@User.Identity.GetUserName()', message);
+
+
+            }
+
+            chat.client.groupimagemassageothers = function (image) {
+                addimgtouser('@User.Identity.GetUserName()',image);
+            }
+
+            chat.client.groupimagemassageown = function (image) {
+
+                addimgtokhodam(image);
+
+            }
+
+            chat.client.groupvoicemassageothers = function (voice) {
+                addvoicetouser($('#sendernametxt').val(),voice);
+            }
+
+            chat.client.groupvoicemassageown = function (voice) {
+
+                addvoicetokhodam(voice);
+
+            }
+
+        });
+
+
+        function sendFile() {
+
+            var formData = new FormData();
+            formData.append('fileupdate', $('#imgupload')[0].files[0]);
+            $.ajax({
+                type: 'post',
+                url: '/Upload/Upload',
+                data: formData,
+                success: function (status) {
+                    if (status.success) {
+                        chat.server.sendimagegroup('@User.Identity.GetUserId()', status.data, $('#grouptxt').val(), $("#sendernametxt").val());
+                        $('#showitem').empty();
+                    }
+                    else {
+                        swal("مشکل سرور", "مشکلی در اتصال به سرور ایجاد شد", "error");
+                    }
+                },
+                processData: false,
+                contentType: false,
+                error: function () {
+                    swal("مشکل سرور", "مشکلی در اتصال به سرور ایجاد شد", "error");
+                }
+            });
+        }
+
+        function sendmassageillnessasuser(visitid, text) {
+            $.ajax({
+                type: 'post',
+                url: '/MassageIllness/AddMassageIllness',
+                data: { visitid: visitid, text: text },
+                success: function (Data) {
+                    if (Data.success) {
+                        swal("ارسال شد", "با موفقیت ارسال شد", "success");
+                    }
+                    else {
+                        swal("مشکل سرور", "مشکلی در اتصال به سرور ایجاد شد", "error");
+                    }
+                },
+                processData: false,
+                contentType: false,
+                error: function () {
+                    swal("مشکل سرور", "مشکلی در اتصال به سرور ایجاد شد", "error");
+                }
+            });
+        }
+
+        function sendmassagedoctorasuser(visitid, text) {
+            $.ajax({
+                type: "Post",
+                url: '/MassageIllness/AddMassageDoctor',
+                data: { visitid: visitid, text: text },
+                success: function (data) {
+                    if (data.success) {
+                        swal("ارسال شد", "با موفقیت ارسال شد", "success");
+                    }
+                }
+            });
+        }
+
+        function finishvisit(visitid) {
+            swal({
+                title: "آیا میخواهید مکالمه تمام شود؟",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "بله تمام شود",
+                cancelButtonText: "خیر",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        showmodalitem(visitid);
+
+                    } else {
+                        swal("صرف نظر", "حذف نشد", "error");
+                    }
+                });
+        }
+
+        function showmodalitem(visitid) {
+            $.ajax({
+                type: "Post",
+                url: '/Visit/Finishvisit',
+                data: { visitid: visitid },
+                success: function (data) {
+                    if (data.success) {
+                        swal("تمام شد", "با موفقیت تمام شد", "success");
+                    }
+                }
+            });
+        }
+
+
+        function addvoicetokhodam(voicesrc) {
+            var list = "<div class='incoming_msg'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'></div><div class='received_msg'><div class='received_withd_msg'><audio controls='' src='" + voicesrc + "'></audio><span class='time_date'> کاربر</span></div></div></div>";
+            $("#chatid").prepend(list);
+        }
+
+        function addvoicetouser(user, voicesrc) {
+            
+            var list = "<div class='outgoing_msg'><div class='sent_msg'><audio controls='' src='" + voicesrc + "'></audio><span class='time_date'>" + user + "</span></div></div>";
+            $("#chatid").prepend(list);
+        }
+
+
+        function addimgtokhodam(imgsrc) {
+            var list = "<div class='incoming_msg'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'></div><div class='received_msg'><div class='received_withd_msg'><a href=" + imgsrc + "><img src=" + imgsrc + " style='height:70px;width:70px;' href=" + imgsrc +"/></a><span class='time_date'> کاربر</span></div></div></div>";
+            $("#chatid").prepend(list);
+        }
+
+        function addimgtouser(user, imgsrc) {
+            var list = "<div class='outgoing_msg'><div class='sent_msg'><a href=" + imgsrc + "><img src=" + imgsrc + " style='height:70px;width:70px;'/></a><span class='time_date'>" + user + "</span></div></div>";
+            $("#chatid").prepend(list);
+        }
+
+        function addchattokhodam(massege) {
+            var list = "<div class='incoming_msg'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'></div><div class='received_msg'><div class='received_withd_msg'><p>" + massege + "</p><span class='time_date'> کاربر</span></div></div></div>";
+            $("#chatid").prepend(list);
+        }
+
+        function addchattouser(user, massege) {
+            var list = "<div class='outgoing_msg'><div class='sent_msg'><p>"+massege+"</p><span class='time_date'>" + user + "</span></div></div>";
+            $("#chatid").prepend(list);
+        }
+    </script>
+
+</body>
+</html>

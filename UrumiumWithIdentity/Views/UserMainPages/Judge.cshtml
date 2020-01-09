@@ -1,0 +1,114 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.JudgeManagmentViewModel.JudgeViewModel
+@{
+    ViewBag.Title = "Judge";
+    Layout = "~/Views/Shared/_ManagmentLayoutJudge.cshtml";
+}
+
+<h3 class="text-center" style="padding-top:50px;color:green;">
+    به پنل کارشناسان خوش آمدید
+</h3>
+
+
+<hr />
+@using (Html.BeginForm("UpdateJudgeInfo", "JudgeManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+<div class="row" style="margin-top:10px;margin-bottom:50px;">
+    <div class="container">
+        <input type="number" style="display:none;" value="@Model.judges.Id" name="id" id="id"/>
+        <div class="row">
+            @{
+                if (Model.judges.Image != "")
+                {
+                    <img src="~/uploads/Judge/@Model.judges.Image" style="width:150px; height:150px;" class="center-block text-center img-circle" />
+                }
+                else
+                {
+                    <img src="~/uploads/team.png" style="width:150px; height:150px;" class="center-block text-center img-circle" />
+                }
+            }
+            
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">عکس کارشناس ازمایشگاه</span>
+                <input type="file" class="form-control" placeholder="عکس را انتخاب کنید " id="fileupdate" name="fileupdate" />
+            </div>
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">نام کارشناس ازمایشگاه</span>
+                <input type="text" placeholder="نام را وارد کنید " class="form-control" value="@Model.judges.Name" id="name" name="name" />
+            </div>
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">توضیحات کارشناس ازمایشگاه</span>
+                <textarea type="text" placeholder="توضیحات را وارد کنید " rows="10" class="form-control" id="description" name="description">@Model.judges.Description</textarea>
+            </div>
+        </div>
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">شماره حساب کارشناس</span>
+                <input type="text" name="accountnumber" placeholder="شماره حساب را وارد کنید " class="form-control" value="@Model.judges.AccountNumber" />
+            </div>
+
+            
+        </div>
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon"> استان را انتخاب کنید</span>
+                <select class="form-control" id="cmbstate" name="cmbstate" onchange="changecityvalue()">
+                    @{
+                        foreach (var item in Model.States)
+                        {
+                            <option value="@item.Id" class="text-center">@item.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">شهر را انتخاب کنید</span>
+                <div id="citylistview">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;margin-bottom:100px;">
+            <button class="btn btn-success center-block">اپدیت اطلاعات</button>
+        </div>
+    </div>
+</div>
+
+                    }
+<script>
+
+
+    function changecityvalue() {
+        var e = document.getElementById("cmbstate");
+        var stateid = e.options[e.selectedIndex].value;
+        $.ajax({
+            type: "Post",
+            url: '/DoctorManagment/ChangeComboItemUpdate',
+            data: { stateid: stateid },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#citylistview').empty();
+                    $('#citylistview').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+
+</script>

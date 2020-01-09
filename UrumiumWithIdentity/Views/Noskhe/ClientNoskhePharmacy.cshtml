@@ -1,0 +1,184 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.NoskheViewModel.NoskheViewModel
+@{
+    ViewBag.Title = "ClientNoskhe";
+    Layout = "~/Views/Shared/_LayoutNewDesignMain.cshtml";
+}
+
+<div class="container">
+    <div class="row" style="margin-top:20px;margin-bottom:20px;padding-left:50px;padding-right:50px;">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            @{
+                if (Model.NoskheMedicines.Count() > 0 && Model.NoskheMedicines != null)
+                {
+                    <a class="btn btn-success btn-block" onclick="showmodal(@Model.visitid,@Model.illnessid,@Model.doctorid)">دارو ها در این دارو خانه موجود میباشد</a>
+                }
+                else
+                {
+                    <div class="alert alert-warning">
+                        <h2 class="text-center">هنوز نسخه ای ثبت نشده است لطفا منتظر بمانید </h2>
+                    </div>
+                    
+                }
+            }
+           
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="container pb-4">
+    <h4 class="font-weight-bold text-center mt-5">نسخه الکترونیکی شفاداک</h4>
+    <div class="row mt-4">
+        <div class="col-6 col-md-8">
+            <p>نام و نام خانوادگی بیمار : @Model.Illnessinfo.Name</p>
+            <p>تاریخ ویزیت و ثبت نسخه : 1398/4/23</p>
+            <p>نوع بیمه:      @Model.Illnessinfo.Insurances.Name</p>
+            <p>شماره بیمه: @Model.Illnessinfo.InsuranceSerial</p>
+        </div>
+        <div class="col-6 col-md-4">
+            @{
+                if (Model.Illnessinfo.Image != "")
+                {
+                    <img src="~/uploads/Illness/@Model.Illnessinfo.Image" class="img-user img-fluid float-right">
+                }
+                else
+                {
+                    <img src="/Content/NewDesign/img/man.png" class="img-user img-fluid float-right">
+                }
+            }
+
+        </div>
+    </div>
+</div>
+<div class="progress file">
+    <div class="progress-bar file"></div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-12">
+            <img src="/Content/NewDesign/img/Image1%20(3).png" class="img-icon img-fluid float-right">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 col-md-3">
+            @{
+                foreach (var item in Model.NoskheMedicines)
+                {
+                    <h5 class="text-dark  mt-4 font-weight-bold">@item.MedicineCount</h5>
+                }
+
+            }
+
+        </div>
+        <div class="col-9 col-md-9">
+            @{
+                foreach (var item in Model.NoskheMedicines)
+                {
+                    <h5 class="text-right font-weight-bold text-dark mt-4"> @item.MedicineName (|</h5>
+                }
+
+            }
+
+        </div>
+    </div>
+    <p class="mt-5 font-weight-bold"> توجه: نسخه بیمار فقط با ارائه اصل مدارک [کارت ملی و دفترچه بیمه] قابل تحویل توسط داروخانه میباشد !</p>
+    <p><input type="checkbox" checked />نسخه بیمار موقت و نیاز به مراجعه حضوری دارد.</p>
+</div>
+<div class="progress file">
+    <div class="progress-bar file"></div>
+</div>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-6 col-md-8">
+            <h5>پزشک : دکتر @Model.Doctorinfo.Name</h5>
+            <h6>نظام پزشکی : @Model.Doctorinfo.NezamPezeshkiCode</h6>
+            <h6>کد پیگیری : @Model.Peigiricode</h6>
+        </div>
+        <div class="col-6 col-md-4">
+            @{
+                if (Model.Illnessinfo.Image != "")
+                {
+                    <img src="~/uploads/Doctor/@Model.Doctorinfo.Image" class="img-user img-fluid float-right">
+                }
+                else
+                {
+                    <img src="~/Content/NewDesign/img/doctor (2).png" class="img-user img-fluid float-right">
+                }
+            }
+        </div>
+    </div>
+</div>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">تایید وجود دارو و ارسال پیام</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        متن ارسالی به بیمار را برای تایید وجود دارو ها وارد کنید
+                    </div>
+                    <div class="col-lg-8">
+                        <textarea id="txtdescription" name="name" type="text" class="form-control" rows="10" placeholder="پیام را وارد کنید" ></textarea>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                <a name="btninsert" class="btn btn-success" value="درج" onclick="sendpmtoillnessfrompharmacy()">درج</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script>
+    var doctorid_item;
+    var illnessid_item;
+    var visitid_item;
+    function showmodal(visitid, illnessid, doctorid) {
+        doctorid_item = doctorid;
+        illnessid_item = illnessid;
+        visitid_item = visitid;
+        $("#myModal").modal();
+    }
+
+    function sendpmtoillnessfrompharmacy() {
+        var text = $("#txtdescription").val();
+        $.ajax({
+            type: "Post",
+            url: '/Noskhe/NoskheIsExistInPharmacy',
+            data: { visitid: visitid_item, illnessid: illnessid_item, doctorid: doctorid_item, description: text },
+            success: function (data) {
+                if (data.success == true && data.type==0) {
+                    $('#myModal').modal('hide');
+                    swal("با موفقیت ارسال شد", "نسخه به داروخانه ارسال شد", "success");
+                }
+                else if (data.success == false && data.type==1) {
+                    swal("ارسال مجدد", "پیام به این نسخه قبلا ارسال شده", "error");
+                    $('#myModal').modal('hide');
+                }
+                else if (data.success == false && data.type == 2){
+                    swal("صرف نظر", "مشکل ارتباط با سرور", "error");
+                    $('#myModal').modal('hide');
+                }
+
+            }
+        });
+    }
+
+</script>

@@ -1,0 +1,51 @@
+﻿@model List<UrumiumMVC.ViewModel.EntityViewModel.ViolationViewModel.ViolationViewModel>
+@{
+    ViewBag.Title = "ViolationList";
+    Layout = "~/Views/Shared/_ManagmentLayoutIllness.cshtml";
+}
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<h2 class="text-center" style="padding:50px;">مدیریت پیام های تخلف</h2>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">شماره پیگیری</th>
+                    <th class="text-center">پیام بیمار</th>
+                    <th class="text-center">جواب ادمین</th>
+                    </thead>
+                    <tbody id="listofillness">
+                       @{
+                           foreach (var item in Model)
+                           {
+                            <tr>
+
+                                <td class="text-center" style="padding:10px;">@item.Number</td>
+                                <td class="text-center" style="padding:10px;">@item.IllnessDescription</td>
+                                <td class="text-center" style="padding:10px;">@item.AdminAnswer</td>
+                                
+                            </tr>
+                                    }
+
+                    }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

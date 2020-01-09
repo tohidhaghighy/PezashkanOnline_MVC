@@ -1,0 +1,12 @@
+﻿
+@model List<UrumiumMVC.DomainClasses.Entities.Noskhe.Noskhe>
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center" style="padding:10px;">@item.MedicineName</td>
+            <td class="text-center" style="padding:10px;">@item.MedicineCount</td>
+        </tr>
+    }
+}
+   

@@ -1,0 +1,192 @@
+﻿@using Microsoft.AspNet.Identity;
+@model List<UrumiumMVC.DomainClasses.Entities.Question.Question>
+@{
+    ViewBag.Title = "Doctor";
+    Layout = "~/Views/Shared/_ManagmentLayoutDoctor.cshtml";
+}
+
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<h2 class="text-center" style="padding:50px;">سوالات عمومی</h2>
+
+<p style="margin-right:50px;">
+    <a class="btn btn-link" onclick="showmodal()">افزودن سوال جدید</a>
+</p>
+
+
+<div class="row center-block text-center" style="margin-top:10px;width:60%;margin-bottom:100px;">
+    <div class="">
+        <h4 class="text-center">لیست سوال ها</h4>
+        <div class="">
+            <div class="">
+                <div class="">
+                    <table id="mytable" class="table table-bordred" style="background-color:white;">
+                        <thead>
+                        <th class="text-center">سوال</th>
+                        <th class="text-center">ویرایش</th>
+                        <th class="text-center">حذف</th>
+                        </thead>
+                        <tbody id="listofpharmacy">
+                            @{
+                                if (Model != null)
+                                {
+                                    Html.RenderPartial("_DoctorQuestionListAjax", Model);
+                                }
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">درج سوال جدید</h4>
+            </div>
+
+            <div class="modal-body">
+                <input type="number" style="display:none" name="iddoctor" id="iddoctor" />
+                <div class="row">
+                    <div class="col-lg-4">
+                        متن سوال
+                    </div>
+                    <div class="col-lg-8">
+                        <textarea id="txttext" name="name" class="form-control" placeholder="متن سوال را وارد کنید" ></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                <a name="btninsert" class="btn btn-success" value="درج" onclick="addquestion()">درج</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="myModalUpdate" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">بروزرسانی سوال جدید</h4>
+            </div>
+
+            <div class="modal-body">
+                <input type="number" style="display:none" name="id" id="id"/>
+                <div class="row">
+                    <div class="col-lg-4">
+                        متن سوال
+                    </div>
+                    <div class="col-lg-8">
+                        <textarea id="txttextupdate" name="name" class="form-control" placeholder="متن سوال را وارد کنید" ></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                <a name="btninsert" class="btn btn-success" value="درج" onclick="updatequestion()">ویرایش</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script>
+
+    function showmodal() {
+        $("#myModal").modal();
+
+    }; 
+
+    function Updateitem(id, text) {
+            $("#txttextupdate").val(text);
+            $("#id").val(id);
+            $("#myModalUpdate").modal();
+        };
+
+    function deleteitem(id) {
+        swal({
+            title: "آیا میخواهید حذف شود؟",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "بله حذف شود",
+            cancelButtonText: "خیر",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+            function (isConfirm) {
+                if (isConfirm) {
+                    sendtoservertodelete(id);
+
+                } else {
+                    swal("صرف نظر", "حذف نشد", "error");
+                }
+            });
+    }
+
+    function sendtoservertodelete(id) {
+    $.ajax({
+            type: "Post",
+            url: '/Question/DeleteQuestion',
+            data: { id: id },
+            success: function (data) {
+                    window.location.reload();
+
+            }
+        });
+    }
+
+    function addquestion() {
+        var itetext = $("#txttext").val();
+        $.ajax({
+            type: "Post",
+            url: '/Question/AddQuestion',
+            data: { id: '@User.Identity.GetUserId()', text: itetext },
+            success: function (data) {
+                    window.location.reload();
+
+            }
+        });
+    } 
+
+    function updatequestion() {
+        var itemname = $("#txttextupdate").val();
+        var id = $("#id").val();
+        $.ajax({
+            type: "Post",
+            url: '/Question/UpdateQuestion',
+            data: { id: id, text: itemname },
+            success: function (data) {
+                window.location.reload();
+
+            }
+        });
+    }
+</script>
+

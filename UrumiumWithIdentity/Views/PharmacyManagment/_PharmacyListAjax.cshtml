@@ -1,0 +1,65 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Pharmacy.Pharmacy>
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+            @{
+                if (item.Active == true)
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" checked onchange="changeactivefunc(@item.Id)" /></td>
+                }
+                else
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" onchange="changeactivefunc(@item.Id)" /></td>
+                }
+            }
+            <td class="text-center" style="padding:10px;"><img style="width:40px;height:40px;" src="~/uploads/Pharmacy/@item.Image" /></td>
+            <td class="text-center" style="padding:10px;">@item.Name</td>
+            <td class="text-center" style="padding:10px;">@item.Cities.Name</td>
+            <td class="text-center" style="padding:10px;">
+                @{
+                    if (item.ScanMelliCode != "")
+                    {
+                        <a href="~/uploads/Pharmacy/m/@item.ScanMelliCode">
+                            <img style="width:40px;height:40px;" src="~/uploads/Pharmacy/m/@item.ScanMelliCode" />
+                        </a>
+                    }
+                }
+
+            </td>
+            <td class="text-center" style="padding:10px;">
+                @{
+                    if (item.ScanShenasname != "")
+                    {
+                        <a href="~/uploads/Pharmacy/s/@item.ScanShenasname">
+                            <img style="width:40px;height:40px;" src="~/uploads/Pharmacy/s/@item.ScanShenasname" />
+                        </a>
+                    }
+                }
+            </td>
+            <td class="text-center" style="padding:10px;">
+                @{
+                    if (item.ScanNezamPezeshki != "")
+                    {
+                        <a href="~/uploads/Pharmacy/n/@item.ScanNezamPezeshki">
+                            <img style="width:40px;height:40px;" src="~/uploads/Pharmacy/n/@item.ScanNezamPezeshki" />
+                        </a>
+                    }
+                }
+            </td>
+            <td class="text-center" style="padding:10px;">
+                @{
+                    if (item.ScanParvane != "")
+                    {
+                        <a href="~/uploads/Pharmacy/p/@item.ScanParvane">
+                            <img style="width:40px;height:40px;" src="~/uploads/Pharmacy/p/@item.ScanParvane" />
+                        </a>
+                    }
+                }
+            </td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="حذف"><a class="btn btn-danger btn-xs" onclick="deleteitem(@item.Id)"><i class="ion ion-ios-trash"></i></a></p></td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="ویرایش"><a class="btn btn-warning btn-xs" onclick="updateitem(@item.Id,'@item.Name','@item.Description',@item.CityId,@item.Cities.StateId)"><i class="ion ion-ios-trash"></i></a></p></td>
+        </tr>
+    }
+
+}

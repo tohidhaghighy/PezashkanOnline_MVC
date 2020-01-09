@@ -1,0 +1,125 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.SubsetViewModel.SubsetViewModel
+@{
+    ViewBag.Title = "City";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<h2 class="text-center" style="padding:50px;">مدیریت زیرمجموعه ها</h2>
+
+<div class="row">
+    <div class="container">
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>@Model.AllVisitList.Count()<sup style="font-size: 20px"></sup></h3>
+                    <p>تعداد ویزیت ها</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-list"></i>
+                </div>
+                <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-address-book"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>
+                    @{ 
+                        int count = 0;
+                        foreach (var item in Model.AllVisitList)
+                        {
+                            count += item.Cost;
+                        }
+                    }
+                    @count
+                    <sup style="font-size: 20px"></sup></h3>
+
+                    <p>مبلغ ویزیت ها</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-list"></i>
+                </div>
+                <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-address-book"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-gray">
+                <div class="inner">
+                    <h3>ویزیت ها<sup style="font-size: 20px"></sup></h3>
+
+                    <p>مشاهده ویزیت ها</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-list"></i>
+                </div>
+                <a href="/SubsetManagment/SubsetVisitDoctorList?doctorid=@Model.Id" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-address-book"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>یادداشت<sup style="font-size: 20px"></sup></h3>
+
+                    <p>افزودن یادداشت</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-list"></i>
+                </div>
+                <a href="/SubsetManagment/SubsetNotes?doctorid=@Model.Id" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-address-book"></i></a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">لیست زیرمجموعه ها</h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">نام دکتر</th>
+                    <th class="text-center">تعداد ویزیت</th>
+                    <th class="text-center">مبلغ قابل پرداخت</th>
+                    <th class="text-center">مشاهده ویزیت ها</th>
+                    </thead>
+                    <tbody id="listofarticle">
+                       @{
+                           foreach (var item in Model.alllistmoaref)
+                           {
+                            <tr>
+                                <td class="text-center" style="padding:10px;">@item.Userid</td>
+                                <td class="text-center" style="padding:10px;"> @item.CountVisit</td>
+                                <td class="text-center" style="padding:10px;"> @item.CostVisit</td>
+                                <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="لیست ویزیت ها"><a class="btn btn-success btn-xs" onclick="gotovisitlistpage(@item.Id)"><i class="ion ion-edit"></i></a></p></td>
+                            </tr>
+                           }
+
+
+                    }
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function gotovisitlistpage(id) {
+        window.location.href = "/SubsetManagment/SubsetVisitDoctorList?doctorid=" + id;
+    }
+</script>
+  
+

@@ -1,0 +1,118 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.DoctorViewModel.DoctorVisitList
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayoutDoctor.cshtml";
+}
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+<link href="~/Content/PersianCalender/bootstrap-datepicker.css" rel="stylesheet" charset="UTF-8" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<h2 class="text-center" style="padding-top:50px;">مدیریت ویزیت ها</h2>
+
+<div style="padding:30px;margin-top:20px;margin-bottom:20px;">
+    <div class="form-group">
+        <div class="center-block text-center">
+            <div class="controls">
+                <div class="input-append">
+                    <input id="datepicker1" class="form-control" type="text" name="date" onchange="changedatevalue('@Model.Mobile')" placeholder="تاریخ را برای جستجو انتخاب کن">
+                    <button id="datepicker1btn" class="btn" type="button"><i class="icon-calendar"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">لیست ویزیت ها</h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">شماره پرونده</th>
+                    <th class="text-center">نام بیمار</th>
+                    <th class="text-center">ویزیت شده</th>
+                    <th class="text-center">تاریخ و ساعت ویزیت</th>
+                    <th class="text-center">پرونده بیمار</th>
+                    <th class="text-center">درج نسخه</th>
+                    <th class="text-center">َشروع چت</th>
+                    <th class="text-center">َجواب سوالات عمومی</th>
+                    </thead>
+                    <tbody id="listofvisitdoctor">
+                                @{
+                                    if (Model.visitlist!=null)
+                                    {
+                                        Html.RenderPartial("_VisitDoctorListAjax", Model.visitlist);
+                                    }
+
+                                 }
+                        
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+    function ShowParvande(illnessid, doctorid) {
+        window.location.href = '/UserMainPages/IllnessParvandeDoctorList?doctorid=' + doctorid + '&illnessid=' + illnessid;
+    };
+
+
+    function ShowNoskhe(id, illnessid, doctorid) {
+        window.location.href = '/Noskhe/Noskhe?visitid=' + id + '&doctorid=' + doctorid + '&illnessid=' + illnessid;
+    };
+
+
+    function StartChat(id, illnessid, doctorid,name) {
+        window.location.href = '/Chat/DoctorChatroom?visitid=' + id + '&doctorid=' + doctorid + '&illnessid=' + illnessid+'&name=D';
+    };
+
+    function ShowQuestion(id, illnessid, doctorid) {
+        window.location.href = '/Question/DoctorShowIllnessAnswerQuestion?visitid=' + id + '&doctorid=' + doctorid + '&illnessid=' + illnessid;
+    }
+
+    $(document).ready(function () {
+        $("#datepicker1").datepicker();
+
+    });
+
+
+    function changedatevalue(id) {
+        var date = $("#datepicker1").val();
+        $.ajax({
+            type: "Post",
+            url: '/UserMainPages/DoctorDateSearchVisitList',
+            data: {
+                date: date,
+                id:id
+            },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#listofvisitdoctor').empty();
+                    $('#listofvisitdoctor').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+</script>
+

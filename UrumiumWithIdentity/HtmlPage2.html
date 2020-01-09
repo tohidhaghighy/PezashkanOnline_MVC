@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="input-upload-file" class="box-shadow">
+        <span>upload! (ღ˘⌣˘ღ)</span>
+        <input type="file" class="upload" id="fileUp" name="fileUpload">
+    </div>
+<pre id="infos"></pre>
+    <script>
+        var myVideos = [];
+
+window.URL = window.URL || window.webkitURL;
+
+document.getElementById('fileUp').onchange = setFileInfo;
+
+function setFileInfo() {
+  var files = this.files;
+  myVideos.push(files[0]);
+  var video = document.createElement('video');
+  video.preload = 'metadata';
+
+  video.onloadedmetadata = function() {
+    window.URL.revokeObjectURL(video.src);
+    var duration = video.duration;
+    myVideos[myVideos.length - 1].duration = duration;
+    updateInfos();
+  }
+
+  video.src = URL.createObjectURL(files[0]);;
+}
+
+
+function updateInfos() {
+  var infos = document.getElementById('infos');
+  infos.textContent = "";
+  for (var i = 0; i < myVideos.length; i++) {
+    infos.textContent += myVideos[i].name + " duration: " + myVideos[i].duration + '\n';
+  }
+        }
+
+    </script>
+</body>
+</html>

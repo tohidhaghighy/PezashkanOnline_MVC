@@ -1,0 +1,616 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.MainPageViewModel.MainPageViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/Content/CardViewAnimated.css" rel="stylesheet" />
+<style>
+    .heading-box h2 {
+        width: 100%;
+        color: red;
+    }
+
+    .text-box {
+        position: absolute;
+        top: 35%;
+        left: 15%;
+        right: 15%;
+        color: #fff;
+        text-align: center;
+        transform: translateY(-50%);
+    }
+
+    .bg {
+        width: 100%;
+        max-height: 100%;
+        height: 100%;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .carousel, .item {
+        height: 100%;
+    }
+
+    .carousel-inner {
+        height: 100%;
+    }
+
+    .carousel {
+        margin-bottom: 60px;
+    }
+
+    .carousel-caption {
+        z-index: 10;
+    }
+
+    .carousel .item {
+        background-color: #777;
+    }
+
+    .parallax {
+        /* The image used */
+        background-image: url("../../Content/Music/3.jpg");
+        /* Set a specific height */
+        min-height: 500px;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .txtfull {
+        border-bottom-left-radius: 45px;
+        border-top-right-radius: 45px;
+        display: block;
+        background: linear-gradient(to left, rgba(52, 129, 235, 0.60) 50%, white 50%);
+        background-size: 200% 100%;
+        background-position: left bottom;
+        transition: all .5s ease-out;
+    }
+
+        .txtfull:hover {
+            background-position: right bottom;
+        }
+
+    .txtfullleft {
+        border-bottom-left-radius: 45px;
+        border-top-right-radius: 45px;
+        display: block;
+        background: linear-gradient(to right, rgba(52, 129, 235, 0.60) 50%, white 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        transition: all .5s ease-out;
+    }
+
+        .txtfullleft:hover {
+            background-position: left bottom;
+        }
+
+    .text {
+        text-align: center;
+        color: black;
+        transition: all .6s ease-out;
+        padding: 20px;
+    }
+
+        .text:hover {
+            color: white;
+        }
+
+    .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+        background-color: #bbb;
+        color: black;
+    }
+
+    .flip-card-back {
+        background-color: #2980b9;
+        color: white;
+        transform: rotateY(180deg);
+    }
+
+
+    .fullfromcenter {
+        border-bottom-left-radius: 45px;
+        border-top-right-radius: 45px;
+        display: block;
+        color: #2980b9;
+        font-size: 30px;
+        font-family: arial;
+        background-image: linear-gradient(#2980b9, #2980b9);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 0% 100%;
+        transition: background-size .5s, color .5s;
+    }
+
+        .fullfromcenter:hover {
+            background-size: 100% 100%;
+            color: #fff;
+        }
+
+    .my-card {
+        position: absolute;
+        left: 40%;
+        top: -20px;
+        border-radius: 50%;
+    }
+
+    .image_outer_container {
+        margin-top: auto;
+        margin-bottom: auto;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .image_inner_container {
+        border-radius: 50%;
+        padding: 5px;
+        background: #833ab4;
+        background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+        background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+    }
+
+        .image_inner_container img {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+
+    .image_outer_container .green_icon {
+        background-color: #4cd137;
+        position: absolute;
+        right: 30px;
+        bottom: 10px;
+        height: 30px;
+        width: 30px;
+        border: 5px solid white;
+        border-radius: 50%;
+    }
+    .blog .carousel-indicators {
+        left: 0;
+        top: auto;
+        bottom: -40px;
+    }
+
+        /* The colour of the indicators */
+        .blog .carousel-indicators li {
+            background: #a3a3a3;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+        }
+
+        .blog .carousel-indicators .active {
+            background: #707070;
+        }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .input-container {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .icon {
+        padding: 0px;
+        background: dodgerblue;
+        color: white;
+        min-width: 50px;
+        text-align: center;
+        font-size: 15px;
+        font-style: oblique;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid black;
+    }
+
+        .input-field:focus {
+            border: 2px solid dodgerblue;
+        }
+
+    /* Set a style for the submit button */
+    .btn {
+        background-color: #2980b9;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+        .btn:hover {
+            opacity: 1;
+        }
+
+    .blog .carousel-indicators {
+        left: 0;
+        top: auto;
+        bottom: -40px;
+    }
+
+        /* The colour of the indicators */
+        .blog .carousel-indicators li {
+            background: #a3a3a3;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+        }
+
+        .blog .carousel-indicators .active {
+            background: #707070;
+        }
+</style>
+
+
+<div class="row">
+
+    <div class="col-lg-12" style="background-color:white;text-align:center;direction:rtl;background-image:url(../../Content/icons/111.jpg);object-fit:contain;">
+        <div class="container">
+            <div class="col-lg-12"><p style="color:white;font-size:xx-large;padding-top:10px;margin-top:80px;">به دکتر هوشمند خوش آمدید</p></div>
+            <br />
+            <div class="input-container container" style="padding:10px;border-radius:15px;margin-bottom:100px;border:1px solid gray;background-color:rgba(168, 165, 165, 0.70);">
+                <input class="form-control" type="text" placeholder="دکتر مورد نظر خود را جستجو کنید" name="usrnm" style="padding-right:20px;">
+                <a class="btn btn-success" style="width:100px;border-radius:15px 0px 0 15px;">جستجو</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="" style="margin-top:-5%;margin-bottom:10px;">
+    <div class="row" style="padding:30px;">
+        <div class="col-md-3" style="margin-bottom:20px;">
+            <a href="/Home/ListDoctor?groupid=0">
+                <div class="card border-info mx-sm-1 p-3">
+                    <div class="card border-info shadow text-info p-3 my-card"><span class="fa fa-user" aria-hidden="true"></span></div>
+                    <div class="text-info text-center mt-3"><h4>پزشکان</h4></div>
+                    <div class="text-info text-center mt-2"><h1>@Model.Doctors.Count()</h1></div>
+                </div>
+            </a>
+
+        </div>
+        <div class="col-md-3" style="margin-bottom:20px;">
+            <a href="/Home/ListJudge">
+                <div class="card border-success mx-sm-1 p-3">
+                    <div class="card border-success shadow text-success p-3 my-card"><span class="fa fa-eye" aria-hidden="true"></span></div>
+                    <div class="text-success text-center mt-3"><h4>کارشناسان</h4></div>
+                    <div class="text-success text-center mt-2"><h1>@Model.Judges.Count()</h1></div>
+                </div>
+            </a>
+
+        </div>
+        <div class="col-md-3" style="margin-bottom:20px;">
+            <a href="/Home/ListPharmacy">
+                <div class="card border-danger mx-sm-1 p-3">
+                    <div class="card border-danger shadow text-danger p-3 my-card"><span class="fa fa-heart" aria-hidden="true"></span></div>
+                    <div class="text-danger text-center mt-3"><h4>داروخانه</h4></div>
+                    <div class="text-danger text-center mt-2"><h1>@Model.Pharmacies.Count()</h1></div>
+                </div>
+            </a>
+
+        </div>
+        <div class="col-md-3" style="margin-bottom:20px;">
+            <a>
+                <div class="card border-warning mx-sm-1 p-3">
+                    <div class="card border-warning shadow text-warning p-3 my-card"><span class="fa fa-inbox" aria-hidden="true"></span></div>
+                    <div class="text-warning text-center mt-3"><h4>بیماران</h4></div>
+                    <div class="text-warning text-center mt-2"><h1>@Model.IllnessCount</h1></div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="" style="margin-bottom:100px;">
+    <div class="row blog">
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="container" data-aos="fade-right">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12  text-center">
+                            <br><br>
+                            <hr>
+                            <h1 class="tagline">جدیدترین پزشکان </h1>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#blogCarousel" data-slide-to="1"></li>
+                        </ol>
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            @{
+                                int k = 2;
+                                if (Model.Doctors.Count<=4)
+                                {
+                                    k = 1;
+                                }
+
+                                for (int i = 0; i < k; i++)
+                                {
+                                    if (i == 0)
+                                    {
+                                        <div class="carousel-item active">
+                                            <div class="row">
+                                                @{
+                                                    int count = 0;
+                                                    foreach (var item in Model.Doctors.Take(4))
+                                                    {
+                                                        @Html.Partial("_ListItemDoctor", item)
+                                                    }
+                                }
+                                            </div>
+                                            <!--.row-->
+                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="carousel-item">
+                                                            <div class="row">
+                                                                @{
+                                                                    int count = 0;
+                                                                    foreach (var item in Model.Doctors.Skip(4).Take(4))
+                                                                    {
+                                                                        @Html.Partial("_ListItemDoctor", item)
+                                                                    }
+                                                                }
+                                                            </div>
+                                                            <!--.row-->
+                                                        </div>
+                                                                        }
+                                                                    }
+                            }
+                        </div>
+                        <!--.carousel-inner-->
+                    </div>
+                    <!--.Carousel-->
+                </div>
+                <div class="container" style="padding:30px;">
+                    <a class="btn btn-success btn-block" href="/Home/ListDoctor?groupid=0">بیشتر</a>
+                </div>
+            </div>
+            <div class="container" data-aos="fade-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12  text-center">
+                            <br><br>
+                            <hr>
+                            <h1 class="tagline">جدیدترین کارشناسان</h1>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#blogCarousel" data-slide-to="1"></li>
+                        </ol>
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            @{  k = 2;
+                                if (Model.Doctors.Count <= 4)
+                                {
+                                    k = 1;
+                                }
+
+                                for (int i = 0; i < k; i++)
+                                {
+                                    if (i == 0)
+                                    {
+                                        <div class="carousel-item active">
+                                            <div class="row">
+                                                @{
+                                                    int count = 0;
+                                                    foreach (var item in Model.Judges.Take(4))
+                                                    {
+                                                        @Html.Partial("_ListItemJudge", item)
+                                                    }
+                                                }
+                                            </div>
+                                            <!--.row-->
+                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="carousel-item">
+                                                            <div class="row">
+                                                                @{
+                                                                    int count = 0;
+                                                                    foreach (var item in Model.Judges.Skip(4).Take(4))
+                                                                    {
+                                                                        @Html.Partial("_ListItemJudge", item)
+                                                                    }
+                                                                }
+                                                            </div>
+                                                            <!--.row-->
+                                                        </div>
+                                                                        }
+                                                                    }
+                            }
+                        </div>
+                        <!--.carousel-inner-->
+                    </div>
+                    <!--.Carousel-->
+                </div>
+                <div class="container" style="padding:30px;">
+                    <a class="btn btn-success btn-block" href="/Home/ListJudge">بیشتر</a>
+                </div>
+            </div>
+            <div class="container" data-aos="fade-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12  text-center">
+                            <br><br>
+                            <hr>
+                            <h1 class="tagline">جدیدترین داروخانه ها</h1>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#blogCarousel" data-slide-to="1"></li>
+                        </ol>
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            @{
+                                k = 2;
+                                if (Model.Doctors.Count <= 4)
+                                {
+                                    k = 1;
+                                }
+
+                                for (int i = 0; i < k; i++)
+                                {
+                                    if (i == 0)
+                                    {
+                                        <div class="carousel-item active">
+                                            <div class="row">
+                                                @{
+                                                    foreach (var item in Model.Pharmacies.Take(4))
+                                                    {
+                                                        @Html.Partial("_ListItemPharmacy", item)
+                                                    }
+                                                }
+                                            </div>
+                                            <!--.row-->
+                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="carousel-item">
+                                                            <div class="row">
+                                                                @{
+                                                                    foreach (var item in Model.Pharmacies.Skip(4).Take(4))
+                                                                    {
+                                                                        @Html.Partial("_ListItemPharmacy", item)
+                                                                    }
+                                                                }
+                                                            </div>
+                                                            <!--.row-->
+                                                        </div>
+                                                                        }
+                                                                    }
+                            }
+                        </div>
+                        <!--.carousel-inner-->
+                    </div>
+                    <!--.Carousel-->
+                </div>
+                <div class="container" style="padding:30px;">
+                    <a class="btn btn-success btn-block" href="/Home/ListPharmacy">بیشتر</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12" data-aos="fade-down">
+            <div class="col-md-12 col-xs-12">
+                <div class="bg-faded p-2 mt-5">
+                    <h3 class="text-center" style="font-weight:bold;font-size:20px;"> دسته بندی ها </h3>
+                    <hr class="bg-dark mb-4 w-25">
+                    <div class="" style="background-color:white;">
+                        @{
+                            foreach (var item in Model.Groups)
+                            {
+                                <a href="/Home/ListDoctor?groupid=@item.Id" class="btn btn-success btn-block">@item.Name</a>
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    $('#blogCarousel').carousel({
+        interval: 1000
+    });
+
+</script>
+
+
+
+<script>
+    $('#blogCarousel').carousel({
+        interval: 5000
+    });
+    wow = new WOW(
+        {
+            animateClass: 'animated',
+            offset: 100,
+            callback: function (box) {
+                console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+            }
+        }
+    );
+    wow.init();
+    document.getElementById('moar').onclick = function () {
+        var section = document.createElement('section');
+        section.className = 'section--purple wow fadeInDown';
+        this.parentNode.insertBefore(section, this);
+    };
+</script>
+

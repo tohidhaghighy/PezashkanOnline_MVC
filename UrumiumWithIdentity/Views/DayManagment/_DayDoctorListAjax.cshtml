@@ -1,0 +1,14 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Doctor.DoctorDays>
+
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center" style="padding:10px;">@item.ReservePersianDatetime</td>
+            <td class="text-center" style="padding:10px;">@item.TimeVisit</td>
+            <td class="text-center" style="padding:10px;">@item.CountVisit </td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="حذف"><a class="btn btn-danger btn-xs" onclick="deleteitem(@item.Id,@item.DoctorId)"><i class="ion ion-ios-trash"></i></a></p></td>
+        </tr>
+    }
+
+}

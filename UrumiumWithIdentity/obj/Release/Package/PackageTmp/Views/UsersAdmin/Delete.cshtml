@@ -1,0 +1,30 @@
+﻿@model DataLayer.Context.ApplicationUser
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+<h3 class="text-center" style="padding:20px;">آیا میخواهید این کاربر حذف شود؟</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            نام کاربری
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="margin-right:50px;">
+            
+            @Html.ActionLink("بازگشت", "Index") |
+            <input type="submit" value="حذف شود" class="btn btn-danger" />
+        </div>
+    }
+</div>

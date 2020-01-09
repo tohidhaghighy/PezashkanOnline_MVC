@@ -1,0 +1,702 @@
+c:\users\tohid\documents\visual studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.csprojResolveAssemblyReference.cache
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\ApplicationInsights.config
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll.config
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.pdb
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.exe
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.exe.config
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.rsp
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csi.exe
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csi.rsp
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.AppContext.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Collections.Immutable.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Diagnostics.StackTrace.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.IO.FileSystem.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.IO.FileSystem.Primitives.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Reflection.Metadata.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.exe
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.exe.config
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.rsp
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\VBCSCompiler.exe
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\VBCSCompiler.exe.config
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Antlr3.Runtime.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.SqlServer.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Agent.Intercept.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.DependencyCollector.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Web.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.WindowsServer.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.ApplicationInsights.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Core.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Cookies.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Facebook.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Google.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.OAuth.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Web.Infrastructure.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Owin.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Diagnostics.DiagnosticSource.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Helpers.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Mvc.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Optimization.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Razor.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Deployment.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Razor.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\WebGrease.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\EFSecondLevelCache.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\AutoMapper.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.pdb
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.dll.config
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.pdb
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.dll.config
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.pdb
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.dll.config
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.pdb
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.dll.config
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Antlr3.Runtime.pdb
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.SqlServer.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.DependencyCollector.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.PerfCounterCollector.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Web.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.WindowsServer.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.ApplicationInsights.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Core.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Cookies.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Facebook.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Google.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.OAuth.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.pdb
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Diagnostics.DiagnosticSource.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Helpers.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Mvc.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Razor.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Deployment.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Razor.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Optimization.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.pdb
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\EFSecondLevelCache.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\AutoMapper.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.pdb
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.dll.config
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.pdb
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.xml
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.pdb
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.dll.config
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.dll
+c:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.pdb
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.dll
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.pdb
+C:\Users\tohid\Documents\Visual Studio 2017\Projects\UrumiumWithIdentity\UrumiumWithIdentity\bin\T4MVCExtensions.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\ApplicationInsights.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.exe
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.exe.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.rsp
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csi.exe
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csi.rsp
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.AppContext.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Collections.Immutable.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.IO.FileSystem.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Reflection.Metadata.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.exe
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.exe.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.rsp
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\VBCSCompiler.exe
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\VBCSCompiler.exe.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Antlr3.Runtime.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.SqlServer.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Agent.Intercept.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.DependencyCollector.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Web.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.WindowsServer.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.ApplicationInsights.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Google.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Web.Infrastructure.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Owin.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Diagnostics.DiagnosticSource.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Helpers.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Mvc.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Optimization.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Razor.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Deployment.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Razor.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\T4MVCExtensions.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\WebGrease.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\EFSecondLevelCache.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\AutoMapper.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.dll.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.dll.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.dll.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.dll.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.dll.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.dll.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Antlr3.Runtime.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.SqlServer.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.DependencyCollector.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.PerfCounterCollector.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Web.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.WindowsServer.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.ApplicationInsights.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Google.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Diagnostics.DiagnosticSource.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Helpers.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Mvc.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Razor.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Deployment.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Razor.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Optimization.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\EFSecondLevelCache.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\AutoMapper.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.dll.config
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.xml
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.csprojResolveAssemblyReference.cache
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.dll
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.pdb
+D:\ارومیوم\UrumiumWithIdentity\UrumiumWithIdentity\bin\Elmah.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\ApplicationInsights.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.exe
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.exe.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.rsp
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csi.exe
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csi.rsp
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.AppContext.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Collections.Immutable.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.IO.FileSystem.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Reflection.Metadata.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.exe
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.exe.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.rsp
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\VBCSCompiler.exe
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\VBCSCompiler.exe.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Antlr3.Runtime.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Elmah.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.SqlServer.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Agent.Intercept.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.DependencyCollector.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Web.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.WindowsServer.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.ApplicationInsights.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Google.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Web.Infrastructure.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Owin.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Diagnostics.DiagnosticSource.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Helpers.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Mvc.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Optimization.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Razor.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Deployment.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Razor.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\T4MVCExtensions.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\WebGrease.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\EFSecondLevelCache.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\AutoMapper.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.dll.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.dll.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.dll.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.dll.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.dll.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.dll.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Antlr3.Runtime.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.SqlServer.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.DependencyCollector.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.PerfCounterCollector.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Web.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.WindowsServer.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.ApplicationInsights.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Google.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Diagnostics.DiagnosticSource.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Helpers.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Mvc.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Razor.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Deployment.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Razor.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Optimization.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\EFSecondLevelCache.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\AutoMapper.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.dll.config
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.pdb
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.xml
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.csprojResolveAssemblyReference.cache
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.dll
+D:\ارومیوم\Codekade\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.csprojResolveAssemblyReference.cache
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\ApplicationInsights.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.exe
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.exe.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.rsp
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csi.exe
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csi.rsp
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.AppContext.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Collections.Immutable.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.IO.FileSystem.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Reflection.Metadata.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.exe
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.exe.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.rsp
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\VBCSCompiler.exe
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\VBCSCompiler.exe.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Antlr3.Runtime.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Elmah.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.SqlServer.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Agent.Intercept.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.DependencyCollector.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Web.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.WindowsServer.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.ApplicationInsights.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Google.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Web.Infrastructure.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Owin.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Diagnostics.DiagnosticSource.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Helpers.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Mvc.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Optimization.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Razor.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Deployment.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Razor.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\T4MVCExtensions.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\WebGrease.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\EFSecondLevelCache.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\AutoMapper.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.dll.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.dll.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.dll.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.dll.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.dll.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.dll.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Antlr3.Runtime.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.SqlServer.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.DependencyCollector.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.PerfCounterCollector.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Web.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.WindowsServer.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.ApplicationInsights.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Google.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Diagnostics.DiagnosticSource.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Helpers.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Mvc.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Razor.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Deployment.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Razor.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Optimization.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\EFSecondLevelCache.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\AutoMapper.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.dll.config
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.Core.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\ApplicationInsights.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.exe
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.exe.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csc.rsp
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csi.exe
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\csi.rsp
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.AppContext.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Collections.Immutable.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.IO.FileSystem.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\System.Reflection.Metadata.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.exe
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.exe.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\vbc.rsp
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\VBCSCompiler.exe
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\roslyn\VBCSCompiler.exe.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Antlr3.Runtime.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Elmah.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.SqlServer.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Agent.Intercept.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.DependencyCollector.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Web.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.WindowsServer.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.ApplicationInsights.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Google.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Web.Infrastructure.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Owin.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\SmsIrRestful.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Diagnostics.DiagnosticSource.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Net.Http.Formatting.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Helpers.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Http.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Http.WebHost.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Mvc.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Optimization.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Razor.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Deployment.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Razor.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\T4MVCExtensions.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\WebGrease.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\EFSecondLevelCache.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\AutoMapper.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\DataLayer.dll.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.Common.dll.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.DomainClasses.dll.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.IocConfig.dll.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ServiceLayer.dll.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.ViewModel.dll.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Antlr3.Runtime.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\EntityFramework.SqlServer.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.DependencyCollector.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.PerfCounterCollector.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.Web.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AI.WindowsServer.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.ApplicationInsights.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.Core.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Google.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Diagnostics.DiagnosticSource.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Net.Http.Formatting.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Helpers.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Http.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Http.WebHost.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Mvc.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Razor.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Deployment.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.WebPages.Razor.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Web.Optimization.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\RefactorThis.GraphDiff.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\EFSecondLevelCache.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\AutoMapper.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.dll.config
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.csprojResolveAssemblyReference.cache
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.pdb

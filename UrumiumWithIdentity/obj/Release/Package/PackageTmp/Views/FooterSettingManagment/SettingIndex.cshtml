@@ -1,0 +1,94 @@
+﻿@model UrumiumMVC.DomainClasses.Entities.Setting.Setting
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Scripts/plugins/tag/prism.min.js"></script>
+    <script src="~/Scripts/plugins/tag/tagsinput.min.js"></script>
+    <script src="~/Scripts/plugins/tag/tokenfield.min.js"></script>
+    <script src="~/Scripts/plugins/tag/typeahead.bundle.min.js"></script>
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+    <script>
+        $(document).ready(function () {
+         $('.tokenfield').tokenfield();
+        });
+    </script>
+}
+<link href="~/Content/Managment/dist/css/ManagmentIndexStyle.css" rel="stylesheet" />
+<link href="~/Content/Common/taginput/bootstrap-tagsinput.css" rel="stylesheet" />
+<script src="~/Content/Common/taginput/bootstrap-tagsinput.js"></script>
+
+<h2 class="text-center" style="padding:20px;">مدیریت تنظیمات ها</h2>
+
+<div class="row" style="padding-left:100px;padding-right:100px;">
+    @using (Html.BeginForm("AddSetting", "FooterSettingManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="@Model.Tittle" placeholder="عنوان سایت را وارد کنید" id="Tittle" name="Tittle" />
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="@Model.Description" placeholder="توضیحات را وارد کنید" id="Description" name="Description" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" value="@Model.Url" placeholder="آدرس سایت را وارد کنید" id="Url" name="Url" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" value="@Model.Author" placeholder="نویسنده سایت را وارد کنید" id="Author" name="Author" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" value="@Model.FooterLeft" placeholder="توضیحات فوتر سایت را وارد کنید" id="FooterLeft" name="FooterLeft" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" value="@Model.FooterRight" placeholder="نویسنده فوتر سایت را وارد کنید" id="FooterRight" name="FooterRight" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" value="@Model.Instagram" placeholder="اینیستاگرام را وارد کنید" id="Instagram" name="Instagram" />
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" value="@Model.Telegram" placeholder="تلگرام را وارد کنید" id="Telegram" name="Telegram" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" value="@Model.GooglePlus" placeholder="گوگل پلاس را وارد کنید" id="GooglePlus" name="GooglePlus" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" value="@Model.LinkedIn" placeholder="لینکداین را وارد کنید" id="LinkedIn" name="LinkedIn" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" value="@Model.Facebook" placeholder="فیسبوک را وارد کنید" id="Facebook" name="Facebook" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="Keyword" name="Keyword" class="form-control center-block" style="height:50px;" value="@Model.Keyword" data-role="tagsinput" placeholder="کلمات کلیدی را وارد کنید" />
+                </div>
+
+                <div class="form-group">
+                    ایکون سایت را انتخاب کنید
+                    <input type="file" name="Icon" id="Icon" class="btn btn-default" />
+                </div>
+
+
+
+                <div class="form-group">
+                    <input type="submit" name="btnSubmit" class="btn btn-success btn-block" value="ثبت تغییرات" />
+                </div>
+            </div>
+
+
+
+        </div>
+
+    }
+</div>
+
+
+

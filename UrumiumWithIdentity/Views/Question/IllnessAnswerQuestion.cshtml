@@ -1,0 +1,175 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.QuestionViewModel.QuestionListInfoViewModel
+@using Microsoft.AspNet.Identity;
+@{
+    ViewBag.Title = "Doctor";
+    Layout = "~/Views/Shared/_ManagmentLayoutIllness.cshtml";
+}
+
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<h4 class="text-center alert alert-warning" style="padding:30px;">لطفا قبل از ورود به چت روم سوالات زیر را پاسخ دهید</h4>
+<div class="container">
+    <div class="">
+        <div class="">
+            <table id="mytable" class="table table-bordred" style="background-color:white;margin:30px;">
+                <thead>
+                <th class="text-center">سوال</th>
+                <th class="text-center">جواب</th>
+                </thead>
+                <tbody id="listofpharmacy">
+                    @{
+                        foreach (var item in Model.QuestionViewModelList)
+                        {
+                            <tr>
+                                <td class="text-center" style="padding:10px;">@item.Text</td>
+                                @{
+                                    if (item.Have_Answer == true)
+                                    {
+                                        <td class="text-center" style="padding:10px;"><a class="btn btn-warning" onclick="showmodalUpdate(@item.Id)">جواب داده شده</a></td>
+                                    }
+                                    else if (item.Have_Answer == false)
+                                    {
+                                        <td class="text-center" style="padding:10px;"><a class="btn btn-success" onclick="showmodal(@item.Id)">جواب بده</a></td>
+                                    }
+
+                                }
+                                
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+        <p style="margin-right:50px;text-align:center;" class="text-center">
+            <a class="btn btn-success btn-block" onclick="startchat(@Model.VisitId,@Model.IllnessId,@Model.DoctorId)">ورود به چت روم </a>
+        </p>
+    </div>
+</div>
+
+
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">جواب سوال</h4>
+            </div>
+
+            <div class="modal-body">
+                <input type="number" style="display:none" name="id" id="id" />
+                <div class="row">
+                    <div class="col-lg-4">
+                        جواب سوال
+                    </div>
+                    <div class="col-lg-8">
+                        <textarea id="txttextupdate" name="name" class="form-control" placeholder="جواب سوال را وارد کنید"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                <a name="btninsert" class="btn btn-success" value="درج" onclick="answerquestion()">ثبت جواب</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div id="myModalUpdate" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">ویرایش جواب سوال</h4>
+            </div>
+
+            <div class="modal-body">
+                <input type="number" style="display:none" name="id" id="id" />
+                <div class="row">
+                    <div class="col-lg-4">
+                        ویرایش جواب سوال
+                    </div>
+                    <div class="col-lg-8">
+                        <textarea id="txttextupdate" name="name" class="form-control" placeholder="جواب سوال را وارد کنید"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                <a name="btninsert" class="btn btn-success" value="درج" onclick="updateanswerquestion()">ویرایش جواب</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    var questionid;
+    function showmodal(id) {
+        questionid = id;
+        $("#myModal").modal();
+
+    };
+
+    function startchat(visitid, illnessid, doctorid) {
+        window.location.href = "/Chat/DoctorChatroom?visitid=" + visitid + "&&illnessid=" + illnessid + "&&doctorid=" + doctorid + '&name=U';
+    }
+    
+    function showmodalUpdate(id) {
+        questionid = id;
+        $("#myModalUpdate").modal();
+
+    };
+
+    function answerquestion(text) {
+        var txt = $('#txttextupdate').val();
+        $.ajax({
+            type: "Post",
+            url: '/Question/AddAnswerQuestion',
+            data: { text: txt, userid: '@User.Identity.GetUserId()', questionid: questionid },
+            success: function (data) {
+                if (data.success) {
+                    $("#myModal").modal('hide');
+                    swal("انجام شد", "سوال درج شد", "success");
+                    window.location.reload();
+                }
+            }
+        });
+    }
+
+    function updateanswerquestion() {
+        var txt = $('#txttextupdate').val();
+         $.ajax({
+            type: "Post",
+            url: '/Question/UpdateAnswerQuestion',
+            data: { text: txt, id: questionid },
+            success: function (data) {
+                if (data.success) {
+                    $("#myModalUpdate").modal('hide');
+                    swal("انجام شد", "سوال ویرایش شد", "success");
+                    $('#txttextupdate').val('');
+                }
+            }
+        });
+    }
+</script>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<DataLayer.Context.ApplicationUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+<h2 class="text-center" style="padding:50px;">مدیریت کاربران</h2>
+
+<p style="margin:20px;">
+    @Html.ActionLink("ساخت کاربر جدید", "Create")
+</p>
+<table class="table" style="direction:rtl;">
+    <tr>
+        <th class="text-center">
+            نام کاربری
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.ActionLink("بروزرسانی", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("جزییات", "Details", new { id = item.Id }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

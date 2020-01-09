@@ -1,0 +1,13 @@
+﻿
+@model List<UrumiumMVC.DomainClasses.Entities.Noskhe.Noskhe>
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center" style="padding:10px;">@item.MedicineName</td>
+            <td class="text-center" style="padding:10px;">@item.MedicineCount</td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="درج نسخه"><a class="btn btn-warning btn-xs" onclick="deleteitem(@item.Id,@item.VisitId)"><i class="ion ion-ios-trash"></i></a></p></td>
+        </tr>
+    }
+}
+   
