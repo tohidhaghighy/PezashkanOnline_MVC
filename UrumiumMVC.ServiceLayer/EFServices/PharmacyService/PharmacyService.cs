@@ -11,6 +11,7 @@ using UrumiumMVC.Common.Cryptography;
 using UrumiumMVC.Common.Massage;
 using UrumiumMVC.DomainClasses.Entities.Pharmacy;
 using UrumiumMVC.ServiceLayer.Contract.PharmacyInterface;
+using UrumiumMVC.ViewModel.EntityViewModel.NotificationViewModel;
 using UrumiumMVC.ViewModel.EntityViewModel.WebServiceClasses;
 
 namespace UrumiumMVC.ServiceLayer.EFServices.PharmacyService
@@ -184,6 +185,14 @@ namespace UrumiumMVC.ServiceLayer.EFServices.PharmacyService
                 return true;
             }
             return false;
+        }
+
+        public async Task<List<NotificationUser>> GetPharmacyNotifi()
+        {
+            var find = from db in _Pharmacy
+                       select new NotificationUser { Id = db.Id, Name = db.Name, Userid = db.Userid };
+            
+            return find.ToList();
         }
 
         public async Task<bool> UpdatePharmacyMadrakWithMobile(string mobile,string mellicart,string shenasname,string parvane,string nezampezeshki)

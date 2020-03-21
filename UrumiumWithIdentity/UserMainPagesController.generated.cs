@@ -126,6 +126,13 @@ namespace UrumiumWithIdentity.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ViolationList);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> NotificationList()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NotificationList);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public UserMainPagesController Actions { get { return MVC.UserMainPages; } }
@@ -154,6 +161,7 @@ namespace UrumiumWithIdentity.Controllers
             public readonly string PharmacyVisitList = "PharmacyVisitList";
             public readonly string TaiideModir = "TaiideModir";
             public readonly string ViolationList = "ViolationList";
+            public readonly string NotificationList = "NotificationList";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -171,6 +179,7 @@ namespace UrumiumWithIdentity.Controllers
             public const string PharmacyVisitList = "PharmacyVisitList";
             public const string TaiideModir = "TaiideModir";
             public const string ViolationList = "ViolationList";
+            public const string NotificationList = "NotificationList";
         }
 
 
@@ -256,6 +265,14 @@ namespace UrumiumWithIdentity.Controllers
         {
             public readonly string id = "id";
         }
+        static readonly ActionParamsClass_NotificationList s_params_NotificationList = new ActionParamsClass_NotificationList();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_NotificationList NotificationListParams { get { return s_params_NotificationList; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_NotificationList
+        {
+            public readonly string type = "type";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -267,6 +284,7 @@ namespace UrumiumWithIdentity.Controllers
             public class _ViewNamesClass
             {
                 public readonly string _DayDoctorListAjax = "_DayDoctorListAjax";
+                public readonly string _notifylist = "_notifylist";
                 public readonly string _VisitDoctorListAjax = "_VisitDoctorListAjax";
                 public readonly string Doctor = "Doctor";
                 public readonly string DoctorVisitList = "DoctorVisitList";
@@ -281,6 +299,7 @@ namespace UrumiumWithIdentity.Controllers
                 public readonly string ViolationList = "ViolationList";
             }
             public readonly string _DayDoctorListAjax = "~/Views/UserMainPages/_DayDoctorListAjax.cshtml";
+            public readonly string _notifylist = "~/Views/UserMainPages/_notifylist.cshtml";
             public readonly string _VisitDoctorListAjax = "~/Views/UserMainPages/_VisitDoctorListAjax.cshtml";
             public readonly string Doctor = "~/Views/UserMainPages/Doctor.cshtml";
             public readonly string DoctorVisitList = "~/Views/UserMainPages/DoctorVisitList.cshtml";
@@ -442,6 +461,18 @@ namespace UrumiumWithIdentity.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ViolationList);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             ViolationListOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void NotificationListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int type);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> NotificationList(int type)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NotificationList);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "type", type);
+            NotificationListOverride(callInfo, type);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

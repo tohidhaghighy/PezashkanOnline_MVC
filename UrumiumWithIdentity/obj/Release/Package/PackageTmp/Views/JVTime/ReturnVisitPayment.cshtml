@@ -1,0 +1,29 @@
+﻿@model UrumiumWithIdentity.Models.Payment
+@{
+    ViewBag.Title = "ReturnVisitPayment";
+    Layout = "~/Views/Shared/_LayoutNewDesignMain.cshtml";
+}
+
+<div class="container">
+    @{
+        if (Model.Stauts == 1)
+        {
+            <h2 class="text-center" style="color:green;margin-top:50px;">با تشکر از انتخاب شما : @Model.Name</h2>
+            <h3 class="text-center" style="color:green;margin-top:50px;">پرداخت با موفقیت انجام شد</h3>
+
+            <h2 class="text-center" style="margin-top:50px;">شماره تراکنش شما : @Model.Peigiri</h2>
+        }
+        else
+        {
+            <h2 class="text-center" style="color:red;margin-top:50px;">پرداخت انجام نشد</h2>
+            <h3 class="text-center" style="color:green;margin-top:50px;">در صورت کسر شدن از حساب شما تا 30 دقیقه به حسابتان بازگشت داده میشود</h3>
+
+            <h2 class="text-center" style="margin-top:50px;">شماره تراکنش شما : ندارد</h2>
+        }
+    }
+   
+
+    <a class="btn  btn-block" style="margin-top:50px;" href="/">
+        بازگشت به صفحه اصلی
+    </a>
+</div>

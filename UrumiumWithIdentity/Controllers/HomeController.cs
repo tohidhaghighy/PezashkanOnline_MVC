@@ -38,50 +38,51 @@ namespace IdentitySample.Controllers
             _uow = uow;
         }
 
-        public async virtual Task<ActionResult> Index()
-        {
-            MainPageViewModel alllistinfo = new MainPageViewModel();
-            alllistinfo.Doctors =await _doctorservice.GetAllDoctor();
-            alllistinfo.Groups = await _groupservice.GetAllGroup();
-            alllistinfo.Judges = await _judgeservice.GetAlljudge();
-            alllistinfo.Pharmacies = await _pharmacyservice.GetAllPharmacy();
-            var findillness = await _illnessservice.GetAllillness();
-            alllistinfo.IllnessCount = findillness.Count;
-            return View(alllistinfo);
-        }
+        //public async virtual Task<ActionResult> Index()
+        //{
+        //    MainPageViewModel alllistinfo = new MainPageViewModel();
+        //    alllistinfo.Doctors =await _doctorservice.GetAllDoctor();
+        //    alllistinfo.Groups = await _groupservice.GetAllGroup();
+        //    alllistinfo.Judges = await _judgeservice.GetAlljudge();
+        //    alllistinfo.Pharmacies = await _pharmacyservice.GetAllPharmacy();
+        //    var findillness = await _illnessservice.GetAllillness();
+        //    alllistinfo.IllnessCount = findillness.Count;
+        //    return View(alllistinfo);
+        //}
 
-        public async virtual Task<ActionResult> ListDoctor(int groupid)
-        {
-            DoctorListViewModel _doctorlv = new DoctorListViewModel();
-            if (groupid==0)
-            {
-                _doctorlv.Doctors = await _doctorservice.GetAllDoctor();
-            }
-            else
-            {
-                _doctorlv.Doctors = await _doctorservice.GetGroupDoctor(groupid);
-            }
-            _doctorlv.Groups = await _groupservice.GetAllGroup();
-            return View(_doctorlv);
-        }
+        //public async virtual Task<ActionResult> ListDoctor(int groupid)
+        //{
+        //    DoctorListViewModel _doctorlv = new DoctorListViewModel();
+        //    if (groupid==0)
+        //    {
+        //        _doctorlv.Doctors = await _doctorservice.GetAllDoctor();
+        //    }
+        //    else
+        //    {
+        //        _doctorlv.Doctors = await _doctorservice.GetGroupDoctor(groupid);
+        //    }
+        //    _doctorlv.Groups = await _groupservice.GetAllGroup();
+        //    return View(_doctorlv);
+        //}
 
-        public async virtual Task<ActionResult> ListPharmacy()
-        {
-            return View(await _pharmacyservice.GetAllPharmacy());
-        }
+        
+        //public async virtual Task<ActionResult> ListPharmacy()
+        //{
+        //    return View(await _pharmacyservice.GetAllPharmacy());
+        //}
 
-        public async virtual Task<ActionResult> ListJudge()
-        {
-            return View(await _judgeservice.GetAlljudge());
-        }
+        //public async virtual Task<ActionResult> ListJudge()
+        //{
+        //    return View(await _judgeservice.GetAlljudge());
+        //}
 
-        public async virtual Task<ActionResult> DetailDoctor(int id)
-        {
-            DoctorDetailViewModel doctordetail = new DoctorDetailViewModel();
-            doctordetail.Doctors = await _doctorservice.GetDoctor(id);
-            doctordetail.DoctorDays = await _daydoctorservice.GetAllDoctorDaysFromToday(id);
-            return View(doctordetail);
-        }
+        //public async virtual Task<ActionResult> DetailDoctor(int id)
+        //{
+        //    DoctorDetailViewModel doctordetail = new DoctorDetailViewModel();
+        //    doctordetail.Doctors = await _doctorservice.GetDoctor(id);
+        //    doctordetail.DoctorDays = await _daydoctorservice.GetAllDoctorDaysFromToday(id);
+        //    return View(doctordetail);
+        //}
         
     }
 }

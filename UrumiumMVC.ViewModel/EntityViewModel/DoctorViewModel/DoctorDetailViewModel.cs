@@ -11,5 +11,8 @@ namespace UrumiumMVC.ViewModel.EntityViewModel.DoctorViewModel
     {
         public Doctor Doctors { get; set; }
         public List<DoctorDays> DoctorDays { get; set; }
+        public int IsLogin { get; set; }
+        public string WitchUser { get; set; }
+        public string UserId { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace UrumiumMVC.ServiceLayer.Contract.JVTimeInterface
 {
     public interface IJVTimeService
     {
-        Task<bool> AddJudgeIllnessPayment(int illnessid, int cost);
+        Task<bool> AddJudgeIllnessPayment(int illnessid, int cost, string transid);
         Task<List<JudgeIllnessPayment>> GetAllVisitJudgeTime();
         int GetAlljudgeCount();
         Task<List<JudgeIllnessPayment>> GetVisitJudgeList(int id);

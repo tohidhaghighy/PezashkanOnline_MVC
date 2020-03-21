@@ -245,7 +245,6 @@ D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\bin\Debug
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\obj\Debug\UrumiumMVC.ServiceLayer.csprojResolveAssemblyReference.cache
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\obj\Debug\UrumiumMVC.ServiceLayer.dll
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\obj\Debug\UrumiumMVC.ServiceLayer.pdb
-D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\obj\Debug\UrumiumMVC.ServiceLayer.csprojResolveAssemblyReference.cache
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\bin\Debug\UrumiumMVC.ServiceLayer.dll.config
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\bin\Debug\UrumiumMVC.ServiceLayer.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\bin\Debug\UrumiumMVC.ServiceLayer.pdb
@@ -300,5 +299,6 @@ D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\bin\Debu
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\bin\Debug\System.Web.WebPages.Razor.xml
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\bin\Debug\System.Web.Razor.xml
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\obj\Debug\UrumiumMVC.ServiceLayer.csprojResolveAssemblyReference.cache
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\obj\Debug\UrumiumMVC.ServiceLayer.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.ServiceLayer\obj\Debug\UrumiumMVC.ServiceLayer.pdb

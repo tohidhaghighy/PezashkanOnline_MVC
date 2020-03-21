@@ -11,7 +11,7 @@ namespace UrumiumMVC.ServiceLayer.Contract.VisitInterface
 {
     public interface IVisitService
     {
-        Task<bool> AddVisitTime(int timedaydoctor, int doctorid, int userid, DateTime date);
+        Task<bool> AddVisitTime(int timedaydoctor, int doctorid, int userid, DateTime date,string transid);
         Task<bool> DeleteVisitTime(int id);
         Task<List<VisitTime>> GetAllVisitTime();
         Task<List<VisitListViewModel>> GetTodayDoctorVisitTime(int doctorid, DateTime date);

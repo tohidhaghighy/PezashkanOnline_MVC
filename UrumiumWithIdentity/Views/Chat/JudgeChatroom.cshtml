@@ -3,6 +3,14 @@
 @{
     Layout = null;
 }
+
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>bermuda-darman : برمودا درمان</title>
+<meta http-equiv="Content-Language" content="fa" />
+<link rel="icon" href="~/Content/NewDesign/img/icons.png">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -314,58 +322,7 @@
                 <div class="mesgs">
                     <div class="msg_history" id="chatid">
 
-                        @{
-                            if (Model.Allmassages.Count() == 0)
-                            {
-                                <div class="incoming_msg">
-                                    <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                    <div class="received_msg">
-                                        <div class="received_withd_msg">
-                                            <p>
-                                                خوش آمدید منتظر حضور دکتر بمانید
-                                            </p>
-                                            <span class="time_date"> پشتیبانی </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-                            foreach (var item in Model.Allmassages.OrderBy(a=>a.Id))
-                            {
-                                HtmlString msg = new HtmlString(item.Text);
-                                if (item.TypeMassage>0)
-                                {
-                                    msg = new HtmlString(item.OnlyUrlText);
-                                }
-                                if (item.UserJudge == true)
-                                {
-                                    <div class="incoming_msg">
-                                        <div class="incoming_msg_img"> <img src="~/Content/icons/fever.png" alt="sunil"> </div>
-                                        <div class="received_msg">
-                                            <div class="received_withd_msg">
-                                                <p>
-                                                    @msg
-                                                </p>
-                                                <span class="time_date">@Model.Illnessname</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
-                                else
-                                {
-                                    <div class="outgoing_msg">
-                                        <div class="sent_msg">
-                                            <p>
-                                                @msg
-                                            </p>
-                                            <span class="time_date">کارشناس  </span>
-                                        </div>
-                                    </div>
-
-                                }
-                            }
-                        }
-
-
+                        @{Html.RenderPartial("_JudgeChatlist", Model.Allmassages);}
 
                     </div>
                     <div class="type_msg">
@@ -377,7 +334,7 @@
                             <div id="showitem" name="showitem">
 
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -395,7 +352,11 @@
     <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
     <script src="/signalr/hubs"></script>
     <script>
-        scrollbuttom();
+
+        setInterval(function () {
+            UpdateJudge($('#grouptxt').val());
+        }, 20000);
+
         $('#sendimage').click(function () {
             $('#imgupload').trigger('click');
         });
@@ -530,45 +491,69 @@
 
 
         function addvoicetokhodam(voicesrc) {
-            var list = "<div class='incoming_msg'><div class='incoming_msg_img'> <img src='/Content/icons/fever.png' alt='sunil'></div><div class='received_msg'><div class='received_withd_msg'><p><audio controls='' src='" + voicesrc + "'></audio></p><span class='time_date'> کاربر</span></div></div></div>";
+            var list = "<div class='outgoing_msg'><div class='sent_msg'><p><audio controls='' src='" + voicesrc + "'></audio></p><span class='time_date'>خودم</span></div></div>";
             $("#chatid").append(list);
             scrollbuttom();
         }
 
         function addvoicetouser(user, voicesrc) {
-
-            var list = "<div class='outgoing_msg'><div class='sent_msg'><p><audio controls='' src='" + voicesrc + "'></audio></p><span class='time_date'>" + user + "</span></div></div>";
+            var list = "<div class='incoming_msg'><div class='incoming_msg_img'> <img src='/Content/icons/fever.png' alt='sunil'></div><div class='received_msg'><div class='received_withd_msg'><p><audio controls='' src='" + voicesrc + "'></audio></p><span class='time_date'> کاربر</span></div></div></div>";
             $("#chatid").append(list);
             scrollbuttom();
         }
 
 
         function addimgtokhodam(imgsrc) {
-            var list = "<div class='incoming_msg'><div class='incoming_msg_img'> <img src='/Content/icons/fever.png' alt='sunil'></div><div class='received_msg'><div class='received_withd_msg'><p><a href=" + imgsrc + "><img src=" + imgsrc + " style='height:70px;width:70px;' href=" + imgsrc +"/></a></p><span class='time_date'> کاربر</span></div></div></div>";
+            var list = "<div class='outgoing_msg'><div class='sent_msg'><p><a href=" + imgsrc + "><img src=" + imgsrc + " style='height:70px;width:70px;'/></a></p><span class='time_date'>خودم</span></div></div>";
             $("#chatid").append(list);
             scrollbuttom();
         }
 
         function addimgtouser(user, imgsrc) {
-            var list = "<div class='outgoing_msg'><div class='sent_msg'><p><a href=" + imgsrc + "><img src=" + imgsrc + " style='height:70px;width:70px;'/></a></p><span class='time_date'>" + user + "</span></div></div>";
+            var list = "<div class='incoming_msg'><div class='incoming_msg_img'> <img src='/Content/icons/fever.png' alt='sunil'></div><div class='received_msg'><div class='received_withd_msg'><p><a href=" + imgsrc + "><img src=" + imgsrc + " style='height:70px;width:70px;' href=" + imgsrc + "/></a></p><span class='time_date'> کاربر</span></div></div></div>";
+            
             $("#chatid").append(list);
             scrollbuttom();
         }
 
         function addchattokhodam(massege) {
-            var list = "<div class='incoming_msg'><div class='incoming_msg_img'> <img src='/Content/icons/fever.png' alt='sunil'></div><div class='received_msg'><div class='received_withd_msg'><p>" + massege + "</p><span class='time_date'> کاربر</span></div></div></div>";
+            var list = "<div class='outgoing_msg'><div class='sent_msg'><p>" + massege + "</p><span class='time_date'>خودم</span></div></div>";
+
             $("#chatid").append(list);
             scrollbuttom();
         }
 
         function addchattouser(user, massege) {
-            var list = "<div class='outgoing_msg'><div class='sent_msg'><p>" + massege + "</p><span class='time_date'>" + user + "</span></div></div>";
+            var list = "<div class='incoming_msg'><div class='incoming_msg_img'> <img src='/Content/icons/fever.png' alt='sunil'></div><div class='received_msg'><div class='received_withd_msg'><p>" + massege + "</p><span class='time_date'> کاربر</span></div></div></div>";
             $("#chatid").append(list);
             scrollbuttom();
         }
 
+       
+
+
+        function UpdateJudge(visitid) {
+            $.ajax({
+                type: "Post",
+                url: '/Chat/UpdateJudgeChat',
+                data: { visitid: visitid },
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#chatid').empty();
+                        $('#chatid').append(data.View);
+                        scrollbuttom();
+                    }
+                    else {
+                        swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                    }
+
+                }
+            });
+            
+        }
+
         function scrollbuttom() {
-            var objDiv = document.getElementById("chatid");
+            var objDiv = document.getElementById("mesgs");
             objDiv.scrollTop = objDiv.scrollHeight;
         }
     </script>

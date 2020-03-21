@@ -90,7 +90,9 @@ namespace UrumiumWithIdentity.Controllers
         [HttpPost]
         public async virtual Task<ActionResult> AddTakhalof(string peigiri, string despei)
         {
-            if (await _violationservice.AddViolation(peigiri, User.Identity.GetUserId(), despei, 0, ""))
+            HttpCookie userid = Request.Cookies["usercookie"];
+            HttpCookie usertype = Request.Cookies["usertype"];
+            if (await _violationservice.AddViolation(peigiri, userid.Value, despei, 0, ""))
             {
                 return new JsonNetResult
                 {

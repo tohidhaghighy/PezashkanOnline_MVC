@@ -93,6 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\LoginAttribute.cs" />
     <Compile Include="Cryptography\InCrypt.cs" />
     <Compile Include="Extentions\ControllerExtentions.cs" />
     <Compile Include="Extentions\ConvertExtentions.cs" />

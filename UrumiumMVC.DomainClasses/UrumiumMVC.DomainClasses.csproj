@@ -100,6 +100,7 @@
     <Compile Include="Entities\Medicine\Medicine.cs" />
     <Compile Include="Entities\Menu\Menu.cs" />
     <Compile Include="Entities\Noskhe\Noskhe.cs" />
+    <Compile Include="Entities\Notification\Notification.cs" />
     <Compile Include="Entities\Nurse\Nurse.cs" />
     <Compile Include="Entities\Pharmacy\Noskhe_Pharmacy.cs" />
     <Compile Include="Entities\Pharmacy\Pharmacy.cs" />

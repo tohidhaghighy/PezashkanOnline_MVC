@@ -1,0 +1,15 @@
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\UnitTestLayer.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\UnitTestLayer.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\obj\Debug\UnitTestLayer.csprojResolveAssemblyReference.cache
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\obj\Debug\UnitTestLayer.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\obj\Debug\UnitTestLayer.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\nunit.framework.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\nunit.framework.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UnitTestLayer\bin\Debug\nunit.framework.xml

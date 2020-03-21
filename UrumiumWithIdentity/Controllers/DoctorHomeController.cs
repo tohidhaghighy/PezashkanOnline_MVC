@@ -67,6 +67,19 @@ namespace UrumiumWithIdentity.Controllers
             alllistinfo.Cities = await _cityservice.GetAllCity();
             var findillness = await _illnessservice.GetAllillness();
             alllistinfo.IllnessCount = findillness.Count;
+
+
+            HttpCookie myCookie = Request.Cookies["usercookie"];
+            HttpCookie usertype = Request.Cookies["usertype"];
+            alllistinfo.IsLogin = 0;
+            alllistinfo.UserId = "";
+            alllistinfo.UsetType = "";
+            if (myCookie != null)
+            {
+                alllistinfo.IsLogin = 1;
+                alllistinfo.UserId = myCookie.Value;
+                alllistinfo.UsetType = usertype.Value;
+            }
             return View(alllistinfo);
         }
 
@@ -124,7 +137,16 @@ namespace UrumiumWithIdentity.Controllers
             {
                 newcostjudge.CostJudge = 0;
             }
-            
+
+            HttpCookie myCookie = Request.Cookies["usercookie"];
+            HttpCookie usertype = Request.Cookies["usertype"];
+            newcostjudge.IsLogin = 0;
+            if (myCookie != null)
+            {
+                newcostjudge.IsLogin = 1;
+                newcostjudge.UserId = myCookie.Value;
+                newcostjudge.WitchUser = usertype.Value;
+            }
             newcostjudge.Judges = await _judgeservice.GetAlljudgeActive();
             return View(newcostjudge);
         }
@@ -148,6 +170,15 @@ namespace UrumiumWithIdentity.Controllers
                 alldatetimevisit.Add(newdoctortime);
             }
             doctordetail.DoctorDays = alldatetimevisit;
+            HttpCookie myCookie = Request.Cookies["usercookie"];
+            HttpCookie usertype = Request.Cookies["usertype"];
+            doctordetail.IsLogin = 0;
+            if (myCookie !=null)
+            {
+                doctordetail.IsLogin = 1;
+                doctordetail.WitchUser = usertype.Value;
+                doctordetail.UserId = myCookie.Value;
+            }
             return View(doctordetail);
         }
 
@@ -165,6 +196,17 @@ namespace UrumiumWithIdentity.Controllers
         public async virtual Task<ActionResult> SiteCooperationwithus()
         {
             return View(await _siteinfoservice.GetSitePageInfo());
+        }
+
+
+        public String RemoveSession()
+        {
+            if (Request.Cookies["usercookie"] != null)
+            {
+                Response.Cookies["usercookie"].Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies["usertype"].Expires = DateTime.Now.AddDays(-1);
+            }
+            return "با موفقیت حذف شد";
         }
     }
 }

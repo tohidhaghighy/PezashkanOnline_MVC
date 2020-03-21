@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using UrumiumMVC.Common.Massage;
 using UrumiumMVC.DomainClasses.Entities.judge;
 using UrumiumMVC.ServiceLayer.Contract.JudgeInterface;
+using UrumiumMVC.ViewModel.EntityViewModel.NotificationViewModel;
 using UrumiumMVC.ViewModel.EntityViewModel.WebServiceClasses;
 
 namespace UrumiumMVC.ServiceLayer.EFServices.JudgeService
@@ -93,6 +94,14 @@ namespace UrumiumMVC.ServiceLayer.EFServices.JudgeService
                 return true;
             }
             return false;
+        }
+
+        public async Task<List<NotificationUser>> GetJudgeNotifi()
+        {
+            var find = from db in _judge
+                       select new NotificationUser { Id = db.Id, Name = db.Name, Userid = db.Userid };
+            
+            return find.ToList();
         }
 
         public async Task<judge> GetJudgeInfowithmobile(string mobile)
@@ -265,7 +274,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.JudgeService
             return false;
         }
 
-        public async Task<bool> Updatejudgewithmobile(string mobile, string Name, string Description, int CityId, string Image)
+        public async Task<bool> Updatejudgewithmobile(string mobile, string Name,string bankcode, string Description, int CityId, string Image)
         {
             var find = await _judge.FirstOrDefaultAsync(a => a.Mobile == mobile);
             if (find != null)
@@ -277,6 +286,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.JudgeService
                 {
                     find.Image = Image;
                 }
+                find.AccountNumber = bankcode;
                 await _unitOfWork.SaveChangesAsync();
                 return true;
             }

@@ -33,7 +33,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.JVTimeService
             _Judge = _unitOfWork.Set<judge>();
         }
 
-        public async Task<bool> AddJudgeIllnessPayment(int illnessid,int cost)
+        public async Task<bool> AddJudgeIllnessPayment(int illnessid,int cost,string transid)
         {
             try
             {
@@ -44,7 +44,8 @@ namespace UrumiumMVC.ServiceLayer.EFServices.JVTimeService
                     IllnessId=illnessid,
                     FinishAnswer=false,
                     Cost=cost,
-                    Peigiricode=s
+                    Peigiricode=s,
+                    TransId=transid
                 });
                 await _unitOfWork.SaveChangesAsync();
                 return true;

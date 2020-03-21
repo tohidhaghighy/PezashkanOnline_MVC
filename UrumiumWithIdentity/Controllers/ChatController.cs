@@ -1,10 +1,12 @@
 ﻿using DataLayer.Context;
+using OstanAg.Common.Extentions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using UrumiumMVC.Common.UploadJson;
 using UrumiumMVC.ServiceLayer.Contract.DoctorInterface;
 using UrumiumMVC.ServiceLayer.Contract.IllnessInterface;
 using UrumiumMVC.ServiceLayer.Contract.MassageIllnessInterface;
@@ -108,6 +110,62 @@ namespace UrumiumWithIdentity.Controllers
             chatinfo.Allmassages = await _massagejudgeservices.GetAllJudgeIllness(visitid);
             chatinfo.Allmassages.Reverse();
             return View(chatinfo);
+        }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> UpdateDocotrChat(int visitid)
+        {
+            try
+            {
+                return new JsonNetResult
+                {
+                    Data = new
+                    {
+                        success = true,
+                        View = this.RenderPartialViewToString("_DoctorChatlist", await _massageillnessservices.GetAllIllnessMassage(visitid))
+                    }
+                };
+            }
+            catch (Exception)
+            {
+
+                return new JsonNetResult
+                {
+                    Data = new
+                    {
+                        success = false
+                    }
+                };
+            }
+
+        }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> UpdateJudgeChat(int visitid)
+        {
+            try
+            {
+                return new JsonNetResult
+                {
+                    Data = new
+                    {
+                        success = true,
+                        View = this.RenderPartialViewToString("_JudgeChatlist", await _massagejudgeservices.GetAllJudgeIllness(visitid))
+                    }
+                };
+            }
+            catch (Exception)
+            {
+
+                return new JsonNetResult
+                {
+                    Data = new
+                    {
+                        success = false
+                    }
+                };
+            }
+
         }
 
     }

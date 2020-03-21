@@ -84,6 +84,20 @@ namespace UrumiumWithIdentity.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.JudgeChatroom);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateDocotrChat()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateDocotrChat);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateJudgeChat()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateJudgeChat);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ChatController Actions { get { return MVC.Chat; } }
@@ -104,6 +118,8 @@ namespace UrumiumWithIdentity.Controllers
             public readonly string JudgeChat = "JudgeChat";
             public readonly string DoctorChatroom = "DoctorChatroom";
             public readonly string JudgeChatroom = "JudgeChatroom";
+            public readonly string UpdateDocotrChat = "UpdateDocotrChat";
+            public readonly string UpdateJudgeChat = "UpdateJudgeChat";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -113,6 +129,8 @@ namespace UrumiumWithIdentity.Controllers
             public const string JudgeChat = "JudgeChat";
             public const string DoctorChatroom = "DoctorChatroom";
             public const string JudgeChatroom = "JudgeChatroom";
+            public const string UpdateDocotrChat = "UpdateDocotrChat";
+            public const string UpdateJudgeChat = "UpdateJudgeChat";
         }
 
 
@@ -158,6 +176,22 @@ namespace UrumiumWithIdentity.Controllers
             public readonly string illnessid = "illnessid";
             public readonly string name = "name";
         }
+        static readonly ActionParamsClass_UpdateDocotrChat s_params_UpdateDocotrChat = new ActionParamsClass_UpdateDocotrChat();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UpdateDocotrChat UpdateDocotrChatParams { get { return s_params_UpdateDocotrChat; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UpdateDocotrChat
+        {
+            public readonly string visitid = "visitid";
+        }
+        static readonly ActionParamsClass_UpdateJudgeChat s_params_UpdateJudgeChat = new ActionParamsClass_UpdateJudgeChat();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UpdateJudgeChat UpdateJudgeChatParams { get { return s_params_UpdateJudgeChat; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UpdateJudgeChat
+        {
+            public readonly string visitid = "visitid";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -168,6 +202,8 @@ namespace UrumiumWithIdentity.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _DoctorChatlist = "_DoctorChatlist";
+                public readonly string _JudgeChatlist = "_JudgeChatlist";
                 public readonly string chattest = "chattest";
                 public readonly string DoctorChatroom = "DoctorChatroom";
                 public readonly string Index = "Index";
@@ -175,6 +211,8 @@ namespace UrumiumWithIdentity.Controllers
                 public readonly string JudgeChatroom = "JudgeChatroom";
                 public readonly string ViewPage1 = "ViewPage1";
             }
+            public readonly string _DoctorChatlist = "~/Views/Chat/_DoctorChatlist.cshtml";
+            public readonly string _JudgeChatlist = "~/Views/Chat/_JudgeChatlist.cshtml";
             public readonly string chattest = "~/Views/Chat/chattest.cshtml";
             public readonly string DoctorChatroom = "~/Views/Chat/DoctorChatroom.cshtml";
             public readonly string Index = "~/Views/Chat/Index.cshtml";
@@ -244,6 +282,30 @@ namespace UrumiumWithIdentity.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "illnessid", illnessid);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "name", name);
             JudgeChatroomOverride(callInfo, visitid, illnessid, name);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void UpdateDocotrChatOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int visitid);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateDocotrChat(int visitid)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateDocotrChat);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "visitid", visitid);
+            UpdateDocotrChatOverride(callInfo, visitid);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void UpdateJudgeChatOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int visitid);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateJudgeChat(int visitid)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateJudgeChat);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "visitid", visitid);
+            UpdateJudgeChatOverride(callInfo, visitid);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

@@ -422,3 +422,6 @@ D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\obj\Release\
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\obj\Release\UrumiumWithIdentity.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\obj\Release\UrumiumWithIdentity.pdb
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\SmsIrRestful.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\nunit.framework.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\nunit.framework.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\nunit.framework.xml

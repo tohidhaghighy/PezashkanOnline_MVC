@@ -550,6 +550,7 @@ D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.Core.xml
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.csprojResolveAssemblyReference.cache
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\ApplicationInsights.config
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll.config
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumWithIdentity.dll
@@ -610,6 +611,7 @@ D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsof
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Web.Infrastructure.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.dll
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\nunit.framework.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Owin.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\SmsIrRestful.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.dll
@@ -677,6 +679,8 @@ D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsof
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Microsoft.Owin.Security.Twitter.xml
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.pdb
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\Newtonsoft.Json.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\nunit.framework.pdb
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\nunit.framework.xml
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.xml
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Diagnostics.DiagnosticSource.xml
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\System.Net.Http.Formatting.xml
@@ -697,6 +701,5 @@ D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumM
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\UrumiumMVC.AutoMapper.dll.config
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.pdb
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\bin\StructureMap.Web.xml
-D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.csprojResolveAssemblyReference.cache
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumWithIdentity\obj\Debug\UrumiumWithIdentity.pdb

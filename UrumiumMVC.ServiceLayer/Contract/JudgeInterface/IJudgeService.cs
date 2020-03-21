@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UrumiumMVC.DomainClasses.Entities.judge;
+using UrumiumMVC.ViewModel.EntityViewModel.NotificationViewModel;
 using UrumiumMVC.ViewModel.EntityViewModel.WebServiceClasses;
 
 namespace UrumiumMVC.ServiceLayer.Contract.JudgeInterface
@@ -16,6 +17,7 @@ namespace UrumiumMVC.ServiceLayer.Contract.JudgeInterface
         Task<bool> Deletejudge(int id);
         int GetAlljudgeCount();
         Task<List<judge>> GetAlljudge();
+        Task<List<NotificationUser>> GetJudgeNotifi();
         Task<List<judge>> GetAlljudgeActive();
         Task<List<judge>> Searchjudge(string text);
         Task<bool> Updatejudge(int id, string accountnumber, string Name, string Description, int CityId, string Image);
@@ -33,7 +35,7 @@ namespace UrumiumMVC.ServiceLayer.Contract.JudgeInterface
 
         //web service
         Task<judge> GetJudgeInfowithmobile(string mobile);
-        Task<bool> Updatejudgewithmobile(string mobile, string Name, string Description, int CityId, string Image);
+        Task<bool> Updatejudgewithmobile(string mobile, string Name, string bankcode, string Description, int CityId, string Image);
         Task<Boolean> UpdateActiveJudgeuser(string mobile);
         Task<Boolean> Changepassword(string mobile, string pass, string newpassword);
     }

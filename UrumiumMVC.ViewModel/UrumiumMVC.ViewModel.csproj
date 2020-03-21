@@ -78,6 +78,7 @@
     <Compile Include="EntityViewModel\AccountingViewModel\AccountingViewModel.cs" />
     <Compile Include="EntityViewModel\ChatViewModel\ChatJudgeUser.cs" />
     <Compile Include="EntityViewModel\ChatViewModel\ChatUser.cs" />
+    <Compile Include="EntityViewModel\ChatViewModel\IllnessMassageViewModel.cs" />
     <Compile Include="EntityViewModel\CityState\CityViewModel.cs" />
     <Compile Include="EntityViewModel\CityState\CityWebService.cs" />
     <Compile Include="EntityViewModel\CityState\CityWithoutFroegnkey.cs" />
@@ -108,6 +109,9 @@
     <Compile Include="EntityViewModel\Marketing\Marketing.cs" />
     <Compile Include="EntityViewModel\MedicineViewModel\MedicineVM.cs" />
     <Compile Include="EntityViewModel\NoskheViewModel\NoskheViewModel.cs" />
+    <Compile Include="EntityViewModel\NotificationViewModel\NotificationDetail.cs" />
+    <Compile Include="EntityViewModel\NotificationViewModel\NotificationMain.cs" />
+    <Compile Include="EntityViewModel\NotificationViewModel\NotificationUser.cs" />
     <Compile Include="EntityViewModel\PharmacyMassage\PharmacyMassageInfoViewModel.cs" />
     <Compile Include="EntityViewModel\PharmacyMassage\PharmacyMassegeListViewModel.cs" />
     <Compile Include="EntityViewModel\PharmacyViewModel\PharmacyListSendedNoskhe.cs" />

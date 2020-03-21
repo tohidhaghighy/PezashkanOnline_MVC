@@ -297,7 +297,6 @@ D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.IocConfig\bin\Debug\Mi
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.IocConfig\bin\Debug\EFSecondLevelCache.xml
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.IocConfig\obj\Debug\UrumiumMVC.IocConfig.dll
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\UrumiumMVC.IocConfig\obj\Debug\UrumiumMVC.IocConfig.pdb
-D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.IocConfig\obj\Debug\UrumiumMVC.IocConfig.csprojResolveAssemblyReference.cache
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.IocConfig\bin\Debug\UrumiumMVC.IocConfig.dll.config
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.IocConfig\bin\Debug\UrumiumMVC.IocConfig.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.IocConfig\bin\Debug\UrumiumMVC.IocConfig.pdb
@@ -365,5 +364,6 @@ D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.IocConfig\bin\Debug\S
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.IocConfig\bin\Debug\System.Web.WebPages.Razor.xml
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.IocConfig\bin\Debug\System.Web.Razor.xml
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.IocConfig\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.IocConfig\obj\Debug\UrumiumMVC.IocConfig.csprojResolveAssemblyReference.cache
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.IocConfig\obj\Debug\UrumiumMVC.IocConfig.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\UrumiumMVC.IocConfig\obj\Debug\UrumiumMVC.IocConfig.pdb

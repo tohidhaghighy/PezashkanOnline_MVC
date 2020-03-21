@@ -17,5 +17,6 @@ namespace UrumiumMVC.ViewModel.EntityViewModel.DoctorViewModel
         public string Description { get; set; }
         public string Takhasos { get; set; }
         public string NezamPezeshki { get; set; }
+        public string Bankcode { get; set; }
     }
 }

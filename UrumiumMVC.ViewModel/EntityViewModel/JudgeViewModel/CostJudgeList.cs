@@ -11,5 +11,8 @@ namespace UrumiumMVC.ViewModel.EntityViewModel.JudgeViewModel
     {
         public int CostJudge { get; set; }
         public List<judge> Judges { get; set; }
+        public int IsLogin { get; set; }
+        public string UserId { get; set; }
+        public string WitchUser { get; set; }
     }
 }

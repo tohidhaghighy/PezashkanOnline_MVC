@@ -262,7 +262,6 @@ D:\ارومیوم\StoreCrm\UrumiumWithIdentity\DataLayer\bin\Debug\System.Web.We
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\DataLayer\obj\Debug\DataLayer.dll
 D:\ارومیوم\StoreCrm\UrumiumWithIdentity\DataLayer\obj\Debug\DataLayer.pdb
-D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\DataLayer\bin\Debug\DataLayer.dll.config
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\DataLayer\bin\Debug\DataLayer.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\DataLayer\bin\Debug\DataLayer.pdb
@@ -307,5 +306,6 @@ D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\DataLayer\bin\Debug\System.Net.H
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\DataLayer\bin\Debug\System.Web.Http.xml
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\DataLayer\bin\Debug\System.Web.Http.Owin.xml
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\DataLayer\bin\Debug\System.Web.Mvc.Extensions.xml
+D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\DataLayer\obj\Debug\DataLayer.dll
 D:\ارومیوم\Pezeshkan\UrumiumWithIdentity\DataLayer\obj\Debug\DataLayer.pdb

@@ -42,7 +42,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.VisitService
             _Illness = _unitOfWork.Set<Illness>();
         }
 
-        public async Task<bool> AddVisitTime(int timedaydoctor, int doctorid, int userid,DateTime date)
+        public async Task<bool> AddVisitTime(int timedaydoctor, int doctorid, int userid,DateTime date,string transid)
         {
             try
             {
@@ -64,7 +64,8 @@ namespace UrumiumMVC.ServiceLayer.EFServices.VisitService
                     GiveMedicineFrom_Pharmacy = false,
                     PeigiriCode=codegenerate,
                     Nobat=count+1,
-                    Cost=finddoctor.Cost
+                    Cost=finddoctor.Cost,
+                    TransId=transid
                 });
                 await _unitOfWork.SaveChangesAsync();
                 return true;

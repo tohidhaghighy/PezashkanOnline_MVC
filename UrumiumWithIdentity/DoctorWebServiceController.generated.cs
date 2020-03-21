@@ -635,6 +635,7 @@ namespace UrumiumWithIdentity.Controllers
         {
             public readonly string id = "id";
             public readonly string name = "name";
+            public readonly string bankcode = "bankcode";
             public readonly string cityid = "cityid";
             public readonly string groupid = "groupid";
             public readonly string description = "description";
@@ -1141,21 +1142,22 @@ namespace UrumiumWithIdentity.Controllers
         }
 
         [NonAction]
-        partial void UpdateDoctorInfoOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, string name, int cityid, int groupid, string description, int cost, string nezampezeshki, string image);
+        partial void UpdateDoctorInfoOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, string name, string bankcode, int cityid, int groupid, string description, int cost, string nezampezeshki, string image);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateDoctorInfo(int id, string name, int cityid, int groupid, string description, int cost, string nezampezeshki, string image)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateDoctorInfo(int id, string name, string bankcode, int cityid, int groupid, string description, int cost, string nezampezeshki, string image)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateDoctorInfo);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "name", name);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "bankcode", bankcode);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "cityid", cityid);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "groupid", groupid);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "description", description);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "cost", cost);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "nezampezeshki", nezampezeshki);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "image", image);
-            UpdateDoctorInfoOverride(callInfo, id, name, cityid, groupid, description, cost, nezampezeshki, image);
+            UpdateDoctorInfoOverride(callInfo, id, name, bankcode, cityid, groupid, description, cost, nezampezeshki, image);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

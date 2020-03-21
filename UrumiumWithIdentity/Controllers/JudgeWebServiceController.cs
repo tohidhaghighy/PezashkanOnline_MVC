@@ -43,7 +43,7 @@ namespace UrumiumWithIdentity.Controllers
         }
 
         [System.Web.Http.HttpPost]
-        public virtual async Task<ActionResult> UpdateJudgeInfo(string mobile, string name, string description, int cityid, string image)
+        public virtual async Task<ActionResult> UpdateJudgeInfo(string mobile="", string name="",string bankcode="", string description="", int cityid=0, string image="")
         {
             string imagedoctor = "";
             if (image != "")
@@ -53,7 +53,7 @@ namespace UrumiumWithIdentity.Controllers
                 byte[] imageillnessBytes = Convert.FromBase64String(image);
                 System.IO.File.WriteAllBytes(imgillnessiamge, imageillnessBytes);
             }
-            return Json(await _judgeservice.Updatejudgewithmobile(mobile, name, description, cityid, imagedoctor));
+            return Json(await _judgeservice.Updatejudgewithmobile(mobile, name,bankcode, description, cityid, imagedoctor));
         }
 
 

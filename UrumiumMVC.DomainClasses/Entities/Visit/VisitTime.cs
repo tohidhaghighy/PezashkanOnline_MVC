@@ -22,6 +22,7 @@ namespace UrumiumMVC.DomainClasses.Entities.Visit
         public string PeigiriCode { get; set; }
         public int Nobat { get; set; }
         public int Cost { get; set; }
+        public string TransId { get; set; }
 
 
         [ForeignKey(nameof(TimeDayDoctor))]

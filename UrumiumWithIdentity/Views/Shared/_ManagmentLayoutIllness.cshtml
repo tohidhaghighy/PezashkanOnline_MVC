@@ -37,11 +37,11 @@
 
         <header class="main-header">
             <!-- Logo -->
-            <a href="/" class="logo">
+            <a href="/DoctorHome/ListDoctor?groupid=0" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">پنل</span>
+                <span class="logo-mini">رزرو</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>ورود به صفحه اصلی سایت</b></span>
+                <span class="logo-lg"><b>رزرو وقت پزشک</b></span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -58,27 +58,8 @@
                                 <i class="fa fa-envelope-o"></i>
                                 <span class="label label-success">1</span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">1 پیام خوانده نشده</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li>
-                                            <!-- start message -->
-                                            <a href="#">
-                                                <div class="pull-right">
-                                                    <img src="~/uploads/tohid.jpg" class="img-circle" alt="User Image">
-                                                </div>
-                                                <h4>
-                                                    <br />
-                                                    <small><i class="fa fa-user"></i> توحید حقیقی</small>
-                                                </h4>
-                                                <p>به پنل مدیریت خوش آمدید</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">نمایش تمام پیام ها</a></li>
+                            <ul class="dropdown-menu" id="notifylist">
+                                
                             </ul>
                         </li>
 
@@ -322,9 +303,29 @@
     <script src="~/Content/Managment/bower_components/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-        
+
+        $(document).ready(function () {
+            sendmassageuser();
+        });
+
+        function sendmassageuser() {
+            $.ajax({
+                type: "Post",
+                url: '/UserMainPages/NotificationList',
+                data: {
+                    type: 3
+                },
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#notifylist').empty();
+                        $('#notifylist').append(data.View);
+                    }
+                }
+            });
+        }
+
         $.widget.bridge('uibutton', $.ui.button);
-        
+
     </script>
     <!-- Bootstrap 3.3.7 -->
     <script src="~/Content/Managment/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

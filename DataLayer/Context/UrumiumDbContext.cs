@@ -32,6 +32,7 @@ using UrumiumMVC.DomainClasses.Entities.Question;
 using UrumiumMVC.DomainClasses.Entities.Noskhe;
 using UrumiumMVC.DomainClasses.Entities.Violation;
 using UrumiumMVC.DomainClasses.Entities.Nurse;
+using UrumiumMVC.DomainClasses.Entities.Notification;
 
 namespace DataLayer.Context
 {
@@ -87,6 +88,7 @@ namespace DataLayer.Context
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<judge> Judges { get; set; }
         public DbSet<Illness> Illnesses { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
         public DbSet<Insurance> Insurances { get; set; }
         public DbSet<InsuranceDoctor> InsuranceDoctors { get; set; }
         public DbSet<Day> Days { get; set; }

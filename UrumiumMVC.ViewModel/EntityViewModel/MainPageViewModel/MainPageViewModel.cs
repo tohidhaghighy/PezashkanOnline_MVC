@@ -19,5 +19,8 @@ namespace UrumiumMVC.ViewModel.EntityViewModel.MainPageViewModel
         public List<Pharmacy> Pharmacies { get; set; }
         public List<City> Cities { get; set; }
         public int IllnessCount { get; set; }
+        public string UserId { get; set; }
+        public string UsetType { get; set; }
+        public int IsLogin { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UrumiumMVC.DomainClasses.Entities.Doctor;
 using UrumiumMVC.ViewModel.EntityViewModel.DoctorViewModel;
+using UrumiumMVC.ViewModel.EntityViewModel.NotificationViewModel;
 using UrumiumMVC.ViewModel.EntityViewModel.WebServiceClasses;
 
 namespace UrumiumMVC.ServiceLayer.Contract.DoctorInterface
@@ -17,6 +18,7 @@ namespace UrumiumMVC.ServiceLayer.Contract.DoctorInterface
         Task<bool> DeleteDoctor(int id);
         int GetAllDoctorCount();
         Task<List<Doctor>> GetAllDoctor();
+        Task<List<NotificationUser>> GetDoctorNotifiList();
         Task<List<Doctor>> GetAllDoctorActive();
         Task<List<Doctor>> GetAllCityDoctor(int cityid,string text);
         Task<List<Doctor>> GetGroupCityDoctor(int groupid, int cityid,string text);
@@ -59,7 +61,7 @@ namespace UrumiumMVC.ServiceLayer.Contract.DoctorInterface
 
         // web service managment
         Task<DoctorDetailWebService> GetDoctorWithMobileWebService(string mobile);
-        Task<bool> UpdateDoctorWebservice(int id, string Name, int CityId, int groupid, string nezampezeshki, int cost, string description, string image);
+        Task<bool> UpdateDoctorWebservice(int id, string Name, string bankcode, int CityId, int groupid, string nezampezeshki, int cost, string description, string image);
         Task<List<DoctorWebService>> GetCityGroupDoctorForService(int cityid, int groupid);
         Task<Boolean> UpdateActiveDoctoruser(string mobile);
         Task<Boolean> Changepassword(string mobile, string pass, string newpassword);

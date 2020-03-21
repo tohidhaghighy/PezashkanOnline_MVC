@@ -15,6 +15,7 @@ namespace UrumiumMVC.DomainClasses.Entities.judge
         public int IllnessId { get; set; }
         public string Peigiricode { get; set; }
         public Boolean FinishAnswer { get; set; }
+        public string TransId { get; set; }
 
         [ForeignKey(nameof(IllnessId))]
         public virtual Illness.Illness Illnesses { get; set; }

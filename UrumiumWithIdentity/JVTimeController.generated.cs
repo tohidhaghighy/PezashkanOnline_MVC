@@ -65,9 +65,16 @@ namespace UrumiumWithIdentity.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> AddVisitJudge()
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> AddVisitJudgePayment()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddVisitJudge);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddVisitJudgePayment);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ReturnVisitPayment()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ReturnVisitPayment);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
@@ -87,14 +94,16 @@ namespace UrumiumWithIdentity.Controllers
         public class ActionNamesClass
         {
             public readonly string IllnessJudgeVisit = "IllnessJudgeVisit";
-            public readonly string AddVisitJudge = "AddVisitJudge";
+            public readonly string AddVisitJudgePayment = "AddVisitJudgePayment";
+            public readonly string ReturnVisitPayment = "ReturnVisitPayment";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string IllnessJudgeVisit = "IllnessJudgeVisit";
-            public const string AddVisitJudge = "AddVisitJudge";
+            public const string AddVisitJudgePayment = "AddVisitJudgePayment";
+            public const string ReturnVisitPayment = "ReturnVisitPayment";
         }
 
 
@@ -106,14 +115,22 @@ namespace UrumiumWithIdentity.Controllers
         {
             public readonly string id = "id";
         }
-        static readonly ActionParamsClass_AddVisitJudge s_params_AddVisitJudge = new ActionParamsClass_AddVisitJudge();
+        static readonly ActionParamsClass_AddVisitJudgePayment s_params_AddVisitJudgePayment = new ActionParamsClass_AddVisitJudgePayment();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_AddVisitJudge AddVisitJudgeParams { get { return s_params_AddVisitJudge; } }
+        public ActionParamsClass_AddVisitJudgePayment AddVisitJudgePaymentParams { get { return s_params_AddVisitJudgePayment; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_AddVisitJudge
+        public class ActionParamsClass_AddVisitJudgePayment
         {
             public readonly string illnessid = "illnessid";
-            public readonly string cost = "cost";
+            public readonly string amount = "amount";
+        }
+        static readonly ActionParamsClass_ReturnVisitPayment s_params_ReturnVisitPayment = new ActionParamsClass_ReturnVisitPayment();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ReturnVisitPayment ReturnVisitPaymentParams { get { return s_params_ReturnVisitPayment; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ReturnVisitPayment
+        {
+            public readonly string Vresult = "Vresult";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -126,8 +143,10 @@ namespace UrumiumWithIdentity.Controllers
             public class _ViewNamesClass
             {
                 public readonly string IllnessJudgeVisit = "IllnessJudgeVisit";
+                public readonly string ReturnVisitPayment = "ReturnVisitPayment";
             }
             public readonly string IllnessJudgeVisit = "~/Views/JVTime/IllnessJudgeVisit.cshtml";
+            public readonly string ReturnVisitPayment = "~/Views/JVTime/ReturnVisitPayment.cshtml";
         }
     }
 
@@ -149,15 +168,27 @@ namespace UrumiumWithIdentity.Controllers
         }
 
         [NonAction]
-        partial void AddVisitJudgeOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string illnessid, int cost);
+        partial void AddVisitJudgePaymentOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string illnessid, string amount);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> AddVisitJudge(string illnessid, int cost)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> AddVisitJudgePayment(string illnessid, string amount)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddVisitJudge);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddVisitJudgePayment);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "illnessid", illnessid);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "cost", cost);
-            AddVisitJudgeOverride(callInfo, illnessid, cost);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "amount", amount);
+            AddVisitJudgePaymentOverride(callInfo, illnessid, amount);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void ReturnVisitPaymentOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, UrumiumWithIdentity.Models.VerifyResultPayment Vresult);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ReturnVisitPayment(UrumiumWithIdentity.Models.VerifyResultPayment Vresult)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ReturnVisitPayment);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "Vresult", Vresult);
+            ReturnVisitPaymentOverride(callInfo, Vresult);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

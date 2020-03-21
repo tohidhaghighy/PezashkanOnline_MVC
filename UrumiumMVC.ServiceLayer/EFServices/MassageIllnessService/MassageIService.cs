@@ -6,8 +6,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UrumiumMVC.Common.TimeConverter;
 using UrumiumMVC.DomainClasses.Entities.Illness;
 using UrumiumMVC.ServiceLayer.Contract.MassageIllnessInterface;
+using UrumiumMVC.ViewModel.EntityViewModel.ChatViewModel;
 
 namespace UrumiumMVC.ServiceLayer.EFServices.MassageIllnessService
 {
@@ -53,7 +55,12 @@ namespace UrumiumMVC.ServiceLayer.EFServices.MassageIllnessService
 
         public async Task<List<IllnessMassage>> GetAllIllnessMassage(int visitid)
         {
-            return await _IllnessMassage.Where(b=>b.VisitId==visitid).OrderByDescending(a => a.Id).ToListAsync();
+            Converter convert = new Converter();
+            var findallmassage = from db in _IllnessMassage
+                                 where db.VisitId == visitid
+                                 select db;
+
+            return await findallmassage.OrderByDescending(a => a.Id).ToListAsync();
         }
     }
 }

@@ -24,6 +24,7 @@ using UrumiumMVC.Common.UploadJson;
 using OstanAg.Common.Extentions;
 using UrumiumMVC.ServiceLayer.Contract.JVTimeInterface;
 using UrumiumMVC.ServiceLayer.Contract.ViolationInterface;
+using UrumiumMVC.ServiceLayer.Contract.NotificationInterface;
 
 namespace UrumiumWithIdentity.Controllers
 {
@@ -41,13 +42,15 @@ namespace UrumiumWithIdentity.Controllers
         IJVTimeService _jvtimeservice;
         IVisitService _visitservice;
         IViolationService _violationservice;
+        INotificationService _notificationservice;
        
         readonly IUnitOfWork _uow;
-        public UserMainPagesController(ITimeDayDrService newdoctortimeservice,IViolationService violationservice, IJVTimeService jvtimeservice, IGroupService newgroupservice, IStateService newstateservice, IDoctorService newdoctorservice, IDayService dayservice,IIllnessService illnessservice,IBimeService bimeservice,IJudgeService judgeservie,IPharmacyService pharmacyservice,IVisitService visitservice,
+        public UserMainPagesController(ITimeDayDrService newdoctortimeservice, INotificationService notificationservice, IViolationService violationservice, IJVTimeService jvtimeservice, IGroupService newgroupservice, IStateService newstateservice, IDoctorService newdoctorservice, IDayService dayservice,IIllnessService illnessservice,IBimeService bimeservice,IJudgeService judgeservie,IPharmacyService pharmacyservice,IVisitService visitservice,
             IUnitOfWork uow)
         {
             _groupservice = newgroupservice;
             _violationservice = violationservice;
+            _notificationservice = notificationservice;
             _doctortimeservices = newdoctortimeservice;
             _stateservice = newstateservice;
             _jvtimeservice = jvtimeservice;
@@ -194,6 +197,57 @@ namespace UrumiumWithIdentity.Controllers
         public async virtual Task<ActionResult> ViolationList(string id)
         {
             return View(await _violationservice.GetViolationuserwithanswer(id));
+        }
+
+        [HttpPost]
+        public async virtual Task<ActionResult> NotificationList(int type)
+        {
+            HttpCookie myCookie = Request.Cookies["usercookie"];
+            HttpCookie usertype = Request.Cookies["usertype"];
+            int userid = 0;
+            if (type==1)
+            {
+                var doctor = await _doctorservice.GetDoctorwithguidid(myCookie.Value);
+                userid = doctor.Id;
+            }
+            else if (type==2)
+            {
+                var judge = await _judgeservice.Getjudge(myCookie.Value);
+                userid = judge.Id;
+            }
+            else if (type==3)
+            {
+                var illness = await _illnessservice.Getillness(myCookie.Value);
+                userid = illness.Id;
+            }
+            else if (type==4)
+            {
+                var pharmacy = await _pharmacyservice.GetPharmacy(myCookie.Value);
+                userid = pharmacy.Id;
+            }
+            try
+            {
+                return new JsonNetResult
+                {
+                    Data = new
+                    {
+                        success = true,
+                        View = this.RenderPartialViewToString("_notifylist", await _notificationservice.GetNotification(userid.ToString(), type))
+                    }
+                };
+            }
+            catch (Exception)
+            {
+
+                return new JsonNetResult
+                {
+                    Data = new
+                    {
+                        success = false,
+                        View = this.RenderPartialViewToString("_notifylist", await _notificationservice.GetNotification(userid.ToString(), type))
+                    }
+                };
+            }
         }
     }
 }

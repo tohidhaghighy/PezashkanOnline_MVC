@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UrumiumMVC.DomainClasses.Entities.Illness;
 using UrumiumMVC.ViewModel.EntityViewModel.IllnessViewModel;
+using UrumiumMVC.ViewModel.EntityViewModel.NotificationViewModel;
 
 namespace UrumiumMVC.ServiceLayer.Contract.IllnessInterface
 {
@@ -15,6 +16,7 @@ namespace UrumiumMVC.ServiceLayer.Contract.IllnessInterface
         Task<bool> Deleteillness(int id);
         int GetAllillnessCount();
         Task<List<Illness>> GetAllillness();
+        Task<List<NotificationUser>> GetIllnessNotifi();
         Task<List<Illness>> Searchillness(string text);
         Task<bool> Updateillness(int id, string Name, int CityId, string Image, int age, int weight, int suger, int pressure, string serialbime, int bimeid);
         Task<bool> UpdateillnessWithDate(int id, string Name, int CityId, string Image, string imagebimefirstpage, int age, int weight, int suger, int pressure, string serialbime, int bimeid, string date);

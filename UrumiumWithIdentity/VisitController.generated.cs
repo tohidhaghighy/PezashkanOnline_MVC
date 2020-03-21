@@ -58,9 +58,16 @@ namespace UrumiumWithIdentity.Controllers
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> AddVisit()
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> AddVisitPayment()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddVisit);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddVisitPayment);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ReturnVisitPayment()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ReturnVisitPayment);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
         [NonAction]
@@ -87,7 +94,8 @@ namespace UrumiumWithIdentity.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
-            public readonly string AddVisit = "AddVisit";
+            public readonly string AddVisitPayment = "AddVisitPayment";
+            public readonly string ReturnVisitPayment = "ReturnVisitPayment";
             public readonly string Finishvisit = "Finishvisit";
         }
 
@@ -95,20 +103,30 @@ namespace UrumiumWithIdentity.Controllers
         public class ActionNameConstants
         {
             public const string Index = "Index";
-            public const string AddVisit = "AddVisit";
+            public const string AddVisitPayment = "AddVisitPayment";
+            public const string ReturnVisitPayment = "ReturnVisitPayment";
             public const string Finishvisit = "Finishvisit";
         }
 
 
-        static readonly ActionParamsClass_AddVisit s_params_AddVisit = new ActionParamsClass_AddVisit();
+        static readonly ActionParamsClass_AddVisitPayment s_params_AddVisitPayment = new ActionParamsClass_AddVisitPayment();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_AddVisit AddVisitParams { get { return s_params_AddVisit; } }
+        public ActionParamsClass_AddVisitPayment AddVisitPaymentParams { get { return s_params_AddVisitPayment; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_AddVisit
+        public class ActionParamsClass_AddVisitPayment
         {
-            public readonly string id = "id";
+            public readonly string visitid = "visitid";
             public readonly string doctorid = "doctorid";
+            public readonly string amount = "amount";
             public readonly string date = "date";
+        }
+        static readonly ActionParamsClass_ReturnVisitPayment s_params_ReturnVisitPayment = new ActionParamsClass_ReturnVisitPayment();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ReturnVisitPayment ReturnVisitPaymentParams { get { return s_params_ReturnVisitPayment; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ReturnVisitPayment
+        {
+            public readonly string Vresult = "Vresult";
         }
         static readonly ActionParamsClass_Finishvisit s_params_Finishvisit = new ActionParamsClass_Finishvisit();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -128,7 +146,9 @@ namespace UrumiumWithIdentity.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string ReturnVisitPayment = "ReturnVisitPayment";
             }
+            public readonly string ReturnVisitPayment = "~/Views/Visit/ReturnVisitPayment.cshtml";
         }
     }
 
@@ -149,16 +169,29 @@ namespace UrumiumWithIdentity.Controllers
         }
 
         [NonAction]
-        partial void AddVisitOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, int doctorid, string date);
+        partial void AddVisitPaymentOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int visitid, int doctorid, string amount, string date);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> AddVisit(int id, int doctorid, string date)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> AddVisitPayment(int visitid, int doctorid, string amount, string date)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddVisit);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddVisitPayment);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "visitid", visitid);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "doctorid", doctorid);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "amount", amount);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "date", date);
-            AddVisitOverride(callInfo, id, doctorid, date);
+            AddVisitPaymentOverride(callInfo, visitid, doctorid, amount, date);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void ReturnVisitPaymentOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, UrumiumWithIdentity.Models.VerifyResultPayment Vresult);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ReturnVisitPayment(UrumiumWithIdentity.Models.VerifyResultPayment Vresult)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ReturnVisitPayment);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "Vresult", Vresult);
+            ReturnVisitPaymentOverride(callInfo, Vresult);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

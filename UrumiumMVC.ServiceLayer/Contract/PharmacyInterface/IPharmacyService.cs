@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UrumiumMVC.DomainClasses.Entities.Pharmacy;
+using UrumiumMVC.ViewModel.EntityViewModel.NotificationViewModel;
 using UrumiumMVC.ViewModel.EntityViewModel.WebServiceClasses;
 
 namespace UrumiumMVC.ServiceLayer.Contract.PharmacyInterface
@@ -18,6 +19,7 @@ namespace UrumiumMVC.ServiceLayer.Contract.PharmacyInterface
         Task<bool> DeletePharmacy(int id);
         int GetAllPharmacyCount();
         Task<List<Pharmacy>> GetAllPharmacy();
+        Task<List<NotificationUser>> GetPharmacyNotifi();
         Task<List<Pharmacy>> GetAllPharmacyActive();
         Task<List<Pharmacy>> SearchPharmacy(string text);
         Task<Pharmacy> GetPharmacy(string id);

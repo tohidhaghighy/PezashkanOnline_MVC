@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using UrumiumMVC.DomainClasses.Entities.Illness;
 using UrumiumMVC.ServiceLayer.Contract.IllnessInterface;
 using UrumiumMVC.ViewModel.EntityViewModel.IllnessViewModel;
+using UrumiumMVC.ViewModel.EntityViewModel.NotificationViewModel;
 
 namespace UrumiumMVC.ServiceLayer.EFServices.IllnessService
 {
@@ -171,6 +172,14 @@ namespace UrumiumMVC.ServiceLayer.EFServices.IllnessService
                 return find;
             }
             return null;
+        }
+
+        public async Task<List<NotificationUser>> GetIllnessNotifi()
+        {
+            var find = from db in _illness
+                       select new NotificationUser { Id = db.Id, Name = db.Name, Userid = db.Userid };
+            
+            return find.ToList();
         }
 
         public async Task<IllnessWebService> GetIllnessWithMobileWebService(string mobile)

@@ -63,13 +63,6 @@ namespace UrumiumWithIdentity.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetJudgeInfo);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateJudgeInfo()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateJudgeInfo);
-            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
-        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public JudgeWebServiceController Actions { get { return MVC.JudgeWebService; } }
@@ -120,6 +113,7 @@ namespace UrumiumWithIdentity.Controllers
         {
             public readonly string mobile = "mobile";
             public readonly string name = "name";
+            public readonly string bankcode = "bankcode";
             public readonly string description = "description";
             public readonly string cityid = "cityid";
             public readonly string image = "image";
@@ -178,18 +172,19 @@ namespace UrumiumWithIdentity.Controllers
         }
 
         [NonAction]
-        partial void UpdateJudgeInfoOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string mobile, string name, string description, int cityid, string image);
+        partial void UpdateJudgeInfoOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string mobile, string name, string bankcode, string description, int cityid, string image);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateJudgeInfo(string mobile, string name, string description, int cityid, string image)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateJudgeInfo(string mobile, string name, string bankcode, string description, int cityid, string image)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateJudgeInfo);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "mobile", mobile);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "name", name);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "bankcode", bankcode);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "description", description);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "cityid", cityid);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "image", image);
-            UpdateJudgeInfoOverride(callInfo, mobile, name, description, cityid, image);
+            UpdateJudgeInfoOverride(callInfo, mobile, name, bankcode, description, cityid, image);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

@@ -1,0 +1,182 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.NotificationViewModel.NotificationMain
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+
+<section class="content">
+    <!-- /.row -->
+    <div class="row" style="margin-top:50px;">
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>@Model.UserNotiCount<sup style="font-size: 20px"></sup></h3>
+
+                    <p>پیام به بیمار</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-list"></i>
+                </div>
+                <a href="/NotificationToUsers/NotificationSend?type=3" class="small-box-footer">ارسال پیام <i class="fa fa-address-book"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>@Model.DoctorNotiCount<sup style="font-size: 20px"></sup></h3>
+
+                    <p>پیام به دکتر</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-list"></i>
+                </div>
+                <a href="/NotificationToUsers/NotificationSend?type=1" class="small-box-footer">ارسال پیام <i class="fa fa-address-book"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-gray">
+                <div class="inner">
+                    <h3>@Model.JudgeNotiCount<sup style="font-size: 20px"></sup></h3>
+
+                    <p>پیام به کارشناس</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-list"></i>
+                </div>
+                <a href="/NotificationToUsers/NotificationSend?type=2" class="small-box-footer">ارسال پیام <i class="fa fa-address-book"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>@Model.PharmacyNotiCount<sup style="font-size: 20px"></sup></h3>
+
+                    <p>پیام به داروخانه</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-list"></i>
+                </div>
+                <a href="/NotificationToUsers/NotificationSend?type=4" class="small-box-footer">ارسال پیام <i class="fa fa-address-book"></i></a>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<div class="container">
+    <div>
+        <h3 style="color:green;margin:10px;" class="text-center">ارسال پیام</h3>
+    </div>
+    <div class="row">
+        <textarea class="form-control" id="txtmassage" name="txtmassage" placeholder="ارسال پیام به همه" style="margin:30px;" rows="4"></textarea>
+    </div>
+    <div class="row">
+        <a class="btn btn-success" id="btnsend" name="btnsend" style="margin-top:30px;float:left;" onclick="sendmassage()">ارسال به همه</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">لیست پیام ها</h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">عنوان</th>
+                    <th class="text-center">متن</th>
+                    <th class="text-center">حذف</th>
+                    </thead>
+                    <tbody id="listofmassage">
+                       @{Html.RenderPartial("_listnotification", Model.AllNotifications);}
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function showmodal() {
+        $("#myModal").modal();
+    } 
+
+    function deleteitem(id) {
+        swal({
+            title: "آیا میخواهید حذف شود؟",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "بله حذف شود",
+            cancelButtonText: "خیر",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+            function (isConfirm) {
+                if (isConfirm) {
+                    sendtoservertodelete(id);
+
+                } else {
+                    swal("صرف نظر", "حذف نشد", "error");
+                }
+            });
+    }
+
+    function sendtoservertodelete(id) {
+        $.ajax({
+            type: "Post",
+            url: '/NotificationToUsers/DeleteNotificationSend',
+            data: { id: id ,type:0},
+            success: function (data) {
+                if (data.success == true) {
+                    $('#listofmassage').empty();
+                    $('#listofmassage').append(data.View);
+                    swal("موفقیت", "حذف شد", "success");
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+            }
+        });
+    }
+
+    function sendmassage() {
+        var text = $("#txtmassage").val();
+        $.ajax({
+            type: "Post",
+            url: '/NotificationToUsers/AddNotificationSend',
+            data: {
+                type: 0,
+                text: text,
+                title: "ارسال به همه",
+                userid:""
+            },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#listofmassage').empty();
+                    $('#listofmassage').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+            }
+        });
+    }
+</script>

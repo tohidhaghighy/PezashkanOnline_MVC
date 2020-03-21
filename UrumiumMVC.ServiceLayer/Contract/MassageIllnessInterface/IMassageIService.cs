@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UrumiumMVC.DomainClasses.Entities.Illness;
+using UrumiumMVC.ViewModel.EntityViewModel.ChatViewModel;
 
 namespace UrumiumMVC.ServiceLayer.Contract.MassageIllnessInterface
 {

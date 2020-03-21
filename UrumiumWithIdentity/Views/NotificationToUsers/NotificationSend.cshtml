@@ -1,0 +1,213 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.NotificationViewModel.NotificationDetail
+@{
+    ViewBag.Title = "NotificationSend";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+
+
+<div class="container">
+    <div>
+        <h3 style="color:green;margin:10px;" class="text-center">ارسال پیام</h3>
+    </div>
+    <div class="row">
+        <textarea class="form-control" id="txtmassage" name="txtmassage" placeholder="ارسال پیام به همه" style="margin:30px;" rows="4"></textarea>
+    </div>
+    <div class="row">
+        <a class="btn btn-success" id="btnsend" name="btnsend" style="margin-top:1px;float:left;" onclick="sendmassageall(@Model.Type)">ارسال به همه</a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-center">لیست کاربران</h4>
+                <div class="table-responsive">
+                    <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                        <thead>
+                        <th class="text-center">نام</th>
+                        <th class="text-center">ارسال پیام خصوصی</th>
+                        </thead>
+                        <tbody id="listofpharmacy">
+                            @{
+                                foreach (var item in Model.AllUsers)
+                                {
+                                    <tr>
+
+                                        <td class="text-center" style="padding:10px;">@item.Name</td>
+
+                                        <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="ویرایش"><a class="btn btn-warning btn-xs" onclick="showmodalsendmassage(@item.Id,@Model.Type)">ارسال پیام</a></p></td>
+                                    </tr>
+                                }
+                            }
+                            
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-center">لیست پیام ها</h4>
+                <div class="table-responsive">
+                    <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                        <thead>
+                        <th class="text-center">عنوان</th>
+                        <th class="text-center">متن</th>
+                        <th class="text-center">حذف</th>
+                        </thead>
+                        <tbody id="listofmassage">
+                           @{Html.RenderPartial("_listnotification", Model.AllNotifications);}
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">پیام</h4>
+            </div>
+
+            <div class="modal-body">
+                <input type="number" style="display:none" name="id" id="id" />
+                <div class="row">
+                    <div class="col-lg-4">
+                        ارسال پیام
+                    </div>
+                    <div class="col-lg-8">
+                        <textarea id="txtmassageuser" name="txtmassageuser" class="form-control" placeholder="متن پیام را وارد کنید"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                <a name="btninsert" class="btn btn-success" value="ارسال پیام" onclick="sendmassageuser()">ارسال</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    var userid;
+    var usertype;
+    function showmodalsendmassage(id,type) {
+        userid = id;
+        usertype = type;
+        $("#myModal").modal();
+    }
+
+    function deleteitem(id) {
+        swal({
+            title: "آیا میخواهید حذف شود؟",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "بله حذف شود",
+            cancelButtonText: "خیر",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+            function (isConfirm) {
+                if (isConfirm) {
+                    sendtoservertodelete(id);
+
+                } else {
+                    swal("صرف نظر", "حذف نشد", "error");
+                }
+            });
+    }
+
+    function sendtoservertodelete(id) {
+        $.ajax({
+            type: "Post",
+            url: '/NotificationToUsers/DeleteNotificationSend',
+            data: { id: id, type: usertype },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#listofmassage').empty();
+                    $('#listofmassage').append(data.View);
+                    swal("موفقیت", "حذف شد", "success");
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+            }
+        });
+    }
+
+    function sendmassageall(type) {
+        var text = $("#txtmassage").val();
+        $.ajax({
+            type: "Post",
+            url: '/NotificationToUsers/AddNotificationSend',
+            data: {
+                type: type,
+                text: text,
+                title: "ارسال به همه کاربران",
+                userid: ""
+            },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#listofmassage').empty();
+                    $('#listofmassage').append(data.View);
+                    swal("موفقیت", "با موفقیت ارسال شد", "success");
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+            }
+        });
+    }
+
+    function sendmassageuser() {
+        $("#myModal").modal('hide');
+        var text = $("#txtmassageuser").val();
+        $.ajax({
+            type: "Post",
+            url: '/NotificationToUsers/AddNotificationSend',
+            data: {
+                type: usertype,
+                text: text,
+                title: "ارسال به کاربر خاص",
+                userid: userid
+            },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#listofmassage').empty();
+                    $('#listofmassage').append(data.View);
+                    swal("موفقیت", "با موفقیت ارسال شد", "success");
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+            }
+        });
+    }
+</script>

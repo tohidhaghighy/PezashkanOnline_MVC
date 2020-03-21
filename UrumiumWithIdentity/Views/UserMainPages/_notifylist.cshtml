@@ -1,0 +1,28 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Notification.Notification>
+
+<li class="header">1 پیام خوانده نشده</li>
+<li>
+    <!-- inner menu: contains the actual data -->
+    <ul class="menu">
+        @{
+            foreach (var item in Model)
+            {
+                <li>
+                    <!-- start message -->
+                    <a href="#">
+                        <div class="pull-right">
+                            <img src="~/uploads/team.png" class="img-circle" alt="User Image">
+                        </div>
+                        <h4>
+                            <br />
+                            <small><i class="fa fa-user"></i> مدیریت</small>
+                        </h4>
+                        <p>@item.Text</p>
+                    </a>
+                </li>
+            }
+        }
+        
+    </ul>
+</li>
+<li class="footer"><a href="#">نمایش تمام پیام ها</a></li>

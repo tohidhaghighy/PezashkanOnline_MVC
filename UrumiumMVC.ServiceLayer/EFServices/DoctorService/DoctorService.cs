@@ -11,6 +11,7 @@ using UrumiumMVC.DomainClasses.Entities.Doctor;
 using UrumiumMVC.DomainClasses.Entities.Visit;
 using UrumiumMVC.ServiceLayer.Contract.DoctorInterface;
 using UrumiumMVC.ViewModel.EntityViewModel.DoctorViewModel;
+using UrumiumMVC.ViewModel.EntityViewModel.NotificationViewModel;
 using UrumiumMVC.ViewModel.EntityViewModel.WebServiceClasses;
 
 namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
@@ -156,6 +157,13 @@ namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
                 return true;
             }
             return false;
+        }
+
+        public async Task<List<NotificationUser>> GetDoctorNotifiList()
+        {
+            var find = from db in _Doctor
+                       select new NotificationUser { Id = db.Id, Name = db.Name, Userid = db.Userid };
+            return find.ToList();
         }
 
         public async Task<Doctor> GetDoctorValueWithMobile(string mobile)
@@ -385,6 +393,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
                 _doctor.Cost = find.Cost.ToString();
                 _doctor.Image = find.Image;
                 _doctor.NezamPezeshki = find.NezamPezeshkiCode;
+                _doctor.Bankcode = find.AccountNumber;
             }
             return _doctor;
         }
@@ -425,7 +434,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
             return false;
         }
 
-        public async Task<bool> UpdateDoctorWebservice(int id, string Name, int CityId,int groupid, string nezampezeshki, int cost, string description, string image)
+        public async Task<bool> UpdateDoctorWebservice(int id, string Name,string bankcode, int CityId,int groupid, string nezampezeshki, int cost, string description, string image)
         {
             var find = await _Doctor.FirstOrDefaultAsync(a => a.Id == id);
             if (find != null)
@@ -440,6 +449,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
                 }
                 find.GroupId = groupid;
                 find.Cost = cost;
+                find.AccountNumber = bankcode;
                 find.NezamPezeshkiCode = nezampezeshki;
                 find.SpecialDoctor = false;
                 await _unitOfWork.SaveChangesAsync();

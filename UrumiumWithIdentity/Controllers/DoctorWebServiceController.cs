@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using UrumiumMVC.Common.TimeConverter;
@@ -548,7 +549,7 @@ namespace UrumiumWithIdentity.Controllers
             var find = await _illnessservice.GetIllnessWithMobile(number);
             if (findcost != null && find != null)
             {
-                return Json(await _jvtimeservices.AddJudgeIllnessPayment(find.Id, findcost.CostJudgeVisit));
+                return Json(await _jvtimeservices.AddJudgeIllnessPayment(find.Id, findcost.CostJudgeVisit,""));
             }
             return Json(false);
 
@@ -589,7 +590,7 @@ namespace UrumiumWithIdentity.Controllers
 
 
         [System.Web.Http.HttpPost]
-        public virtual async Task<ActionResult> UpdateDoctorInfo(int id = 0, string name = "", int cityid = 0, int groupid = 0, string description = "", int cost = 0, string nezampezeshki = "", string image = "")
+        public virtual async Task<ActionResult> UpdateDoctorInfo(int id = 0, string name = "",string bankcode="", int cityid = 0, int groupid = 0, string description = "", int cost = 0, string nezampezeshki = "", string image = "")
         {
             string imagedoctor = "";
             if (image != "")
@@ -600,7 +601,7 @@ namespace UrumiumWithIdentity.Controllers
                 System.IO.File.WriteAllBytes(imgillnessiamge, imageillnessBytes);
             }
 
-            return Json(await _doctorservice.UpdateDoctorWebservice(id, name, cityid, groupid, nezampezeshki, cost, description, imagedoctor));
+            return Json(await _doctorservice.UpdateDoctorWebservice(id, name,bankcode, cityid, groupid, nezampezeshki, cost, description, imagedoctor));
         }
 
         [System.Web.Http.HttpPost]
@@ -736,21 +737,9 @@ namespace UrumiumWithIdentity.Controllers
         [System.Web.Http.HttpGet]
         public virtual async Task<string> SendSms(string number,string code)
         {
-            var token = new Token().GetToken("c7b17989dff70224b6b57e4e", "!@#%qwer5321");
-            var restVerificationCode = new RestVerificationCode()
-            {
-                Code = "123456",
-                MobileNumber = "09144967941"
-            };
-            var restVerificationCodeRespone = new VerificationCode().Send(token, restVerificationCode);
-            if (restVerificationCodeRespone.IsSuccessful)
-            {
-
-            }
-            else
-            {
-
-            }
+            SendSms sends = new SendSms();
+            sends.SendSmsFunction(number, code);
+            
             return "true";
         }
 
@@ -795,6 +784,8 @@ namespace UrumiumWithIdentity.Controllers
             }
             return Json(null);
         }
+
+        
 
     }
 }

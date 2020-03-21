@@ -31,6 +31,7 @@ public static partial class MVC
     public static UrumiumWithIdentity.Controllers.AccountingController Accounting = new UrumiumWithIdentity.Controllers.T4MVC_AccountingController();
     public static UrumiumWithIdentity.Controllers.AdminManagmentController AdminManagment = new UrumiumWithIdentity.Controllers.T4MVC_AdminManagmentController();
     public static UrumiumWithIdentity.Controllers.AndroidChatroomController AndroidChatroom = new UrumiumWithIdentity.Controllers.T4MVC_AndroidChatroomController();
+    public static UrumiumWithIdentity.Controllers.AndroidPaymentController AndroidPayment = new UrumiumWithIdentity.Controllers.T4MVC_AndroidPaymentController();
     public static UrumiumWithIdentity.Controllers.BimeManagmentController BimeManagment = new UrumiumWithIdentity.Controllers.T4MVC_BimeManagmentController();
     public static UrumiumMVC.Controllers.CaptchaController Captcha = new UrumiumMVC.Controllers.T4MVC_CaptchaController();
     public static UrumiumWithIdentity.Controllers.ChatController Chat = new UrumiumWithIdentity.Controllers.T4MVC_ChatController();
@@ -61,6 +62,7 @@ public static partial class MVC
     public static UrumiumWithIdentity.Controllers.MenuManagmentController MenuManagment = new UrumiumWithIdentity.Controllers.T4MVC_MenuManagmentController();
     public static UrumiumWithIdentity.Controllers.NoskheController Noskhe = new UrumiumWithIdentity.Controllers.T4MVC_NoskheController();
     public static UrumiumWithIdentity.Controllers.NoskheWebServiceController NoskheWebService = new UrumiumWithIdentity.Controllers.T4MVC_NoskheWebServiceController();
+    public static UrumiumWithIdentity.Controllers.NotificationToUsersController NotificationToUsers = new UrumiumWithIdentity.Controllers.T4MVC_NotificationToUsersController();
     public static UrumiumWithIdentity.Controllers.ParvandeIllnessController ParvandeIllness = new UrumiumWithIdentity.Controllers.T4MVC_ParvandeIllnessController();
     public static UrumiumWithIdentity.Controllers.PaymentController Payment = new UrumiumWithIdentity.Controllers.T4MVC_PaymentController();
     public static UrumiumWithIdentity.Controllers.Pharmacy_MassageController Pharmacy_Massage = new UrumiumWithIdentity.Controllers.T4MVC_Pharmacy_MassageController();
@@ -2152,6 +2154,7 @@ namespace Links
             public static readonly string home2_png = Url("home2.png");
             public static readonly string menu_png = Url("menu.png");
             public static readonly string modrnurmia_mp4 = Url("modrnurmia.mp4");
+            public static readonly string pay_png = Url("pay.png");
             public static readonly string seo_png = Url("seo.png");
             public static readonly string stethoscope_png = Url("stethoscope.png");
             public static readonly string tarahi_site_png = Url("tarahi site.png");
@@ -15897,6 +15900,7 @@ namespace Links
                 public const string UrlPath = "~/Content/NewDesign/img";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string _1_jpg = Url("1.jpg");
                 public static readonly string _1_svg = Url("1.svg");
                 public static readonly string _10_svg = Url("10.svg");
                 public static readonly string _11_svg = Url("11.svg");
@@ -15908,10 +15912,12 @@ namespace Links
                 public static readonly string _17_svg = Url("17.svg");
                 public static readonly string _18_svg = Url("18.svg");
                 public static readonly string _19_svg = Url("19.svg");
+                public static readonly string _2_jpg = Url("2.jpg");
                 public static readonly string _2_svg = Url("2.svg");
                 public static readonly string _20_svg = Url("20.svg");
                 public static readonly string _21_svg = Url("21.svg");
                 public static readonly string _22_svg = Url("22.svg");
+                public static readonly string _3_jpg = Url("3.jpg");
                 public static readonly string _3_svg = Url("3.svg");
                 public static readonly string _4_svg = Url("4.svg");
                 public static readonly string _5_svg = Url("5.svg");

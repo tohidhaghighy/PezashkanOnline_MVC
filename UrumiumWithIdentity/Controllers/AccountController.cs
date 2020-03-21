@@ -21,6 +21,7 @@ using System.IO;
 using System.Collections.Generic;
 using UrumiumMVC.ServiceLayer.Contract.BimeInterface;
 using UrumiumMVC.ServiceLayer.Contract.GroupInterface;
+using UrumiumMVC.Common.Attributes;
 
 namespace IdentitySample.Controllers
 {
@@ -78,32 +79,31 @@ namespace IdentitySample.Controllers
         [AllowAnonymous]
         public async virtual Task<ActionResult> Login(string returnUrl)
         {
-            if (User.Identity.IsAuthenticated)
+            HttpCookie myCookie = Request.Cookies["usercookie"];
+            HttpCookie usertype = Request.Cookies["usertype"];
+            if (myCookie != null && usertype!=null)
             {
-                var find = UserManager.Users.Where(a => a.UserName == User.Identity.Name).FirstOrDefault();
-                if (find != null && find.EmailConfirmed == true)
-                {
-                    if (find.RollId == 1)
+                
+                    if (usertype.Value == "1")
                     {
-                        return RedirectToLocal("/UserMainPages/Doctor?id=" + find.Id);
+                        return RedirectToLocal("/UserMainPages/Doctor?id=" + myCookie.Value);
                     }
-                    else if (find.RollId == 2)
+                    else if (usertype.Value == "2")
                     {
-                        return RedirectToLocal("/UserMainPages/Judge?id=" + find.Id);
+                        return RedirectToLocal("/UserMainPages/Judge?id=" + myCookie.Value);
                     }
-                    else if (find.RollId == 3)
+                    else if (usertype.Value == "3")
                     {
-                        return RedirectToLocal("/UserMainPages/Illness?id=" + find.Id);
+                        return RedirectToLocal("/UserMainPages/Illness?id=" + myCookie.Value);
                     }
-                    else if (find.RollId == 4)
+                    else if (usertype.Value == "4")
                     {
-                        return RedirectToLocal("/UserMainPages/Pharmacy?id=" + find.Id);
+                        return RedirectToLocal("/UserMainPages/Pharmacy?id=" + myCookie.Value);
                     }
-                    else if (find.RollId == 5)
+                    else if (usertype.Value == "5")
                     {
-                        return RedirectToLocal("/Managment/Index?id=" + find.Id);
+                        return RedirectToLocal("/Managment/Index?id=" + myCookie.Value);
                     }
-                }
 
                 return RedirectToLocal("/Account/LoginMain");
             }
@@ -209,6 +209,20 @@ namespace IdentitySample.Controllers
 
         }
 
+        public void addcookie(string name,string username)
+        {
+            HttpCookie myCookie = new HttpCookie(name);
+            DateTime now = DateTime.Now;
+
+            // Set the cookie value.
+            myCookie.Value = username;
+            // Set the cookie expiration date.
+            myCookie.Expires = now.AddYears(50); // For a cookie to effectively never expire
+
+            // Add the cookie.
+            Response.Cookies.Add(myCookie);
+        }
+
         [HttpPost]
         public virtual async Task<ActionResult> LoginMobile(string Mobilesms, string Passwordsms, int rollidsms = 0)
         {
@@ -219,7 +233,10 @@ namespace IdentitySample.Controllers
                     var find = await _doctorservice.CheckLoginWithMobile(Mobilesms, Passwordsms);
                     if (find != null)
                     {
+                        addcookie("usercookie", find.Userid);
+                        addcookie("usertype", "1");
                         return RedirectToLocal("/UserMainPages/Doctor?id=" + find.Userid);
+                        
                     }
 
                 }
@@ -228,6 +245,8 @@ namespace IdentitySample.Controllers
                     var find = await _judgeservice.CheckLoginwithmobile(Mobilesms, Passwordsms);
                     if (find != null)
                     {
+                        addcookie("usercookie", find.Userid);
+                        addcookie("usertype", "2");
                         return RedirectToLocal("/UserMainPages/Judge?id=" + find.Userid);
                     }
                 }
@@ -236,7 +255,10 @@ namespace IdentitySample.Controllers
                     var find = await _illnessservice.CheckLoginwithmobile(Mobilesms, Passwordsms);
                     if (find != null)
                     {
+                        addcookie("usercookie",find.Userid);
+                        addcookie("usertype", "3");
                         return RedirectToLocal("/UserMainPages/Illness?id=" + find.Userid);
+
                     }
                 }
                 else if (rollidsms == 4)
@@ -244,6 +266,8 @@ namespace IdentitySample.Controllers
                     var find = await _pharmacyservice.CheckLoginwithmobile(Mobilesms, Passwordsms);
                     if (find != null)
                     {
+                        addcookie("usercookie", find.Userid);
+                        addcookie("usertype", "4");
                         return RedirectToLocal("/UserMainPages/Pharmacy?id=" + find.Userid);
                     }
                 }
@@ -839,6 +863,11 @@ namespace IdentitySample.Controllers
         [ValidateAntiForgeryToken]
         public virtual ActionResult LogOff()
         {
+            if (Request.Cookies["usercookie"] != null)
+            {
+                Response.Cookies["usercookie"].Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies["usertype"].Expires = DateTime.Now.AddDays(-1);
+            }
             AuthenticationManager.SignOut();
             return RedirectToAction("Index", "DoctorHome");
         }

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
@@ -132,6 +133,9 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
@@ -223,6 +227,9 @@
     <Compile Include="AndroidChatroomController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="AndroidPaymentController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -263,6 +270,7 @@
     <Compile Include="Controllers\AccountingController.cs" />
     <Compile Include="Controllers\AdminManagmentController.cs" />
     <Compile Include="Controllers\AndroidChatroomController.cs" />
+    <Compile Include="Controllers\AndroidPaymentController.cs" />
     <Compile Include="Controllers\BimeManagmentController.cs" />
     <Compile Include="Controllers\CaptchaController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
@@ -293,6 +301,7 @@
     <Compile Include="Controllers\MenuManagmentController.cs" />
     <Compile Include="Controllers\NoskheController.cs" />
     <Compile Include="Controllers\NoskheWebServiceController.cs" />
+    <Compile Include="Controllers\NotificationToUsersController.cs" />
     <Compile Include="Controllers\ParvandeIllnessController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\PharmacyManagmentController.cs" />
@@ -395,12 +404,18 @@
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\ApplicationUserViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\SendPayment.cs" />
     <Compile Include="Models\SendSms.cs" />
     <Compile Include="Models\UserChatroom.cs" />
+    <Compile Include="Models\VerifyResultPayment.cs" />
     <Compile Include="NoskheController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="NoskheWebServiceController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationToUsersController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="ParvandeIllnessController.generated.cs">
@@ -534,6 +549,7 @@
     <Content Include="Content\icons\fever.png" />
     <Content Include="Content\icons\Gif-F.gif" />
     <Content Include="Content\icons\home2.png" />
+    <Content Include="Content\icons\pay.png" />
     <Content Include="Content\icons\menu.png" />
     <Content Include="Content\icons\modrnurmia.mp4" />
     <Content Include="Content\icons\seo.png" />
@@ -9688,6 +9704,14 @@
     <Content Include="Views\Chat\ViewPage1.cshtml" />
     <Content Include="Views\Account\ChangePassword.cshtml" />
     <Content Include="Views\Account\AddnewPasswordAsync.cshtml" />
+    <Content Include="Views\Chat\_DoctorChatlist.cshtml" />
+    <Content Include="Views\Chat\_JudgeChatlist.cshtml" />
+    <Content Include="Views\Visit\ReturnVisitPayment.cshtml" />
+    <Content Include="Views\JVTime\ReturnVisitPayment.cshtml" />
+    <Content Include="Views\NotificationToUsers\Index.cshtml" />
+    <Content Include="Views\NotificationToUsers\NotificationSend.cshtml" />
+    <Content Include="Views\NotificationToUsers\_listnotification.cshtml" />
+    <Content Include="Views\UserMainPages\_notifylist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -9728,6 +9752,7 @@
     <Folder Include="uploads\Pharmacy\s\" />
     <Folder Include="uploads\UploadFile\" />
     <Folder Include="Views\AndroidChatroom\" />
+    <Folder Include="Views\AndroidPayment\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Captcha\" />
     <Folder Include="Views\Doctor\" />
@@ -9741,7 +9766,6 @@
     <Folder Include="Views\SendMessage\" />
     <Folder Include="Views\Ticket\" />
     <Folder Include="Views\Upload\" />
-    <Folder Include="Views\Visit\" />
     <Folder Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
@@ -9829,6 +9853,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
