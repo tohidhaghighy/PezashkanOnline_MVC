@@ -1,0 +1,55 @@
+﻿@model IdentitySample.Models.EditUserViewModel
+
+@{
+    ViewBag.Title = "ویرایش";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+<h2 class="text-center" style="padding:50px;">ویرایش کاربران</h2>
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group row">
+            <div class="col-md-2">
+                <p class="text-center">ایمیل</p>
+            </div>
+            <div class="col-md-8">
+               @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+               @Html.ValidationMessageFor(model => model.Email)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                <p class="text-center">نقش ها</p>
+            </div>
+            <span class=" col-md-10">
+                @foreach (var item in Model.RolesList)
+                {
+                    <input type="checkbox" name="SelectedRole" value="@item.Value" checked="@item.Selected" class="checkbox-inline" />
+                    @Html.Label(item.Value, new { @class = "control-label" })
+                }
+            </span>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="بروزرسانی" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div style="margin-right:50px;">
+    @Html.ActionLink("بازگشت", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

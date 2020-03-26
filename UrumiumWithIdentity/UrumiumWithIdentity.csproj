@@ -302,6 +302,8 @@
     <Compile Include="Controllers\NoskheController.cs" />
     <Compile Include="Controllers\NoskheWebServiceController.cs" />
     <Compile Include="Controllers\NotificationToUsersController.cs" />
+    <Compile Include="Controllers\NurseManagmentController.cs" />
+    <Compile Include="Controllers\NurseWebServiceController.cs" />
     <Compile Include="Controllers\ParvandeIllnessController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\PharmacyManagmentController.cs" />
@@ -9712,6 +9714,8 @@
     <Content Include="Views\NotificationToUsers\NotificationSend.cshtml" />
     <Content Include="Views\NotificationToUsers\_listnotification.cshtml" />
     <Content Include="Views\UserMainPages\_notifylist.cshtml" />
+    <Content Include="Views\NurseManagment\Index.cshtml" />
+    <Content Include="Views\NurseManagment\_NurseListAjax.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -9761,6 +9765,7 @@
     <Folder Include="Views\MassageIllness\" />
     <Folder Include="Views\MassageJudge\" />
     <Folder Include="Views\NoskheWebService\" />
+    <Folder Include="Views\NurseWebService\" />
     <Folder Include="Views\PharmacyWebService\" />
     <Folder Include="Views\Product\" />
     <Folder Include="Views\SendMessage\" />

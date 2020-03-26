@@ -1,0 +1,19 @@
+.ticker {
+  margin: 0 auto;
+  text-align: right;
+  position: relative;
+  overflow: hidden;
+  direction: rtl;
+  color: white;
+}
+
+.ticker ul {
+  width: 100%;
+  position: relative;
+}
+
+.ticker ul li {
+  width: 100%;
+  display: none;
+}
+

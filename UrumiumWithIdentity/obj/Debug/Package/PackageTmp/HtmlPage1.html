@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <html>
+    <head>
+        <style>
+            div {
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Get Dimensions</h1>
+        <div>
+            <label for="load-file">Load a file:</label>
+            <input type="file" id="load-file">
+        </div>
+        <div>
+            <button type="button" id="done-button">Get me dimensions</button>
+        </div>
+
+        <script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.js"></script>
+        <script>
+(function ($) {
+  $('#done-button').on('click', function () {
+    var file = $('#load-file')[0].files[0];
+    var reader  = new FileReader();
+    var fileType =  file.type;
+    console.log("type", fileType);
+    reader.addEventListener("load", function () {
+      var dataUrl =  reader.result;
+      var videoId = "videoMain";
+      var $videoEl = $('<video id="' + videoId + '"></video>');
+      $("body").append($videoEl);
+      $videoEl.attr('src', dataUrl);
+
+      var videoTagRef = $videoEl[0];
+      videoTagRef.addEventListener('loadedmetadata', function(e){
+        console.log(videoTagRef.videoWidth, videoTagRef.videoHeight);
+      });
+
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  });
+
+})(jQuery);
+        </script>
+    </body>
+</html>
+</body>
+</html>

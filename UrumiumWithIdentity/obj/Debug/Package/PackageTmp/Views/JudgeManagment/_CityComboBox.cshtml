@@ -1,0 +1,10 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Common.City>
+
+<select class="form-control" id="cmbcity" name="cityid">
+    @{
+        foreach (var item in Model)
+        {
+            <option value="@item.Id" class="text-center">@item.Name</option>
+        }
+    }
+</select>

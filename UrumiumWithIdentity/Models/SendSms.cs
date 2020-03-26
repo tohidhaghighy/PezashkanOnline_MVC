@@ -12,7 +12,6 @@ namespace UrumiumWithIdentity.Models
         public Boolean SendSmsFunction(string to, string text)
         {
             var token = new Token().GetToken("ee3ba626f282b38dd6c9a626", "divar123-09");
-
             var restVerificationCode = new RestVerificationCode()
             {
                 Code = text,

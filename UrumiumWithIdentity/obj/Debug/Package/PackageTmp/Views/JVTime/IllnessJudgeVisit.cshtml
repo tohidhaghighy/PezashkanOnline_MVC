@@ -1,0 +1,59 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.judge.JudgeIllnessPayment>
+@{
+    ViewBag.Title = "IllnessJudgeVisit";
+    Layout = "~/Views/Shared/_ManagmentLayoutIllness.cshtml";
+}
+
+<div class="row center-block text-center" style="margin-top:10px;width:60%;margin-bottom:100px;">
+    <div class="">
+        <h4 class="text-center">لیست وقت ویزیت ها</h4>
+        <div class="">
+            <div class="">
+                <div class="">
+                    <table id="mytable" class="table table-bordred" style="background-color:white;">
+                        <thead>
+                        <th class="text-center">نام بیمار</th>
+                        <th class="text-center">هزینه</th>
+                        <th class="text-center">شروع چت با بیمار</th>
+                        </thead>
+                        <tbody id="listofpharmacy">
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="text-center" style="padding:10px;">@item.Illnesses.Name</td>
+                                        <td class="text-center" style="padding:10px;">@item.Cost</td>
+                                        @{
+                                            if (item.FinishAnswer == false)
+                                            {
+                                                <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="شروع چت"><a class="btn btn-success btn-xs" onclick="startchat(@item.Id,@item.IllnessId)"><i class="ion ion-ios-albums"></i></a></p></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="text-center" style="padding:10px;"></td>
+                                            }
+                                        }
+
+                                    </tr>
+                                            }
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function startchat(visitid,illnessid) {
+        window.location.href = '/Chat/JudgeChatroom?visitid=' + visitid + '&illnessid=' + illnessid + '&name=U';
+    }
+</script>
+
+

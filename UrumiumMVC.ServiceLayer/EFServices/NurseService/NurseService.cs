@@ -40,6 +40,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.NurseService
         {
             try
             {
+                string code = GetRandomString(6);
                 _nurse.Add(new Nurse()
                 {
                     Active = true,
@@ -50,6 +51,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.NurseService
                     Userid=mobile,
                     Password=password,
                     CodeActiveUse=GetRandomString(6),
+                    BusinessKey=code,
                     Image=""
                 });
                 await _unitOfWork.SaveChangesAsync();
@@ -83,6 +85,11 @@ namespace UrumiumMVC.ServiceLayer.EFServices.NurseService
             return false;
         }
 
+        public async Task<List<Nurse>> GetNurses()
+        {
+            return await _nurse.OrderByDescending(a=>a.Id).ToListAsync();
+        }
+
         public async Task<bool> GetNursewithmobile(string mobile)
         {
             var find = await _nurse.FirstOrDefaultAsync(a => a.Mobile == mobile);
@@ -93,9 +100,43 @@ namespace UrumiumMVC.ServiceLayer.EFServices.NurseService
             return false;
         }
 
+
         public async Task<Nurse> GetNurseInfowithmobile(string mobile)
         {
             return await _nurse.FirstOrDefaultAsync(a => a.Mobile == mobile);
         }
+
+        public async Task<bool> ChangeActive(int id)
+        {
+            var find = await _nurse.FirstOrDefaultAsync(a => a.Id == id);
+            if (find != null)
+            {
+                if (find.Active == true)
+                {
+                    find.Active = false;
+                }
+                else
+                {
+                    find.Active = true;
+                }
+                await _unitOfWork.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
+
+        public async Task<Boolean> UpdateActiveNurseuser(string mobile)
+        {
+            var find = await _nurse.FirstOrDefaultAsync(a => a.Mobile == mobile);
+            if (find != null)
+            {
+                find.Is_Use_CodeValue = true;
+                await _unitOfWork.SaveChangesAsync();
+                return true;
+            }
+            return false;
+
+        }
+
     }
 }

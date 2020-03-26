@@ -1,0 +1,12 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Medicine.Medicine>
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center" style="padding:10px;">@item.Name</td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="حذف"><a class="btn btn-danger btn-xs" onclick="deleteitem(@item.Id)"><i class="ion ion-ios-trash"></i></a></p></td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="ویرایش"><a class="btn btn-warning btn-xs" onclick="updatemedicine(@item.Id,'@item.Name','@item.Description')"><i class="ion ion-ios-trash"></i></a></p></td>
+        </tr>
+    }
+
+}

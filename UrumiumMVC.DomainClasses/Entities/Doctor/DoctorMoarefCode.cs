@@ -11,5 +11,6 @@ namespace UrumiumMVC.DomainClasses.Entities.Doctor
         public int Id { get; set; }
         public int Id_Doctor_Main { get; set; }
         public int Id_Doctor_Zir { get; set; }
+        public Nullable<int> type { get; set; }
     }
 }

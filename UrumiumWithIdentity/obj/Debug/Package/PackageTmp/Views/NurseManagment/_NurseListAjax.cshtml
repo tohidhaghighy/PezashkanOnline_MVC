@@ -1,0 +1,26 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Nurse.Nurse>
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+            @{
+                if (item.Active == true)
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" checked onchange="changeactivefunc(@item.Id)" /></td>
+                }
+                else
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" onchange="changeactivefunc(@item.Id)" /></td>
+                }
+            }
+            <td class="text-center" style="padding:10px;"><img style="width:40px;height:40px;" src="~/uploads/Nurse/@item.Image" /></td>
+            <td class="text-center" style="padding:10px;">@item.Mobile</td>
+            <td class="text-center" style="padding:10px;">@item.CodeActiveUse</td>
+            <td class="text-center" style="padding:10px;">@item.Name</td>
+            
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="حذف"><a class="btn btn-danger btn-xs" onclick="deleteitem(@item.Id)"><i class="ion ion-ios-trash"></i></a></p></td>
+            
+        </tr>
+                    }
+
+}

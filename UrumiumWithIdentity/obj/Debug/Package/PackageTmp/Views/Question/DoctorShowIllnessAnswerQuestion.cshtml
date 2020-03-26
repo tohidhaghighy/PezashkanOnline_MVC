@@ -1,0 +1,37 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.QuestionViewModel.AnswerQuestionViewModel
+@{
+    ViewBag.Title = "DoctorShowIllnessAnswerQuestion";
+    Layout = "~/Views/Shared/_ManagmentLayoutDoctor.cshtml";
+}
+
+<h4 class="text-center alert alert-warning" style="padding:30px;">جواب سوال هایی که بیمار داده است</h4>
+<div class="container">
+    <div class="">
+        <div class="">
+            <table id="mytable" class="table table-bordred" style="background-color:white;margin:30px;">
+                <thead>
+                <th class="text-center">سوال</th>
+                <th class="text-center">جواب</th>
+                </thead>
+                <tbody id="listofpharmacy">
+                    @{
+                        foreach (var item in Model.UserAnswerToQuestionList)
+                        {
+                            <tr>
+                                <td class="text-center" style="padding:10px;">@item.Questions.Text</td>
+                                <td class="text-center" style="padding:10px;">@item.AnswerText</td>
+                            </tr>
+
+                                    }
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+       
+    </div>
+</div>
+
+

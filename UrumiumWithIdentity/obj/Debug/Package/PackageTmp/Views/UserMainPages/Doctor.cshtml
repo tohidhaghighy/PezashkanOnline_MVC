@@ -1,0 +1,280 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.DoctorViewModel.DoctorViewModel
+@{
+    ViewBag.Title = "Doctor";
+    Layout = "~/Views/Shared/_ManagmentLayoutDoctor.cshtml";
+}
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+<link href="~/Content/PersianCalender/bootstrap-datepicker.css" rel="stylesheet" charset="UTF-8" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+
+<style>
+    .datepicker {
+        direction: rtl;
+    }
+
+        .datepicker.dropdown-menu {
+            right: initial;
+        }
+</style>
+<h3 class="text-center" style="padding-top:50px;color:green;">
+    به پنل پزشکان خوش آمدید
+</h3>
+
+
+<div class="row" style="margin-top:10px;margin-bottom:50px;">
+    @using (Html.BeginForm("UpdateItemClient", "DoctorManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="container">
+            <input type="number" style="display:none;" name="id" id="id" value="@Model.doctor.Id" />
+            <div class="row">
+                @{
+                    if (Model.doctor.Image == "" || Model.doctor.Image == null)
+                    {
+                        <img src="~/uploads/defaultuser.png" style="width:150px; height:150px;" class="center-block text-center img-circle" />
+                    }
+                    else
+                    {
+                        <img src="~/uploads/Doctor/@Model.doctor.Image" style="width:150px; height:150px;" class="center-block text-center img-circle" />
+                    }
+                }
+
+            </div>
+
+
+
+
+            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                <div class="input-group">
+                    <span class="input-group-addon">عکس دکتر</span>
+                    <input type="file" name="fileupdate" id="fileupdate" class="form-control" placeholder="عکس را انتخاب کنید " />
+                </div>
+
+            </div>
+
+            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                <div class="input-group">
+                    <span class="input-group-addon">نام دکتر</span>
+                    <input type="text" name="name" placeholder="نام را وارد کنید " class="form-control" value="@Model.doctor.Name" />
+                </div>
+
+            </div>
+            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                <div class="input-group">
+                    <span class="input-group-addon">کد نظام پزشکی دکتر</span>
+                    <input type="text" name="nezampezeshkicode" placeholder="کد نظام پزشکی را وارد کنید " class="form-control" value="@Model.doctor.NezamPezeshkiCode" />
+                </div>
+            </div>
+
+            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                <div class="input-group">
+                    <span class="input-group-addon">شماره حساب دکتر</span>
+                    <input type="text" name="accountnumber" placeholder="شماره حساب را وارد کنید " class="form-control" value="@Model.doctor.AccountNumber" />
+                </div>
+            </div>
+
+
+            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                <div class="input-group">
+                    <span class="input-group-addon">توضیحات دکتر</span>
+                    <textarea type="text" name="description" placeholder="توضیحات را وارد کنید " rows="10" class="form-control">@Model.doctor.Description</textarea>
+                </div>
+            </div>
+
+            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                <div class="input-group">
+                    <span class="input-group-addon">گروه را انتخاب کنید</span>
+                    <select class="form-control" id="groupid" name="groupid">
+                        @{
+                            foreach (var item in Model.Groups)
+                            {
+                                <option value="@item.Id" class="text-center">@item.Name</option>
+                            }
+                        }
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                <div class="input-group">
+                    <span class="input-group-addon">استان را انتخاب کنید</span>
+                    <select class="form-control" id="cmbstate" name="cmbstate" onchange="changecityvalue()">
+                        @{
+                            foreach (var item in Model.States)
+                            {
+                                <option value="@item.Id" class="text-center">@item.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                <div class="input-group">
+                    <span class="input-group-addon"> شهر را انتخاب کنید</span>
+                    <div id="citylistview">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                <div class="input-group">
+                    <span class="input-group-addon"> مبلغ ویزیت</span>
+                    <input type="number" name="cost" placeholder="مبلغ ویزیت را وارد کنید " class="form-control" value="@Model.doctor.Cost" />
+                </div>
+            </div>
+            <div class="row center-block text-center" style="margin-top:10px;width:60%;margin-bottom:10px;">
+                <button class="btn btn-success center-block">اپدیت اطلاعات</button>
+            </div>
+
+            <div class="row center-block text-center" style="margin-top:10px;width:60%;margin-bottom:100px;">
+                <div class="">
+                    <h4 class="text-center">زمان بندی دکتر</h4>
+                    <div class="">
+                        <div class="">
+                            <div class="">
+                                <table id="mytable" class="table table-bordred" style="background-color:white;">
+                                    <thead>
+                                    <th class="text-center">تاریخ</th>
+                                    <th class="text-center">توضیح</th>
+                                    <th class="text-center">تعداد ویزیت</th>
+                                    <th class="text-center">حذف</th>
+                                    </thead>
+                                    <tbody id="listofpharmacy">
+                                        @{Html.RenderPartial("_DayDoctorListAjax", Model.DoctorDays);}
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <a class="btn btn-success center-block" onclick="showmodal()">افزودن روز</a>
+            </div>
+        </div>
+                                            }
+
+        <div id="addTimeModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                @using (Html.BeginForm("AddItem", "DayManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+        <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">درج وقت ویزیت جدید</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <input type="number" style="display:none;" name="doctorid" id="doctorid" value="@Model.doctor.Id" />
+                            <input type="text" style="display:none;" name="id" id="id" value="@Model.doctor.Userid" />
+
+                            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                                <label for="sel1">تاریخ را انتخاب کنید</label>
+                                <div class="row center-block text-center">
+                                    <div class="controls">
+                                        <div class="input-append">
+                                            <input id="datepicker1" class="form-control" type="text" name="date">
+                                            <button id="datepicker1btn" class="btn" type="button"><i class="icon-calendar"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                                <label for="sel1">توضیحات را انتخاب کنید</label>
+                                <input type="text" id="description" name="description" class="form-control" placeholder="توضیحات را وارد کنید" />
+                            </div>
+                            <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+                                <label for="sel1">تعداد ویزیت در روز را انتخاب کنید</label>
+                                <input type="number" id="countuser" name="countuser" class="form-control" placeholder="تعداد ویزیت را وارد کنید" />
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                            <button name="btninsert" class="btn btn-success" value="درج">درج</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+
+        <script>
+
+            $(document).ready(function () {
+                $("#datepicker1").datepicker();
+
+            });
+            var id;
+            function showmodal() {
+                $("#addTimeModal").modal();
+
+            };
+
+            function deleteitem(id, doctorid) {
+                swal({
+                    title: "آیا میخواهید حذف شود؟",
+                    text: "",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "بله حذف شود",
+                    cancelButtonText: "خیر",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            sendtoservertodelete(id, doctorid);
+
+                        } else {
+                            swal("صرف نظر", "حذف نشد", "error");
+                        }
+                    });
+            }
+
+            function sendtoservertodelete(id, doctorid) {
+                $.ajax({
+                    type: "Post",
+                    url: '/DayManagment/DeleteItem',
+                    data: { id: id, doctorid: doctorid },
+                    success: function (data) {
+                        window.location.reload();
+
+                    }
+                });
+            }
+
+            function changecityvalue() {
+                var e = document.getElementById("cmbstate");
+                var stateid = e.options[e.selectedIndex].value;
+                $.ajax({
+                    type: "Post",
+                    url: '/DoctorManagment/ChangeComboItemUpdate',
+                    data: { stateid: stateid },
+                    success: function (data) {
+                        if (data.success == true) {
+                            $('#citylistview').empty();
+                            $('#citylistview').append(data.View);
+                        }
+                        else {
+                            swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                        }
+
+                    }
+                });
+            }
+
+        </script>

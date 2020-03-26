@@ -1,0 +1,46 @@
+﻿@model List<UrumiumMVC.ViewModel.EntityViewModel.PharmacyMassage.PharmacyMassegeListViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayoutPharmacy.cshtml";
+}
+<section class="content-header">
+    <h1>
+        داشبرد
+        <small>کنترل پنل</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> خانه</a></li>
+        <li class="active">داشبرد</li>
+    </ol>
+</section>
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="col-md-12">
+        <h1 class="text-center">پیام های داروخانه ها</h1>
+        <div class="table-responsive">
+            <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                <thead>
+                <th class="text-center">نام داروخانه</th>
+                <th class="text-center">متن</th>
+                </thead>
+                <tbody id="listofnoskhe">
+                    @{
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="text-center" style="padding:10px;"> @item.Illnessname </td>
+                                <td class="text-center" style="padding:10px;">@item.Text</td>
+                            </tr>
+                        }
+                    }
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+</div>
+

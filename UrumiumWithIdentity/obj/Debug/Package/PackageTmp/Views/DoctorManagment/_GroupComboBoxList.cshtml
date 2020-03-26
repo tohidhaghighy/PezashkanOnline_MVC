@@ -1,0 +1,10 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Group.Group>
+
+<select class="form-control" id="cmbgroup" name="groupid">
+    @{
+        foreach (var item in Model)
+        {
+            <option value="@item.Id" class="text-center">@item.Name</option>
+        }
+    }
+</select>

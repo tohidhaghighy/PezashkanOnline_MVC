@@ -1,0 +1,410 @@
+﻿@model IdentitySample.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LoginNewDesignLayout.cshtml";
+}
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+<script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+<div class="container">
+    @*<div class="row mt-4 ml-5">
+
+        <div class="login-box col-12 col-md-4 border my-5">
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data", role = "form" ,id= "firstform"}))
+{
+    @Html.AntiForgeryToken()
+            <h3 class="center-block text-center" style="color:white;margin-top:20px;">ثبت نام با ایمیل</h3>
+            <h5 class="center-block text-center" style="color:white;margin-top:10px;">تذکر : پزشکان و کارشناسان و پزشکان داروخانه باید برای ثبت نام تمام مدارک مورد نیاز را وارد کنند تا تایید شود</h5>
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control mt-5", placeholder = "ایمیل خود را وارد کنید" })
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control mt-2", placeholder = "پسورد را وارد کنید" })
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control mt-2", placeholder = "تکرار پسورد را وارد کنید" })
+            <h6 class="text-light mt-2 font-weight-bold">نقش:</h6>
+            <select class="form-control  register mt-2" id="rollid" name="rollid" onchange="changerollvalue()">
+                <option value="3">بیمار</option>
+                <option value="1">دکتر</option>
+                <option value="2">کارشناس</option>
+                <option value="4">داروخانه</option>
+            </select>
+            <h6 class="text-light mt-2 font-weight-bold">استان:</h6>
+            <select class="form-control  register mt-2" id="cmbstate" name="cmbstate" onchange="changecityvalue()">
+                @{
+                    if (Model != null)
+                    {
+                        foreach (var item in Model.States)
+                        {
+                            <option value="@item.Id" class="text-center">@item.Name</option>
+                        }
+                    }
+
+                }
+            </select>
+            <h6 class="text-light mt-2 font-weight-bold">شهر:</h6>
+            <div id="citylistview">
+                <select class="form-control  register mt-2">
+                    <option value="0">استان را انتخاب کنید</option>
+                </select>
+            </div>
+            <div id="txtcartmelli">
+                <h6 class="text-light mt-2 font-weight-bold">اسکن کارت ملی:</h6>
+                <div class="form-control  register mt-2">
+                    <input type="file" name="filecartmelli" id="filecartmelli" class="form-control" placeholder="فایل را انتخاب کنید " />
+                </div>
+            </div>
+            <div id="txtshenasname">
+                <h6 class="text-light mt-2 font-weight-bold">اسکن شناسنامه:</h6>
+                <div class="form-control  register mt-2">
+                    <input type="file" name="fileshenasname" id="fileshenasname" class="form-control" placeholder="فایل را انتخاب کنید " />
+                </div>
+            </div>
+            <div id="txtnezam">
+                <h6 class="text-light mt-2 font-weight-bold">اسکن نظام پزشکی:</h6>
+                <div class="form-control  register mt-2">
+                    <input type="file" name="filenezampezeshki" id="filenezampezeshki" class="form-control" placeholder="فایل را انتخاب کنید " />
+                </div>
+            </div>
+            <div id="txtparvane">
+                <h6 class="text-light mt-2 font-weight-bold">اسکن پروانه:</h6>
+                <div class="form-control  register mt-2">
+                    <input type="file" name="fileparvane" id="fileparvane" class="form-control" placeholder="فایل را انتخاب کنید " />
+                </div>
+            </div>
+            <div id="txtmadrak">
+                <h6 class="text-light mt-2 font-weight-bold">اسکن مدرک تحصیلی:</h6>
+                <div class="form-control  register mt-2">
+                    <input type="file" name="filemadraketahsili" id="filemadraketahsili" class="form-control" placeholder="فایل را انتخاب کنید " />
+                </div>
+            </div>
+
+            @Html.TextBoxFor(m => m.Code, new { @class = "form-control mt-2", placeholder = "کد معرف خود را وارد کنید" })
+
+            <div class="row">
+                <div class="col-xs-12 col-md-6"><input type="submit" style="height:50px;" class="btn btn-success text-light my-5" value="ثبت نام" /></div>
+                <div class="col-xs-12 col-md-6"><a href="/Account/Login" style="height:50px;" class="btn btn-default text-light my-5">قبلا ثبت نام کرده ام</a></div>
+            </div>
+                    }
+        </div>
+
+        <div class="col-md-3 ml-3 ">
+
+        </div>*@
+
+        <div class="login-box col-12 col-md-4 border my-5">
+@using (Html.BeginForm("RegisterMobile", "Account", FormMethod.Post, new { enctype = "multipart/form-data", role = "form" ,id="secondform"}))
+{
+            <h3 class="center-block text-center" style="color:white;margin-top:20px;">ورود با موبایل</h3>
+            <h5 class="center-block text-center" style="color:white;margin-top:10px;">تذکر : پزشکان و کارشناسان و پزشکان داروخانه باید برای ثبت نام تمام مدارک مورد نیاز را وارد کنند تا تایید شود</h5>
+            <div class="form-group">
+                <input type="text" placeholder="موبایل خود را وارد کنید" id="Mobile" name="Mobilesms" class="form-control mt-5" />
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="پسورد خود را وارد کنید" id="Password" name="Passwordsms" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="تکرار پسورد خود را وارد کنید" id="rePassword" name="rePasswordsms" class="form-control" />
+            </div>
+            
+            <h6 class="text-light mt-2 font-weight-bold">نقش:</h6>
+            <select class="form-control  register mt-2" id="rollidmobile" name="rollid" onchange="changerollvaluemobile()">
+                <option value="3">بیمار</option>
+                <option value="1">دکتر</option>
+                <option value="2">کارشناس</option>
+                <option value="4">داروخانه</option>
+            </select>
+            <h6 class="text-light mt-2 font-weight-bold">استان:</h6>
+            <select class="form-control  register mt-2" id="cmbstatemobile" name="cmbstate" onchange="changecityvalueformobile()">
+                @{
+                    if (Model != null)
+                    {
+                        foreach (var item in Model.States)
+                        {
+                            <option value="@item.Id" class="text-center">@item.Name</option>
+                        }
+                    }
+
+                }
+            </select>
+            <h6 class="text-light mt-2 font-weight-bold">شهر:</h6>
+            <div id="citylistviewmobile">
+                <select class="form-control  register mt-2">
+                    <option value="0">استان را انتخاب کنید</option>
+                </select>
+            </div>
+            <div id="txtcartmellimobile">
+                <h6 class="text-light mt-2 font-weight-bold">اسکن کارت ملی:</h6>
+                <div class="form-control  register mt-2">
+                    <input type="file" name="filecartmelli" id="filecartmellimobile" class="form-control" placeholder="فایل را انتخاب کنید " />
+                </div>
+            </div>
+            <div id="txtshenasnamemobile">
+                <h6 class="text-light mt-2 font-weight-bold">اسکن شناسنامه:</h6>
+                <div class="form-control  register mt-2">
+                    <input type="file" name="fileshenasname" id="fileshenasnamemobile" class="form-control" placeholder="فایل را انتخاب کنید " />
+                </div>
+            </div>
+            <div id="txtnezammobile">
+                <h6 class="text-light mt-2 font-weight-bold">اسکن نظام پزشکی:</h6>
+                <div class="form-control  register mt-2">
+                    <input type="file" name="filenezampezeshki" id="filenezampezeshkimobile" class="form-control" placeholder="فایل را انتخاب کنید " />
+                </div>
+            </div>
+            <div id="txtparvanemobile">
+                <h6 class="text-light mt-2 font-weight-bold">اسکن پروانه:</h6>
+                <div class="form-control  register mt-2">
+                    <input type="file" name="fileparvane" id="fileparvanemobile" class="form-control" placeholder="فایل را انتخاب کنید " />
+                </div>
+            </div>
+            <div id="txtmadrakmobile">
+                <h6 class="text-light mt-2 font-weight-bold">اسکن مدرک تحصیلی:</h6>
+                <div class="form-control  register mt-2">
+                    <input type="file" name="filemadraketahsili" id="filemadraketahsilimobile" class="form-control" placeholder="فایل را انتخاب کنید " />
+                </div>
+            </div>
+            <div id="codemoaref">
+                <div class="form-control  register mt-2">
+                    <input type="text" name="Code" id="Codemobile" class="form-control mt-2" placeholder="کد معرف خود را وارد کنید " />
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <input type="submit" class="btn btn-success text-light my-5" value="ثبت نام">
+                </div>
+                <div class="col-xs-12 col-md-6">
+                <a href="/Account/Login" style="height:50px;" class="btn btn-default text-light my-5">قبلا ثبت نام کرده ام</a>
+                </div>
+            </div>
+                    }
+        </div>
+
+
+    </div>
+      
+    </div>
+
+
+
+<script>
+    $(function () {
+        $("secondform").submit(function (e) {
+            var email = $('#Mobile').val();
+            var passwrod = $('#Password').val();
+            var confirmpass = $('#rePassword').val();
+            var ss = document.getElementById("#rollidmobile");
+            var roll = ss.options[ss.selectedIndex].value;
+            if (email != "" && passwrod != "" && confirmpass != "" && (passwrod == confirmpass)) {
+                var cartemelli = $('#filecartmellimobile').val();
+                var shenasname = $('#fileshenasnamemobile').val();
+                var parvande = $('#fileparvanemobile').val();
+                var madrak = $('#filemadraketahsilimobile').val();
+                var nezampezeshki = $('#filenezampezeshkimobile').val();
+                
+                if (roll == "1") {
+                    if (cartemelli != "" && shenasname != "" && nezampezeshki != "") {
+                        return;
+                    }
+
+                }
+                else if (roll == "2") {
+                    if (cartemelli != "" && shenasname != "" && madrak != "") {
+                        return;
+                    }
+                }
+                else if (roll == "3") {
+                    return;
+                }
+                else if (roll == "4") {
+                    if (cartemelli != "" && shenasname != "" && nezampezeshki != "" && parvande !="") {
+                        return;
+                    }
+                }
+            }
+            swal("وارد کردن اطلاعات", "همه اطلاعات را باید وارد کنید", "error");
+            e.preventDefault();
+        });
+
+        $("firstform").submit(function (e) {
+            var email = $('#Email').val();
+            var passwrod = $('#Password').val();
+            var confirmpass = $('#ConfirmPassword').val();
+            var ss = document.getElementById("#rollid");
+            var roll = ss.options[ss.selectedIndex].value;
+            if (email != "" && passwrod != "" && confirmpass != "" && (passwrod == confirmpass)) {
+                var cartemelli = $('#filecartmelli').val();
+                var shenasname = $('#fileshenasname').val();
+                var parvande = $('#fileparvane').val();
+                var madrak = $('#filemadraketahsili').val();
+                var nezampezeshki = $('#filenezampezeshki').val();
+
+                if (roll == "1") {
+                    if (cartemelli != "" && shenasname != "" && nezampezeshki != "") {
+                        return;
+                    }
+
+                }
+                else if (roll == "2") {
+                    if (cartemelli != "" && shenasname != "" && madrak != "") {
+                        return;
+                    }
+                }
+                else if (roll == "3") {
+                    return;
+                }
+                else if (roll == "4") {
+                    if (cartemelli != "" && shenasname != "" && nezampezeshki != "" && parvande != "") {
+                        return;
+                    }
+                }
+            }
+            swal("وارد کردن اطلاعات", "همه اطلاعات را باید وارد کنید", "error");
+            e.preventDefault();
+        });
+    });
+    $(document).ready(function () {
+        isuser();
+        isusermobile(); 
+        $("#Code").hide();
+        $("#codemoaref").hide();
+    });
+
+    function changerollvalue() {
+        var e = document.getElementById("rollid");
+        var roll = e.options[e.selectedIndex].value;
+        if (roll == "1") {
+            $("#Code").show();
+            isdoctor();
+        }
+        else {
+            $("#Code").hide();
+        }
+        if (roll == "2") {
+            isjudge();
+        }
+        if (roll == "3") {
+            isuser();
+        }
+        if (roll == "4") {
+            ispharmacy();
+        }
+    }
+
+    function changerollvaluemobile() {
+        var e = document.getElementById("rollidmobile");
+        var roll = e.options[e.selectedIndex].value;
+        if (roll == "1") {
+            $("#codemoaref").show();
+            isdoctormobile();
+        }
+        else {
+            $("#codemoaref").hide();
+        }
+        if (roll == "2") {
+            isjudgemobile();
+        }
+        if (roll == "3") {
+            isusermobile();
+        }
+        if (roll == "4") {
+            ispharmacymobile();
+        }
+    }
+
+    
+    function changecityvalue() {
+        var e = document.getElementById("cmbstate");
+        var stateid = e.options[e.selectedIndex].value;
+
+        $.ajax({
+            type: "Post",
+            url: '/DoctorManagment/ChangeComboItem',
+            data: { stateid: stateid },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#citylistview').empty();
+                    $('#citylistview').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+
+    function changecityvalueformobile() {
+        var e = document.getElementById("cmbstatemobile");
+        var stateid = e.options[e.selectedIndex].value;
+
+        $.ajax({
+            type: "Post",
+            url: '/DoctorManagment/ChangeComboItem',
+            data: { stateid: stateid },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#citylistviewmobile').empty();
+                    $('#citylistviewmobile').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+
+    function isdoctor() {
+        isuser();
+        $("#txtcartmelli").show();
+        $("#txtshenasname").show();
+        $("#txtnezam").show();
+
+    }
+    function isjudge() {
+        isuser();
+        $("#txtcartmelli").show();
+        $("#txtshenasname").show();
+        $("#txtmadrak").show();
+    }
+    function ispharmacy() {
+        isuser();
+        $("#txtcartmelli").show();
+        $("#txtshenasname").show();
+        $("#txtnezam").show();
+        $("#txtparvane").show();
+    }
+    function isuser() {      
+        $("#txtcartmelli").hide();
+        $("#txtshenasname").hide();
+        $("#txtnezam").hide();
+        $("#txtparvane").hide();
+        $("#txtmadrak").hide();
+    }
+
+
+    function isdoctormobile() {
+        isusermobile();
+        $("#txtcartmellimobile").show();
+        $("#txtshenasnamemobile").show();
+        $("#txtnezammobile").show();
+    }
+    function isjudgemobile() {
+        isusermobile();
+        $("#txtcartmellimobile").show();
+        $("#txtshenasnamemobile").show();
+        $("#txtmadrakmobile").show();
+    }
+    function ispharmacymobile() {
+        isusermobile();
+        $("#txtcartmellimobile").show();
+        $("#txtshenasnamemobile").show();
+        $("#txtnezammobile").show();
+        $("#txtparvanemobile").show();
+    }
+    function isusermobile() {
+        $("#txtcartmellimobile").hide();
+        $("#txtshenasnamemobile").hide();
+        $("#txtnezammobile").hide();
+        $("#txtparvanemobile").hide();
+        $("#txtmadrakmobile").hide();
+    }
+</script>

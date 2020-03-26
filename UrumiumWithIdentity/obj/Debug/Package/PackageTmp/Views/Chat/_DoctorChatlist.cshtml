@@ -1,0 +1,52 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Illness.IllnessMassage>
+@{
+    if (Model.Count() == 0)
+    {
+        <div class="incoming_msg">
+            <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+            <div class="received_msg">
+                <div class="received_withd_msg">
+                    <p>
+                        خوش آمدید منتظر حضور دکتر بمانید
+                    </p>
+                    <span class="time_date"> پشتیبانی </span>
+                </div>
+            </div>
+        </div>
+    }
+    foreach (var item in Model.OrderBy(a => a.Id))
+    {
+        HtmlString msg = new HtmlString(item.Text);
+        if (item.TypeMassage > 0)
+        {
+            msg = new HtmlString(item.OnlyUrlText);
+        }
+        if (item.UserDoctor == true)
+        {
+            <div class="incoming_msg">
+                <div class="incoming_msg_img"> <img src="~/Content/icons/fever.png" alt="sunil"> </div>
+                <div class="received_msg">
+                    <div class="received_withd_msg">
+                        <p>
+                            @msg
+                        </p>
+                        <span class="time_date">کاربر</span>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="outgoing_msg">
+                <div class="sent_msg">
+                    <p>
+                        @msg
+                    </p>
+                    <span class="time_date">خودم</span>
+                </div>
+            </div>
+
+        }
+    }
+}
+

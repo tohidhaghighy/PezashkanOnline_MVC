@@ -1,0 +1,389 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.DoctorViewModel.DoctorDetailViewModel
+@{
+    ViewBag.Title = "DetailDoctor";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<link href="~/Content/Common/GridStyle.css" rel="stylesheet" />
+<style>
+    .heading-box h2 {
+        width: 100%;
+        color: red;
+    }
+
+    .text-box {
+        position: absolute;
+        top: 35%;
+        left: 15%;
+        right: 15%;
+        color: #fff;
+        text-align: center;
+        transform: translateY(-50%);
+    }
+
+    .bg {
+        width: 100%;
+        max-height: 100%;
+        height: 100%;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .carousel, .item {
+        height: 100%;
+    }
+
+    .carousel-inner {
+        height: 100%;
+    }
+
+    .carousel {
+        margin-bottom: 60px;
+    }
+
+    .carousel-caption {
+        z-index: 10;
+    }
+
+    .carousel .item {
+        background-color: #777;
+    }
+
+    .parallax {
+        /* The image used */
+        background-image: url("../../Content/Music/3.jpg");
+        /* Set a specific height */
+        min-height: 500px;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .txtfull {
+        border-bottom-left-radius: 45px;
+        border-top-right-radius: 45px;
+        display: block;
+        background: linear-gradient(to left, rgba(52, 129, 235, 0.60) 50%, white 50%);
+        background-size: 200% 100%;
+        background-position: left bottom;
+        transition: all .5s ease-out;
+    }
+
+        .txtfull:hover {
+            background-position: right bottom;
+        }
+
+    .txtfullleft {
+        border-bottom-left-radius: 45px;
+        border-top-right-radius: 45px;
+        display: block;
+        background: linear-gradient(to right, rgba(52, 129, 235, 0.60) 50%, white 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        transition: all .5s ease-out;
+    }
+
+        .txtfullleft:hover {
+            background-position: left bottom;
+        }
+
+    .text {
+        text-align: center;
+        color: black;
+        transition: all .6s ease-out;
+        padding: 20px;
+    }
+
+        .text:hover {
+            color: white;
+        }
+
+    .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+        background-color: #bbb;
+        color: black;
+    }
+
+    .flip-card-back {
+        background-color: #2980b9;
+        color: white;
+        transform: rotateY(180deg);
+    }
+
+
+    .fullfromcenter {
+        border-bottom-left-radius: 45px;
+        border-top-right-radius: 45px;
+        display: block;
+        color: #2980b9;
+        font-size: 30px;
+        font-family: arial;
+        background-image: linear-gradient(#2980b9, #2980b9);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 0% 100%;
+        transition: background-size .5s, color .5s;
+    }
+
+        .fullfromcenter:hover {
+            background-size: 100% 100%;
+            color: #fff;
+        }
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+
+<div>
+    <div class="container mt-40" style="margin-top:80px;margin-bottom:20px;">
+
+        <h3 class="text-center" style="font-size:45px;font-weight:bold;color:rgba(0, 0, 0, 0.73);">اطلاعات پزشکی</h3>
+
+    </div>
+
+    <div class="container" style="margin-bottom:20px;">
+        <div class="row" style="direction:rtl;">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                @{
+                    if (Model.Doctors.Image == "" || Model.Doctors.Image == null)
+                    {
+                        <img src="~/Content/Managment/dist/img/avatar3.png" alt=" علی صادقی" class="img-responsive img-bordered" style="height:300px;width:100%;margin-left:30px;margin-right:30px; border-radius:5px;">
+                    }
+                    else
+                    {
+                        <img src="~/uploads/Doctor/@Model.Doctors.Image" alt=" علی صادقی" class="img-responsive img-bordered" style="height:300px;width:100%;margin-left:30px;margin-right:30px; border-radius:5px;">
+                    }
+                }
+                
+            </div>
+            <div class="col-lg-8 col-md-12 col-sm-12">
+                <div class="card-body">
+                    <!-- Grid row -->
+                    <!-- Grid row -->
+                    <!--Table-->
+                    <table class="table table-striped">
+                        <!--Table body-->
+                        <tbody>
+                            <tr>
+                                <td class="text-center">نام دکتر</td>
+                                <td class="text-center">@Model.Doctors.Name</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">تخصص</td>
+                                <td class="text-center">@Model.Doctors.Groups.Name</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">هزینه ویزیت</td>
+                                <td class="text-center">@Model.Doctors.Cost</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">ادرس</td>
+                                <td class="text-center">@Model.Doctors.Cities.Name</td>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="direction:rtl;">
+        <div class="row" style="margin-top:20px;border-bottom:1px solid #dcdcdc;margin-bottom:20px;position:relative;padding:11px 0 15px;">
+            <h2><span style="font-weight:bold; float:right;border-bottom:3px solid #0094ff;position:relative;padding-bottom:15px;top:16px;">درباره دکتر</span></h2>
+        </div>
+        <div class="row">
+            <p style="text-align:right;direction:rtl;color:rgba(0, 0, 0, 0.62);font-weight:bold;">
+                @Model.Doctors.Description
+            </p>
+        </div>
+    </div>
+
+    @{
+        if (Model.DoctorDays.Count() > 0)
+        {
+            <div class="container" style="direction:rtl;">
+                <div class="row" style="margin-top:20px;border-bottom:1px solid #dcdcdc;margin-bottom:20px;position:relative;padding:11px 0 15px;">
+                    <h2><span style="font-weight:bold; float:right;border-bottom:3px solid #0094ff;position:relative;padding-bottom:15px;top:16px;">زمان ملاقات</span></h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card-body">
+                            <!-- Grid row -->
+                            <!-- Grid row -->
+                            <!--Table-->
+                            <table class="table table-striped">
+                                <thead>
+                                <th class="text-center">تاریخ</th>
+                                <th class="text-center">ساعت ملاقات</th>
+                                <th class="text-center"></th>
+                                </thead>
+                                <!--Table body-->
+                                <tbody>
+                                    @{
+                                        foreach (var item in Model.DoctorDays)
+                                        {
+                                            <tr>
+                                                <td class="text-center">@item.ReservePersianDatetime</td>
+                                                <td class="text-center">@item.TimeVisit</td>
+                                                @{
+                                                    if (User.Identity.IsAuthenticated)
+                                                    {
+                                                        <td class="text-center"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalPayment">رزرو وقت ملاقات</button></td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td class="text-center"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">رزرو وقت ملاقات</button></td>
+                                                    }
+                                                }
+                                                
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                                <!--Table body-->
+                            </table>
+                            <!--Table-->
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+                                        }
+    }
+    
+
+
+</div>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">ورود به سایت</h4>
+            </div>
+          
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="">
+                            <div class="col-12 text-center center-block">
+                                <div class="row">
+                                    <strong></strong>
+                                    <h3 class="text-center">برای رزرو وقت پزشکی باید در سایت ثبت نام کنید</h3>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br />
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                    <a name="btninsert" class="btn btn-warning" value="ثبت نام" href="/Account/Register">ثبت نام</a>
+                    <a name="btninsert" class="btn btn-success" value="ورود به سایت" href="/Account/Login">ورود به سایت</a>
+                </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="myModalPayment" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">پرداخت</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="">
+                        <div class="col-12 text-center center-block">
+                            <div class="row">
+                                <strong></strong>
+                                <h3 class="text-center">شما برای رزرو وقت پزشکی باید مبلغ زیر را واریز کنید</h3>
+                            </div>
+                            <h4 class="" style="padding:20px;">مبلغ پرداختی</h4>
+                            <h4 class="" style="color:red;margin-top:5px;">@Model.Doctors.Cost </h4>
+                            <h4 class="" style="color:red;margin-top:5px;"> تومان</h4>
+                            
+                        </div>
+                    </div>
+
+
+                </div>
+                <br />
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                <a name="btninsert" class="btn btn-warning" value="پرداخت" href="/Chat/Index?id=1&doctorid=12&userid=14">پرداخت</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    function showmodal() {
+        $("#myModal").modal();
+    }
+
+    function showmodalpay() {
+        $("#myModalPayment").modal();
+    }
+</script>
+

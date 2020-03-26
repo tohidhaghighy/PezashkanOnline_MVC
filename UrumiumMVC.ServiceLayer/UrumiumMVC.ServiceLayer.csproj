@@ -100,6 +100,7 @@
     <Compile Include="Contract\NoskheInterface\INoskheService.cs" />
     <Compile Include="Contract\NotificationInterface\INotificationService.cs" />
     <Compile Include="Contract\NurseInterface\INurseService.cs" />
+    <Compile Include="Contract\PharmacyInterface\IPharmacyIllnessService.cs" />
     <Compile Include="Contract\PharmacyInterface\IPharmacyService.cs" />
     <Compile Include="Contract\PharmacyInterface\IPharmacy_MassageService.cs" />
     <Compile Include="Contract\ProductInterface\IProductService.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="EFServices\NoskheService\NoskheService.cs" />
     <Compile Include="EFServices\NotificationService\NotificationService.cs" />
     <Compile Include="EFServices\NurseService\NurseService.cs" />
+    <Compile Include="EFServices\PharmacyService\PharmacyIllnessMassageService.cs" />
     <Compile Include="EFServices\PharmacyService\PharmacyService.cs" />
     <Compile Include="EFServices\PharmacyService\Pharmacy_MassageService.cs" />
     <Compile Include="EFServices\ProductService\ProductService.cs" />

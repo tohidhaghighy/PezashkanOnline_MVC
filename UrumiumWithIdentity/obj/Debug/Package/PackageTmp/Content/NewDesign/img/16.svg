@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="117.47761mm"
+   height="117.47761mm"
+   viewBox="0 0 416.25924 416.25923"
+   id="svg5323"
+   version="1.1"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="Glands.svg">
+  <defs
+     id="defs5325" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="222.64782"
+     inkscape:cy="107.64777"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5328">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(738.95106,-225.94688)">
+    <circle
+       style="opacity:1;fill:#9f92b3;fill-opacity:1;stroke:none;stroke-width:7.67106342;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="circle4438"
+       cx="-530.82147"
+       cy="434.07648"
+       r="208.12961"
+       inkscape:export-filename="C:\Users\nacer\Documents\Projects\VS\ShadaDocStandPanel\ShadaDocStandPanel\bin\Debug\Images-color\غدد.png"
+       inkscape:export-xdpi="99.992851"
+       inkscape:export-ydpi="99.992851" />
+    <path
+       id="path4720"
+       d="m -607.5776,341.15656 c 6.7136,-3.60049 14.2919,-4.98408 21.8073,-5.70732 17.3578,-1.99678 35.7533,0.81757 50.9414,9.77948 8.8833,5.70732 15.8641,14.27616 20.2508,23.83553 4.4652,10.95868 6.9336,22.60916 8.899,34.24391 2.264,17.64081 3.8677,35.65896 1.3993,53.37838 -0.9748,9.00907 -7.028,16.87039 -15.2667,20.51805 -20.8797,7.76698 -41.1304,17.48358 -59.7303,29.79441 -9.7166,6.30477 -18.3641,14.05606 -27.5933,21.02116 -7.4839,5.2042 -18.1596,7.594 -26.2725,2.3741 -6.6978,-4.0407 -9.7009,-12.4366 -9.1034,-19.96773 1.415,-29.55857 -11.7448,-57.23042 -13.0184,-86.49026 -0.094,-5.61298 0.094,-11.24169 0.7547,-16.8075 0.6447,-5.10986 1.9182,-10.12539 3.4433,-15.03085 5.3142,-17.46786 16.7603,-32.76599 31.4924,-43.42594 3.8678,-2.70429 7.8456,-5.25136 11.9964,-7.51542 z"
+       inkscape:connector-curvature="0"
+       style="opacity:1;fill:#ffffff;fill-opacity:1" />
+    <path
+       id="path4722"
+       d="m -490.208,358.78164 c 4.2136,-0.84902 8.5216,-0.0943 12.6252,0.94336 15.9742,3.16025 32.1843,5.03124 48.1899,7.93993 9.4493,1.3836 17.9867,8.91474 19.1817,18.61561 1.3678,7.26386 -1.8868,14.7164 -7.2167,19.60614 -21.1155,19.79481 -40.0456,43.23727 -66.9628,55.43804 -4.4966,1.22636 -8.899,-1.3836 -10.3769,-5.6916 -0.5975,-4.27656 0.3302,-8.55312 0.6289,-12.81395 1.7924,-23.12801 0.8647,-46.47614 -3.3961,-69.28969 -1.2421,-5.8331 1.2735,-12.89257 7.3268,-14.74784 z"
+       inkscape:connector-curvature="0"
+       style="opacity:1;fill:#8673a2;fill-opacity:1" />
+  </g>
+</svg>

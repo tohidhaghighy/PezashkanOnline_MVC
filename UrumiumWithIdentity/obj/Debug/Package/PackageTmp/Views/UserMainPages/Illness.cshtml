@@ -1,0 +1,196 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.IllnessViewModel.IllnessViewModel
+@{
+    ViewBag.Title = "Illness";
+    Layout = "~/Views/Shared/_ManagmentLayoutIllness.cshtml";
+}
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+<link href="~/Content/PersianCalender/bootstrap-datepicker.css" rel="stylesheet" charset="UTF-8" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+
+<style>
+    .datepicker {
+        direction: rtl;
+    }
+
+        .datepicker.dropdown-menu {
+            right: initial;
+        }
+</style>
+
+<h3 class="text-center" style="padding-top:50px;color:green;">
+    به پنل بیمار خوش آمدید
+</h3>
+
+<hr />
+
+@using (Html.BeginForm("UpdateItemClient", "IllnessManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+<div class="row" style="margin-top:10px;margin-bottom:50px;">
+    <div class="container">
+        <input value="@Model.Illness.Id" id="id" name="id" type="number" style="display:none;"/>
+
+        <div class="row">
+            @{
+                if (Model.Illness.Image == "" || Model.Illness.Image == null)
+                {
+                    <img src="~/uploads/defaultuser.png" style="width:150px; height:150px;" class="center-block text-center img-circle" />
+                }
+                else
+                {
+                    <img src="~/uploads/Illness/@Model.Illness.Image" style="width:150px; height:150px;" class="center-block text-center img-circle" />
+                }
+            }
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">عکس بیمار</span>
+                <input type="file" name="fileupdate" id="fileupdate" class="form-control" placeholder="عکس را انتخاب کنید " />
+            </div>
+
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">نام بیمار</span>
+                <input type="text" name="name" placeholder="نام را وارد کنید " class="form-control" value="@Model.Illness.Name" />
+            </div>
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">بیمه را انتخاب کنید</span>
+                <select class="form-control" id="bimeid" name="bimeid">
+                    @{
+                        foreach (var item in Model.Insurances)
+                        {
+                            <option value="@item.Id" class="text-center">@item.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+         
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">استان را انتخاب کنید</span>
+                <select class="form-control" id="cmbstate" name="cmbstate" onchange="changecityvalue()">
+                    @{
+                        foreach (var item in Model.States)
+                        {
+                            <option value="@item.Id" class="text-center">@item.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+    <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+        <div class="input-group">
+            <span class="input-group-addon">شهر را انتخاب کنید</span>
+            <div id="citylistview">
+
+            </div>
+        </div>
+      
+    </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">مقدار قند بیمار</span>
+                <input type="number" name="suger" placeholder="قند را وارد کنید " class="form-control" value="@Model.Illness.Sugar" />
+            </div>
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">مقدار فشار خون بیمار</span>
+                <input type="number" name="pressure" placeholder="فشار را وارد کنید " class="form-control" value="@Model.Illness.PressureBlood" />
+            </div>
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">مقدار وزن بیمار</span>
+                <input type="number" name="weight" placeholder="وزن را وارد کنید " class="form-control" value="@Model.Illness.Weight" />
+            </div>
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">سن بیمار</span>
+                <input type="number" name="age" placeholder="سن را وارد کنید " class="form-control" value="@Model.Illness.Age" />
+            </div>
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">سریال بیمه بیمار</span>
+                <input type="number" name="serialbime" placeholder="سریال بیمه را وارد کنید " class="form-control" value="@Model.Illness.InsuranceSerial" />
+            </div>
+        </div>
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">عکس صفحه اول بیمه</span>
+                <input type="file" name="fileBime" id="fileBime" class="form-control" placeholder="عکس را انتخاب کنید " />
+            </div>
+        </div>
+
+    <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+        <div class="input-group">
+            <span class="input-group-addon">تاریخ را انتخاب کنید</span>
+            <div class="row center-block text-center">
+                <div class="controls">
+                    <div class="input-append">
+                        <input id="datepicker1" class="form-control" type="text" name="date" value="@Model.Illness.InsuranceFinishDate">
+                        <button id="datepicker1btn" class="btn" type="button"><i class="icon-calendar"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;margin-bottom:100px;">
+            <button class="btn btn-success center-block">اپدیت اطلاعات</button>
+        </div>
+
+
+    </div>
+</div>
+
+}
+<script>
+
+    $(document).ready(function () {
+        $("#datepicker1").datepicker();
+
+    });
+   
+    function changecityvalue() {
+        var e = document.getElementById("cmbstate");
+        var stateid = e.options[e.selectedIndex].value;
+        $.ajax({
+            type: "Post",
+            url: '/DoctorManagment/ChangeComboItemUpdate',
+            data: { stateid: stateid },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#citylistview').empty();
+                    $('#citylistview').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+
+</script>

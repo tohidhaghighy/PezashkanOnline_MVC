@@ -1,0 +1,17 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Ticket.Ticket>
+
+<div class="col-lg-3 col-xs-6">
+
+    <div class="small-box bg-red">
+        <div class="inner">
+            <h3>@Model.Where(a => a.FinishChat==true).Count()<sup style="font-size: 20px"></sup></h3>
+
+            <p>تعداد پیام های پاسخ داده شده</p>
+        </div>
+        <div class="icon">
+            <i class="ion ion-ios-list"></i>
+        </div>
+        <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-address-book"></i></a>
+    </div>
+</div>
+

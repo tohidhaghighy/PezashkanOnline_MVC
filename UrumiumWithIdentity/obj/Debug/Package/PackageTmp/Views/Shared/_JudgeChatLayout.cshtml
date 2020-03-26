@@ -1,0 +1,406 @@
+﻿@using Microsoft.AspNet.Identity;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor-دکتر هوشمند</title>
+    <meta http-equiv="Content-Language" content="fa" />
+    <link rel="icon" href="~/Content/icons/stethoscope.png">
+    <meta name="description" content="دکتر هوشمند" />
+    <meta name="robots" content="noodp" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="توحید حقیقی 09144967941" />
+    <link rel="canonical" href="" />
+    <link rel="canonical" href="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="DoctorHushmand" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="~/Content/icons/stethoscope.png" />
+    <meta name="twitter:card" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Managment/dist/css/cssbootstrapcustom.css">
+    <link href="~/Scripts/ScrollerLoad/ScrollAos.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Content/Managment/dist/css/animation.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+
+    <style>
+        @@font-face {
+            font-family: 'butifulfont';
+            src: url('/Content/Managment/dist/fonts/Yekan/Yekan.eot');
+            src: url('/Content/Managment/dist/fonts/Yekan/Yekan.eot?#iefix') format('embedded-opentype'), url('/Content/Managment/dist/fonts/Yekan/Yekan.woff') format('woff'), url('/Content/Managment/dist/fonts/Yekan/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        p, a, span, div {
+            font-family: butifulfont;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            color: white;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+
+        .blurset {
+            -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+            filter: blur(5px);
+        }
+
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('~/Content/Managment/dist/img/icon.png') 50% 50% no-repeat rgb(249,249,249);
+            opacity: .8;
+        }
+
+        #footer ul.social li {
+            padding: 3px 0;
+        }
+
+            #footer ul.social li a i {
+                margin-right: 5px;
+                font-size: 25px;
+                -webkit-transition: .5s all ease;
+                -moz-transition: .5s all ease;
+                transition: .5s all ease;
+            }
+
+            #footer ul.social li:hover a i {
+                font-size: 30px;
+                margin-top: -10px;
+            }
+
+            #footer ul.social li a,
+            #footer ul.quick-links li a {
+                color: #ffffff;
+            }
+
+                #footer ul.social li a:hover {
+                    color: #eeeeee;
+                }
+
+        #footer ul.quick-links li {
+            padding: 3px 0;
+            -webkit-transition: .5s all ease;
+            -moz-transition: .5s all ease;
+            transition: .5s all ease;
+        }
+
+            #footer ul.quick-links li:hover {
+                padding: 3px 0;
+                margin-left: 5px;
+                font-weight: 700;
+            }
+
+            #footer ul.quick-links li a i {
+                margin-right: 5px;
+            }
+
+            #footer ul.quick-links li:hover a i {
+                font-weight: 700;
+            }
+
+        @@media (max-width:767px) {
+            #footer h5 {
+                padding-left: 0;
+                border-left: transparent;
+                padding-bottom: 0px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+
+<body id="parent" style="overflow-x:hidden;">
+
+
+
+    @RenderBody()
+
+
+    
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+
+                </div>
+                <div class="modal hide" id="myModal">
+
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                </div>
+                <div class="modal-body" align="center" style="direction:rtl;">
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <img height="70" src="~/Content/Managment/dist/img/up-arrow.png" class="animated1 tada" onclick="topFunction()" id="myBtn" />
+    <script src="~/Content/Managment/dist/js/jsmenu.js"></script>
+    <script src="~/Content/Managment/dist/js/jsbootstrap4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="~/Scripts/ScrollerLoad/ScrollAos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script>
+
+        $("#imgupload").on('change', function () {
+
+            if (typeof (FileReader) != "undefined") {
+
+                var image_holder = $("#showitem");
+                image_holder.empty();
+
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("<img />", {
+                        "src": e.target.result,
+                        "class": "thumb-image",
+                        "style": "width:70px;height:70px;paddign:10px;"
+                    }).appendTo(image_holder);
+                }
+                image_holder.show();
+                reader.readAsDataURL($(this)[0].files[0]);
+            } else {
+                alert("This browser does not support FileReader.");
+            }
+            sendFile();
+        });
+
+        var chat = $.connection.chatHub;
+
+        $(function () {
+            $('#sendimage').click(function () {
+                $('#imgupload').trigger('click');
+            });
+            var chat = $.connection.chatHub;
+
+            $.connection.hub.start().done(function () {
+
+                var name = $('#sendernametxt').val();
+                var group = $('#grouptxt').val();
+                chat.server.adduserjudge(name, group);
+
+                $("#sendmessage").click(function () {
+                    var txt = $("#chat").val();
+                    if (txt!="") {
+                        chat.server.sendgroupjudge(txt, group,'@User.Identity.GetUserId()', name);
+                        addchattokhodam($("#chat").val());
+                        $("#chat").val("").focus();
+                    }
+
+
+                });
+
+            });
+
+            chat.client.addNewItem = function (name, message) {
+                addchattouser(name,message);
+            }
+
+            chat.client.groupmassage = function (message) {
+                addchattouser('@User.Identity.GetUserName()', message);
+            }
+
+            chat.client.groupimagemassageothers = function (image) {
+                addimgtouser('@User.Identity.GetUserName()', image);
+            }
+
+            chat.client.groupimagemassageown = function (image) {
+                addimgtokhodam(image);
+
+            }
+
+        });
+
+
+        function sendFile() {
+
+            var formData = new FormData();
+            formData.append('fileupdate', $('#imgupload')[0].files[0]);
+            $.ajax({
+                type: 'post',
+                url: '/Upload/JudgeUpload',
+                data: formData,
+                success: function (status) {
+                    if (status.success) {
+                        chat.server.sendgroupimgjudge(status.data, $('#grouptxt').val(), '@User.Identity.GetUserId()', $("#sendernametxt").val());
+                        $('#showitem').empty();
+                    }
+                    else {
+                        swal("مشکل سرور", "مشکلی در اتصال به سرور ایجاد شد", "error");
+                    }
+                },
+                processData: false,
+                contentType: false,
+                error: function () {
+                    alert("Whoops something went wrong!");
+                }
+            });
+        }
+        function finishvisit(visitid) {
+            swal({
+                title: "آیا میخواهید مکالمه تمام شود؟",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "بله تمام شود",
+                cancelButtonText: "خیر",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        showmodalitem(visitid);
+
+                    } else {
+                        swal("صرف نظر", "حذف نشد", "error");
+                    }
+                });
+        }
+
+
+        function showmodalitem(visitid) {
+            $.ajax({
+                type: "Post",
+                url: '/JudgeManagment/Finishvisit',
+                data: { visitid: visitid },
+                success: function (data) {
+                    if (data.success) {
+                        swal("تمام شد", "با موفقیت تمام شد", "success");
+                    }
+                }
+            });
+        }
+
+        $("#dbprogrammenu").hover(
+            function () {
+                $('#dbprogrammenu', this).stop(true, true).delay(200).fadeIn(500);
+                $(this).toggleClass('open');
+            },
+            function () {
+                $('#dbprogrammenu', this).stop(true, true).delay(200).fadeOut(500);
+                $(this).toggleClass('open');
+            }
+        );
+
+
+        $(document).ready(function () {
+            if ($(window).width() < 600) {
+                $("#navchangecolor").css("background-color", "white");
+            }
+        });
+
+
+        $(function () {
+                $(document).scroll(function () {
+                    var $nav = $(".navbar-fixed-top");
+                    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                });
+            });
+
+        window.onscroll = function () { scrollFunction(); };
+        function scrollFunction() {
+            if ($(window).width() < 600) {
+                $("#navchangecolor").css("background-color", "white");
+                $(".btn-li-nav").css("color", "black");
+            }
+            else {
+                if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+                    $("#navchangecolor").css("background-color", "white");
+                    $(".btn-li-nav").css("color", "black");
+                } else {
+                    $("#navchangecolor").css("background-color", "rgba(29, 108, 6, 0.40)");
+                    $(".btn-li-nav").css("color", "white");
+                }
+            }
+        }
+
+
+        function addchattokhodam(massege) {
+            var list = "<li><div class='message-data'><span class='message-data-name'><i class='fa fa-circle you'></i> خودم</span></div><div class='message you-message'>" + massege + "</div></li>";
+            $("#chatid").prepend(list);
+        }
+
+        function addchattouser(user,massege) {
+            var list = "<li class='clearfix'><div class='message-data align-right'><span class='message-data-name'>" + user + "</span><i class='fa fa-circle me'></i></div><div class='message me-message float-right'> " + massege + "</div></li>";
+            $("#chatid").prepend(list);
+        }
+
+        function addimgtokhodam(massege) {
+            var list = "<li><div class='message-data'><span class='message-data-name'><i class='fa fa-circle you'></i> خودم</span></div><div class='message you-message'><a href=" + massege + "><img src=" + massege + " style='height:70px;width:70px;' href=" + massege + "/></a></div></li>";
+            $("#chatid").prepend(list);
+        }
+
+        function addimgtouser(user, massege) {
+            var list = "<li class='clearfix'><div class='message-data align-right'><span class='message-data-name'>" + user + "</span><i class='fa fa-circle me'></i></div><div class='message me-message float-right'><a href=" + massege + "><img src=" + massege + " style='height:70px;width:70px;' href=" + massege + "/></a></div></li>";
+            $("#chatid").prepend(list);
+        }
+
+            function showitemdeparteman() {
+
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    $("#imgshowitem").show(500);
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            }
+
+            function clicktofooter() {
+                $('html, body').animate({
+                    scrollTop: $("#footerdiv").offset().top
+                }, 2000);
+            }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104223336-1"></script>
+    <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-104223336-1');
+    </script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

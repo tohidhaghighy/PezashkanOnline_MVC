@@ -106,7 +106,7 @@ namespace DataLayer.Context
         public DbSet<Nurse> Nurses { get; set; }
         public DbSet<DoctorMoarefCode> DoctorMoarefCodes { get; set; }
         public DbSet<DoctorSubsetPassage> DoctorSubsetPassages { get; set; }
-        
+        public DbSet<Illness_Pharmacy_Massage> IllnessPharmacyMassages { get; set; }
 
 
         public DbSet<UserAnswerToQuestion> UserAnswerToQuestions { get; set; }

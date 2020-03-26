@@ -112,6 +112,7 @@
     <Compile Include="EntityViewModel\NotificationViewModel\NotificationDetail.cs" />
     <Compile Include="EntityViewModel\NotificationViewModel\NotificationMain.cs" />
     <Compile Include="EntityViewModel\NotificationViewModel\NotificationUser.cs" />
+    <Compile Include="EntityViewModel\PharmacyMassage\PharmacyIllnessMassage.cs" />
     <Compile Include="EntityViewModel\PharmacyMassage\PharmacyMassageInfoViewModel.cs" />
     <Compile Include="EntityViewModel\PharmacyMassage\PharmacyMassegeListViewModel.cs" />
     <Compile Include="EntityViewModel\PharmacyViewModel\PharmacyListSendedNoskhe.cs" />

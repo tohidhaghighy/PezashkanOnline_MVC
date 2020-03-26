@@ -1,0 +1,354 @@
+﻿@using Microsoft.AspNet.Identity;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> پنل مدیریت</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="fa" />
+    <link rel="icon" href="~/Content/NewDesign/img/Image1 (1).png">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="~/Content/Managment/dist/css/bootstrap-theme.css">
+    <!-- Bootstrap rtl -->
+    <link rel="stylesheet" href="~/Content/Managment/dist/css/rtl.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/Managment/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/Content/Managment/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/Managment/dist/css/AdminLTE.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="~/Content/Managment/dist/css/skins/_all-skins.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
+    <script src="/signalr/hubs"></script>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini">پنل</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>ورود به صفحه اصلی سایت</b></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success" id="txtspannumber">1</span>
+                            </a>
+                            <ul class="dropdown-menu" id="notifylist">
+                               
+                            </ul>
+                        </li>
+
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="~/uploads/team.png" width="160" height="160" class="user-image" alt="User Image">
+                                <span class="hidden-xs">@User.Identity.GetUserName()</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="~/uploads/team.png" width="160" height="160" class="img-circle" alt="User Image">
+
+                                    <p>
+                                        <small>مدیریت کل سایت</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">پروفایل</a>
+                                    </div>
+                                    <div class="pull-left">
+                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+
+
+                                            <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-danger">خروج</a>
+
+                                        }
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- right side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-right image">
+                        <img src="~/uploads/team.png" width="160" height="160" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-right info">
+                        <p>@User.Identity.GetUserName()</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> آنلاین</a>
+                    </div>
+                </div>
+                <!-- search form -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+
+                    </div>
+                </form>
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">منو</li>
+                    @{
+                        string param1 = Request.QueryString["id"];
+
+                    }
+                    <li id="Workitem" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> مدیریت اطلاعات</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/UserMainPages/Doctor?id=@param1"><i class="fa fa-circle-o"></i> اطلاعات شخصی</a></li>
+                        </ul>
+                    </li>
+                    <li id="Workitem" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> سوالات عمومی</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/Question/DoctorQuestion?id=@param1"><i class="fa fa-circle-o"></i> لیست سوالات عمومی</a></li>
+                        </ul>
+                    </li>
+                    <li id="Workitem" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> مدیریت دارو ها</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/MedicineManagment/Index?id=@param1"><i class="fa fa-circle-o"></i>  دارو</a></li>
+                        </ul>
+                    </li>
+                    <li id="Workitem" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> حسابداری</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li id="Workitem" class="treeview">
+                        <a href="/Noskhe/Index">
+                            <i class="fa fa-list-ul"></i> <span> مدیریت ویزیت ها</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/UserMainPages/DoctorVisitList?id=@param1"><i class="fa fa-circle-o"></i>  مدیریت ویزیت ها</a></li>
+                        </ul>
+                    </li>
+                    <li id="Workitem" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ul"></i> <span> بازاریابی</span>
+                            <span class="pull-left-container">
+                                <i class="fa fa-angle-right pull-left"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/MarketingDoctor/Index?id=@param1"><i class="fa fa-circle-o"></i>  لینک بازاریابی</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <!-- Main content -->
+
+
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer text-left">
+            <strong>Copyleft &copy; 2020 <a href="http://urumium.ir">هیوا وب</a></strong>
+        </footer>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane" id="control-sidebar-home-tab">
+
+
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Stats tab content -->
+                <div class="tab-pane" id="control-sidebar-stats-tab">وضعیت</div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">تنظیمات عمومی</h3>
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                گزارش کنترلر پنل
+                                <input type="checkbox" class="pull-left" checked>
+                            </label>
+
+                            <p>
+                                ثبت تمامی فعالیت های مدیران
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                ایمیل مارکتینگ
+                                <input type="checkbox" class="pull-left" checked>
+                            </label>
+
+                            <p>
+                                اجازه به کاربران برای ارسال ایمیل
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                در دست تعمیرات
+                                <input type="checkbox" class="pull-left" checked>
+                            </label>
+
+                            <p>
+                                قرار دادن سایت در حالت در دست تعمیرات
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <h3 class="control-sidebar-heading">تنظیمات گفتگوها</h3>
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                آنلاین بودن من را نشان نده
+                                <input type="checkbox" class="pull-left" checked>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                اعلان ها
+                                <input type="checkbox" class="pull-left">
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                حذف تاریخته گفتگوهای من
+                                <a href="javascript:void(0)" class="text-red pull-left"><i class="fa fa-trash-o"></i></a>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- jQuery 3 -->
+    <script src="~/Content/Managment/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="~/Content/Managment/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $(document).ready(function () {
+            sendmassageuser();
+        });
+
+        function sendmassageuser() {
+            $.ajax({
+                type: "Post",
+                url: '/UserMainPages/NotificationList',
+                data: {
+                    type: 1
+                },
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#notifylist').empty();
+                        $('#notifylist').append(data.View);
+                    }
+                }
+            });
+        }
+
+        $.widget.bridge('uibutton', $.ui.button);
+
+    </script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/Content/Managment/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Content/Managment/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content/Managment/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="~/Content/Managment/dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Content/Managment/dist/js/demo.js"></script>
+    <script src="~/Content/Common/CurrencyJquary.js"></script>
+    <script src="~/Content/PersianCalender/bootstrap-datepicker.js"></script>
+    <script src="~/Content/PersianCalender/bootstrap-datepicker.fa.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

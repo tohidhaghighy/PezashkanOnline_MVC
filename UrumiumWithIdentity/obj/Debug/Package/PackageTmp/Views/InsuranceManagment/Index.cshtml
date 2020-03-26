@@ -1,0 +1,259 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Insurance.Insurance>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+
+
+
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<h2 class="text-center" style="padding:50px;">مدیریت بیمه ها</h2>
+
+<p style="margin-right:50px;">
+    <a class="btn btn-link" onclick="showmodal()">افزودن بیمه جدید</a>
+</p>
+
+<div style="padding:30px;margin-top:20px;margin-bottom:20px;">
+    <div class="col-lg-12 col-sm-12 col-md-12">
+        <input type="text" placeholder="جستجو کن ..." class="form-control" id="txtsearch" onchange="changetext()" />
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">لیست بیمه ها</h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">عکس</th>
+                    <th class="text-center">نام</th>
+                    <th class="text-center">حذف</th>
+                    <th class="text-center">ویرایش</th>
+                    </thead>
+                    <tbody id="listofitem">
+                        @{Html.RenderPartial("_InsuranceListAjax", Model);}
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">درج بیمه جدید</h4>
+            </div>
+            @using (Html.BeginForm("AddItem", "InsuranceManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="">
+                            <div class="col-12 text-center center-block">
+                                <div class="alert alert-warning">
+                                    <strong>نام</strong>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            نام بیمه جدید
+                        </div>
+                        <div class="col-lg-8">
+                            <input id="txtname" name="name" class="form-control" placeholder="نام بیمه را وارد کنید" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-4">
+                            توضیحات بیمه جدید
+                        </div>
+                        <div class="col-lg-8">
+                            <input id="txtdes" name="description" class="form-control" placeholder="توضیحات بیمه را وارد کنید" />
+                        </div>
+                    </div>
+                  
+                    <div class="row" style="margin-top:20px;">
+                        <div class="col-lg-4">
+                            عکس بیمه را انتخاب کنید
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="file" name="file" id="file" class="btn btn-default" />
+                        </div>
+                    </div>
+                    <br />
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                    <button name="btninsert" class="btn btn-success" value="درج">درج</button>
+                </div>
+
+                                    }
+        </div>
+
+    </div>
+</div>
+
+<div id="myModalUpdate" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">ویرایش بیمه</h4>
+            </div>
+            @using (Html.BeginForm("UpdateItem", "InsuranceManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="modal-body">
+                    <input id="txtid" name="id" class="form-control" style="display:none;" />
+                    <div class="row">
+                        <div class="col-lg-4">
+                           نام بیمه 
+                        </div>
+                        <div class="col-lg-8">
+                            <input id="txtnameupdate" name="name" class="form-control" placeholder="نام بیمه را وارد کنید" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-4">
+                            توضیحات بیمه
+                        </div>
+                        <div class="col-lg-8">
+                            <input id="txtdesupdate" name="description" class="form-control" placeholder="توضیحات دکتر را وارد کنید" />
+                        </div>
+                    </div>
+                   
+                    <div class="row" style="margin-top:20px;">
+                        <div class="col-lg-4">
+                            عکس بیمه را انتخاب کنید
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="file" name="fileupdate" id="file" class="btn btn-default" />
+                        </div>
+                    </div>
+                    <br />
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">خروج</button>
+                    <button name="btninsert" class="btn btn-success" value="درج">ویرایش</button>
+                </div>
+
+                                    }
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+
+    function showmodal() {
+        $("#myModal").modal();
+
+    };
+
+    function deleteitem(id) {
+        swal({
+            title: "آیا میخواهید حذف شود؟",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "بله حذف شود",
+            cancelButtonText: "خیر",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+            function (isConfirm) {
+                if (isConfirm) {
+                    sendtoservertodelete(id);
+
+                } else {
+                    swal("صرف نظر", "حذف نشد", "error");
+                }
+            });
+    }
+
+    function sendtoservertodelete(id) {
+        $.ajax({
+            type: "Post",
+            url: '/InsuranceManagment/DeleteItem',
+            data: { id: id },
+            success: function (data) {
+                window.location.reload();
+
+            }
+        });
+    }
+
+   
+
+    function changetext() {
+        var text = $('#txtsearch').val();
+        if (text != "") {
+            $.ajax({
+                type: "Post",
+                url: '/InsuranceManagment/SearchItem',
+                data: { text: text },
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#listofitem').empty();
+                        $('#listofitem').append(data.View);
+                    }
+                    else {
+                        swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                    }
+                }
+            });
+        }
+
+    }
+
+
+    function updateitem(id,name,description) {
+        $('#txtid').val(id);
+        $('#txtnameupdate').val(name);
+        $('#txtdesupdate').val(description);
+        $("#myModalUpdate").modal();
+    }
+
+</script>
+
+
+
+
+
+
+
+
+

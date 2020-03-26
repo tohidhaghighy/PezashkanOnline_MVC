@@ -26,7 +26,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/22/2017 07:11:18</publishTime>
     </File>
     <File Include="bin/DataLayer.dll">
-      <publishTime>03/20/2020 11:45:03</publishTime>
+      <publishTime>03/26/2020 12:10:36</publishTime>
     </File>
     <File Include="bin/DataLayer.dll.config">
       <publishTime>01/11/2019 21:48:59</publishTime>
@@ -251,7 +251,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/08/2018 08:16:46</publishTime>
     </File>
     <File Include="bin/UrumiumMVC.AutoMapper.dll">
-      <publishTime>03/20/2020 11:45:03</publishTime>
+      <publishTime>03/26/2020 12:10:34</publishTime>
     </File>
     <File Include="bin/UrumiumMVC.AutoMapper.dll.config">
       <publishTime>01/11/2019 21:48:59</publishTime>
@@ -263,31 +263,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/11/2019 21:41:54</publishTime>
     </File>
     <File Include="bin/UrumiumMVC.DomainClasses.dll">
-      <publishTime>03/20/2020 11:45:01</publishTime>
+      <publishTime>03/26/2020 12:10:33</publishTime>
     </File>
     <File Include="bin/UrumiumMVC.DomainClasses.dll.config">
       <publishTime>12/18/2018 10:04:02</publishTime>
     </File>
     <File Include="bin/UrumiumMVC.IocConfig.dll">
-      <publishTime>03/20/2020 11:45:05</publishTime>
+      <publishTime>03/26/2020 12:10:38</publishTime>
     </File>
     <File Include="bin/UrumiumMVC.IocConfig.dll.config">
       <publishTime>01/11/2019 21:48:58</publishTime>
     </File>
     <File Include="bin/UrumiumMVC.ServiceLayer.dll">
-      <publishTime>03/20/2020 11:45:04</publishTime>
+      <publishTime>03/26/2020 12:10:37</publishTime>
     </File>
     <File Include="bin/UrumiumMVC.ServiceLayer.dll.config">
       <publishTime>01/11/2019 21:48:58</publishTime>
     </File>
     <File Include="bin/UrumiumMVC.ViewModel.dll">
-      <publishTime>03/20/2020 11:45:02</publishTime>
+      <publishTime>03/26/2020 12:10:34</publishTime>
     </File>
     <File Include="bin/UrumiumMVC.ViewModel.dll.config">
       <publishTime>01/11/2019 21:48:58</publishTime>
     </File>
     <File Include="bin/UrumiumWithIdentity.dll">
-      <publishTime>03/20/2020 11:45:23</publishTime>
+      <publishTime>03/26/2020 17:53:24</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -27305,34 +27305,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/DoctorHome/DetailDoctor.cshtml">
-      <publishTime>03/15/2020 12:16:52</publishTime>
+      <publishTime>03/21/2020 11:52:19</publishTime>
     </File>
     <File Include="Views/DoctorHome/Index.cshtml">
-      <publishTime>03/15/2020 12:16:15</publishTime>
+      <publishTime>03/21/2020 11:52:05</publishTime>
     </File>
     <File Include="Views/DoctorHome/ListDoctor.cshtml">
-      <publishTime>03/15/2020 12:17:03</publishTime>
+      <publishTime>03/21/2020 11:51:59</publishTime>
     </File>
     <File Include="Views/DoctorHome/ListDoctorWithCity.cshtml">
-      <publishTime>03/15/2020 12:17:12</publishTime>
+      <publishTime>03/21/2020 11:52:39</publishTime>
     </File>
     <File Include="Views/DoctorHome/ListJudge.cshtml">
-      <publishTime>03/15/2020 12:17:24</publishTime>
+      <publishTime>03/21/2020 11:52:53</publishTime>
     </File>
     <File Include="Views/DoctorHome/ListPharmacy.cshtml">
-      <publishTime>03/15/2020 12:17:35</publishTime>
+      <publishTime>03/21/2020 11:53:11</publishTime>
     </File>
     <File Include="Views/DoctorHome/SiteAboutUs.cshtml">
-      <publishTime>03/15/2020 12:17:44</publishTime>
+      <publishTime>03/21/2020 11:53:23</publishTime>
     </File>
     <File Include="Views/DoctorHome/SiteCooperationwithus.cshtml">
-      <publishTime>03/15/2020 12:18:00</publishTime>
+      <publishTime>03/21/2020 11:53:37</publishTime>
     </File>
     <File Include="Views/DoctorHome/SiteRolles.cshtml">
-      <publishTime>03/15/2020 12:18:09</publishTime>
+      <publishTime>03/21/2020 11:56:51</publishTime>
     </File>
     <File Include="Views/DoctorManagment/Index.cshtml">
-      <publishTime>07/26/2019 17:26:14</publishTime>
+      <publishTime>03/24/2020 18:36:56</publishTime>
     </File>
     <File Include="Views/DoctorManagment/_BimeListAjax.cshtml">
       <publishTime>06/20/2019 00:00:20</publishTime>
@@ -27344,7 +27344,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/19/2019 22:46:42</publishTime>
     </File>
     <File Include="Views/DoctorManagment/_DoctorListAjax.cshtml">
-      <publishTime>08/03/2019 13:00:02</publishTime>
+      <publishTime>03/24/2020 18:37:42</publishTime>
     </File>
     <File Include="Views/DoctorManagment/_GroupComboBoxList.cshtml">
       <publishTime>06/18/2019 20:10:54</publishTime>
@@ -27461,7 +27461,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/IllnessManagment/Index.cshtml">
-      <publishTime>10/27/2019 22:54:29</publishTime>
+      <publishTime>03/24/2020 18:39:46</publishTime>
     </File>
     <File Include="Views/IllnessManagment/_CityComboBox.cshtml">
       <publishTime>06/20/2019 09:16:11</publishTime>
@@ -27470,7 +27470,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/20/2019 09:34:22</publishTime>
     </File>
     <File Include="Views/IllnessManagment/_IllnessListAjax.cshtml">
-      <publishTime>06/20/2019 10:04:22</publishTime>
+      <publishTime>03/24/2020 18:40:32</publishTime>
     </File>
     <File Include="Views/IllnessManagment/_InsuranceComboBoxList.cshtml">
       <publishTime>06/20/2019 09:16:37</publishTime>
@@ -27485,7 +27485,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/19/2019 09:35:43</publishTime>
     </File>
     <File Include="Views/JudgeManagment/Index.cshtml">
-      <publishTime>07/26/2019 17:48:31</publishTime>
+      <publishTime>03/24/2020 18:41:21</publishTime>
     </File>
     <File Include="Views/JudgeManagment/_CityComboBox.cshtml">
       <publishTime>06/20/2019 10:34:00</publishTime>
@@ -27494,7 +27494,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/20/2019 10:34:00</publishTime>
     </File>
     <File Include="Views/JudgeManagment/_JudgeListAjax.cshtml">
-      <publishTime>07/26/2019 17:56:02</publishTime>
+      <publishTime>03/24/2020 18:41:48</publishTime>
     </File>
     <File Include="Views/JVTime/IllnessJudgeVisit.cshtml">
       <publishTime>11/06/2019 22:47:01</publishTime>
@@ -27658,6 +27658,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/NotificationToUsers/_listnotification.cshtml">
       <publishTime>03/15/2020 17:41:18</publishTime>
     </File>
+    <File Include="Views/NurseManagment/Index.cshtml">
+      <publishTime>03/24/2020 19:09:48</publishTime>
+    </File>
+    <File Include="Views/NurseManagment/_NurseListAjax.cshtml">
+      <publishTime>03/24/2020 19:07:10</publishTime>
+    </File>
     <File Include="Views/Package/Index.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
@@ -27689,7 +27695,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2019 18:12:18</publishTime>
     </File>
     <File Include="Views/PharmacyManagment/Index.cshtml">
-      <publishTime>07/26/2019 17:53:29</publishTime>
+      <publishTime>03/24/2020 18:42:42</publishTime>
     </File>
     <File Include="Views/PharmacyManagment/_CityComboPharmacy.cshtml">
       <publishTime>05/31/2019 12:07:48</publishTime>
@@ -27701,7 +27707,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/29/2019 20:54:41</publishTime>
     </File>
     <File Include="Views/PharmacyManagment/_PharmacyListAjax.cshtml">
-      <publishTime>07/26/2019 17:55:51</publishTime>
+      <publishTime>03/24/2020 18:43:14</publishTime>
     </File>
     <File Include="Views/PharmacyManagment/_Update.cshtml">
       <publishTime>05/29/2019 20:54:53</publishTime>
@@ -27779,13 +27785,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/05/2019 22:50:33</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutNewDesignMain.cshtml">
-      <publishTime>03/13/2020 08:41:23</publishTime>
+      <publishTime>03/21/2020 11:56:50</publishTime>
     </File>
     <File Include="Views/Shared/_LoginLayout.cshtml">
       <publishTime>07/12/2019 23:54:35</publishTime>
     </File>
     <File Include="Views/Shared/_LoginNewDesignLayout.cshtml">
-      <publishTime>03/15/2020 12:19:20</publishTime>
+      <publishTime>03/21/2020 11:54:54</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>01/05/2019 22:50:32</publishTime>
@@ -27794,7 +27800,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/26/2019 22:29:03</publishTime>
     </File>
     <File Include="Views/Shared/_ManagmentLayout.cshtml">
-      <publishTime>03/14/2020 23:15:21</publishTime>
+      <publishTime>03/24/2020 19:13:39</publishTime>
     </File>
     <File Include="Views/Shared/_ManagmentLayoutDoctor.cshtml">
       <publishTime>03/15/2020 21:11:40</publishTime>

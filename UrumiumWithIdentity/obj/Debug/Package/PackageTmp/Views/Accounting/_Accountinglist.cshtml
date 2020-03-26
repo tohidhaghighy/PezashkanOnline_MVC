@@ -1,0 +1,84 @@
+﻿
+@model UrumiumMVC.ViewModel.EntityViewModel.AccountingViewModel.AccountingMainData
+<div class="row">
+    <div class="container" style="margin-top:30px;">
+        <div class="col-lg-3 col-xs-6">
+
+        </div>
+        <div class="col-lg-3 col-xs-6">
+
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-default">
+                <div class="inner">
+                    <h3>
+                        @Model.VisitCost
+                        <sup style="font-size: 20px"></sup>
+                    </h3>
+
+                    <p>مبلغ ویزیت ها</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-list"></i>
+                </div>
+                <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-address-book"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-default">
+                <div class="inner">
+                    <h3>@Model.VisitCount<sup style="font-size: 20px"></sup></h3>
+                    <p>تعداد ویزیت ها</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-list"></i>
+                </div>
+                <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-address-book"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">لیست ویزیت ها</h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">کد پیگیری</th>
+                    <th class="text-center">روز و ساعت</th>
+                    <th class="text-center">نام دکتر</th>
+                    <th class="text-center">نام بیمار</th>
+                    <th class="text-center">مبلغ پرداختی</th>
+                    </thead>
+                    <tbody id="listofarticle">
+                        @{
+                            if (Model.VisitList != null)
+                            {
+                                foreach (var item in Model.VisitList)
+                                {
+                                    <tr>
+                                        <td class="text-center" style="padding:10px;">@item.PeigiriCode </td>
+                                        <td class="text-center" style="padding:10px;"> @item.Dateandtime</td>
+                                        <td class="text-center" style="padding:10px;"> @item.DoctorName</td>
+                                        <td class="text-center" style="padding:10px;"> @item.IllnessName</td>
+                                        <td class="text-center" style="padding:10px;">@item.Cost</td>
+                                    </tr>
+                                }
+                            }
+
+                        }
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

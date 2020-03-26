@@ -1,0 +1,96 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Admin.Admin>
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+
+            <td class="text-center" style="padding:10px;">@item.Name</td>
+            @{
+                if (item.DoctorManagment)
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" checked value="true" disabled/></td>
+                }
+                else
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" value="false" disabled /></td>
+                }
+            }
+            @{
+                if (item.IllnessManagment)
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" checked value="true" disabled /></td>
+                }
+                else
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" value="false" disabled /></td>
+                }
+            }
+            @{
+                if (item.JudgeManagment)
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" checked value="true" disabled /></td>
+                }
+                else
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" value="false" disabled /></td>
+                }
+            }
+            @{
+                if (item.PharmacyManagment)
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" checked value="true" disabled /></td>
+                }
+                else
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" value="false" disabled /></td>
+                }
+            }
+            @{
+                if (item.CommonManagment)
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" checked value="true" disabled /></td>
+                }
+                else
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" value="false" disabled /></td>
+                }
+            }
+            @{
+                if (item.AccountManagment)
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" checked value="true" disabled /></td>
+                }
+                else
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" value="false" disabled /></td>
+                }
+            }
+            @{
+                if (item.MedicineManagment)
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" checked value="true" disabled /></td>
+                }
+                else
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" value="false" disabled /></td>
+                }
+            }
+            @{
+                if (item.UserManagment)
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" checked value="true" disabled /></td>
+                }
+                else
+                {
+                    <td class="text-center" style="padding:10px;"><input type="checkbox" id="txtcityname" name="PharmacyManagment" value="false" disabled /></td>
+                }
+            }
+            
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="حذف"><a class="btn btn-danger btn-xs" onclick="deleteitem(@item.Id)"><i class="ion ion-ios-trash"></i></a></p></td>
+            
+        </tr>
+    }
+
+}
+
+

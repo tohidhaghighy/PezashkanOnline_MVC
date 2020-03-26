@@ -1,0 +1,101 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Nurse.Nurse>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+
+
+
+
+<link href="~/Content/Common/CommonAddItem.css" rel="stylesheet" />
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+@section Scripts
+{
+    <script src="~/Content/Common/alert/sweetalert.min.js"></script>
+
+}
+<h2 class="text-center" style="padding:50px;">مدیریت پرستاران </h2>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">لیست پرستار ها</h4>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped" style="background-color:white;">
+                    <thead>
+                    <th class="text-center">تایید شده؟</th>
+                    <th class="text-center">عکس</th>
+                    <th class="text-center">شماره موبایل</th>
+                    <th class="text-center">کد فعال سازی</th>
+                    <th class="text-center">نام</th>
+                    <th class="text-center">حذف</th>
+                    </thead>
+                    <tbody id="listofpharmacy">
+                        @{Html.RenderPartial("_NurseListAjax", Model);}
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function deleteitem(id) {
+        swal({
+            title: "آیا میخواهید حذف شود؟",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "بله حذف شود",
+            cancelButtonText: "خیر",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+            function (isConfirm) {
+                if (isConfirm) {
+                    sendtoservertodelete(id);
+
+                } else {
+                    swal("صرف نظر", "حذف نشد", "error");
+                }
+            });
+    }
+
+    function sendtoservertodelete(id) {
+        $.ajax({
+            type: "Post",
+            url: '/PharmacyManagment/DeleteItem',
+            data: { id: id },
+            success: function (data) {
+                window.location.reload();
+
+            }
+        });
+    }
+
+
+    function changeactivefunc(id) {
+        $.ajax({
+            type: "Post",
+            url: '/NurseManagment/ChangeActive',
+            data: { id: id },
+            success: function (data) {
+                if (data.success == true) {
+                    window.location.reload();
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+            }
+        });
+    }
+
+</script>

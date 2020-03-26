@@ -1,0 +1,45 @@
+﻿@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css);
+
+.hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+
+.darken-grey-text {
+    color: #2E2E2E;
+}
+
+.input-group.md-form.form-sm.form-2 input {
+    border: 1px solid #bdbdbd;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+    .input-group.md-form.form-sm.form-2 input.purple-border {
+        border: 1px solid #9e9e9e;
+    }
+
+    .input-group.md-form.form-sm.form-2 input[type=text]:focus:not([readonly]).purple-border {
+        border: 1px solid #ba68c8;
+        box-shadow: none;
+    }
+
+.form-2 .input-group-addon {
+    border: 1px solid #ba68c8;
+}
+
+.danger-text {
+    color: #ff3547;
+}
+
+.success-text {
+    color: #00C851;
+}
+
+.table-bordered.red-border, .table-bordered.red-border th, .table-bordered.red-border td {
+    border: 1px solid #ff3547 !important;
+}
+
+.table.table-bordered th {
+    text-align: center;
+}

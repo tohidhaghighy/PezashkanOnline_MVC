@@ -102,6 +102,7 @@
     <Compile Include="Entities\Noskhe\Noskhe.cs" />
     <Compile Include="Entities\Notification\Notification.cs" />
     <Compile Include="Entities\Nurse\Nurse.cs" />
+    <Compile Include="Entities\Pharmacy\Illness_Pharmacy_Massage.cs" />
     <Compile Include="Entities\Pharmacy\Noskhe_Pharmacy.cs" />
     <Compile Include="Entities\Pharmacy\Pharmacy.cs" />
     <Compile Include="Entities\Pharmacy\Pharmacy_Massage.cs" />

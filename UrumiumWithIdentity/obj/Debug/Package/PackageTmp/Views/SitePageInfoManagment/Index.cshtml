@@ -1,0 +1,76 @@
+﻿@model UrumiumMVC.DomainClasses.Entities.Setting.SitePagesInfo
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+<h2 class="text-center" style="padding:20px;">مدیریت صفحات سایت</h2>
+
+<div class="row" style="padding-left:100px;padding-right:100px;">
+    @using (Html.BeginForm("AddPageinfo", "SitePageInfoManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                <div class="form-group">
+                    <p> متن صفحه درباره ما:</p>
+                    @{
+                        if (Model != null)
+                        {
+                            <textarea class="form-control" id="aboutus" name="aboutus" rows="7">@Model.AboutUs</textarea>
+
+                        }
+                        else
+                        {
+                            <textarea class="form-control" id="aboutus" name="aboutus"></textarea>
+                        }
+                    }
+
+                </div>
+
+                <div class="form-group">
+                    <p> متن صفحه قوانین سایت :</p>
+                    @{
+                        if (Model != null)
+                        {
+                            <textarea class="form-control" id="siteroll" name="siteroll" rows="7">@Model.SiteRolles</textarea>
+
+                        }
+                        else
+                        {
+                            <textarea class="form-control" id="siteroll" name="siteroll"></textarea>
+                            
+                        }
+                    }
+
+
+                </div>
+                <div class="form-group">
+                    <p> متن صفحه همکاری با ما :</p>
+                    @{
+                        if (Model != null)
+                        {
+                            <textarea class="form-control" id="coorporatewithus" name="coorporatewithus" rows="7">@Model.CoorprateWithUs</textarea>
+
+                        }
+                        else
+                        {
+                            <textarea class="form-control" id="coorporatewithus" name="coorporatewithus"></textarea>
+                            
+                        }
+                    }
+
+
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="btnSubmit" class="btn btn-success btn-block" value="ثبت تغییرات" />
+                </div>
+            </div>
+
+
+
+        </div>
+
+                        }
+</div>

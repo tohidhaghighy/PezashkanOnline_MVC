@@ -1,0 +1,13 @@
+﻿@model List<UrumiumMVC.DomainClasses.Entities.Doctor.Doctor>
+
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center" style="padding:10px;"> @item.Name</td>
+            <td class="text-center" style="padding:10px;"> @item.Groups.Name</td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="درج یادداشت"><a class="btn btn-warning btn-xs" onclick="gotonotepage(@item.Id)"><i class="ion ion-paper-airplane"></i></a></p></td>
+            <td class="text-center" style="padding:10px;"><p data-placement="top" data-toggle="tooltip" title="محاسبه کن"><a class="btn btn-success btn-xs" onclick="gotovisitpage(@item.Id)"><i class="ion ion-edit"></i></a></p></td>
+        </tr>
+    }
+}

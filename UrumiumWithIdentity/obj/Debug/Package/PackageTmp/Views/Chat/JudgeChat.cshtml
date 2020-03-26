@@ -1,0 +1,187 @@
+﻿@using Microsoft.AspNet.Identity;
+@model UrumiumMVC.ViewModel.EntityViewModel.ChatViewModel.ChatJudgeUser
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_JudgeChatLayout.cshtml";
+}
+<link href="~/Content/Common/alert/sweetalert.css" rel="stylesheet" />
+<script src="~/Content/Common/alert/sweetalert.min.js"></script>
+<style>
+    @@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+    @@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    .chat .chat-history {
+        padding: 30px 30px 20px;
+        border-bottom: 2px solid white;
+    }
+
+        .chat .chat-history .message-data {
+            margin-bottom: 15px;
+        }
+
+        .chat .chat-history .message-data-time {
+            color: #a8aab1;
+            padding-left: 6px;
+        }
+
+        .chat .chat-history .message {
+            color: white;
+            padding: 18px 20px;
+            line-height: 26px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            width: 90%;
+            position: relative;
+        }
+
+            .chat .chat-history .message:after {
+                content: "";
+                position: absolute;
+                top: -15px;
+                left: 20px;
+                border-width: 0 15px 15px;
+                border-style: solid;
+                border-color: #CCDBDC transparent;
+                display: block;
+                width: 0;
+            }
+
+        .chat .chat-history .you-message {
+            background: #CCDBDC;
+            color: #003366;
+        }
+
+        .chat .chat-history .me-message {
+            background: #E9724C;
+        }
+
+            .chat .chat-history .me-message:after {
+                border-color: #E9724C transparent;
+                right: 20px;
+                top: -15px;
+                left: auto;
+                bottom: auto;
+            }
+
+    .chat .chat-message {
+        padding: 30px;
+    }
+
+        .chat .chat-message .fa-file-o, .chat .chat-message .fa-file-image-o {
+            font-size: 16px;
+            color: gray;
+            cursor: pointer;
+        }
+
+    .chat-ul li {
+        list-style-type: none;
+    }
+
+    .align-left {
+        text-align: left;
+    }
+
+    .align-right {
+        text-align: right;
+    }
+
+    .float-right {
+        float: right;
+    }
+
+    .clearfix:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+
+    .you {
+        color: #CCDBDC;
+    }
+
+    .me {
+        color: #E9724C;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Raleway",sans-serif;
+        color: #003366;
+    }
+</style>
+<div class="container clearfix">
+    @{
+        if (Model.Sendername == "J")
+        {
+            <p style="margin-right:50px;text-align:center;margin-top:20px;" class="text-center">
+                <a class="btn btn-success btn-block" onclick="finishvisit(@Model.Groupname)">اتمام وقت ویزیت </a>
+            </p>
+        }
+    }
+    <input type="text" style="display:none;" value="@Model.Groupname" id="grouptxt" />
+    <input type="number" style="display:none;" value="@Model.illnessid" id="illnessidtxt" />
+    <input type="text" style="display:none;" value="@Model.Sendername" id="sendernametxt" />
+    <div class="chat" style="margin-top:10px;">
+        <div class="chat-history">
+            <ul class="chat-ul">
+                <li> <h2 class="text-center">چت روم کارشناس ازمایشگاه و بیمار</h2></li>
+
+                <li class="input-group jumbotron" style="margin-top:40px;margin-bottom:40px;">
+
+                    <input type="file" id="imgupload" style="display:none" name="imgupload" />
+                    <img id="sendimage" src="~/Content/icons/chat/attachment.png" style="height:50px;cursor:pointer;padding:5px;" title="ارسال عکس" alt="ارسال عکس" />
+                    <img id="sendmessage" src="~/Content/icons/chat/paper-plane.png" style="height:50px;cursor:pointer;padding:5px;" title="ارسال پیام" alt="ارسال پیام" />
+                    <div id="showitem" name="showitem">
+
+                    </div>
+                    <textarea class="form-control" placeholder="متن را وارد کنید" style="text-align:right;padding:10px;height:150px;" rows="5" id="chat"></textarea>
+
+                </li>
+              
+                <div id="chatid">
+                    @{
+                        foreach (var item in Model.Allmassages)
+                        {
+                            HtmlString msg = new HtmlString(item.Text);
+                            if (item.UserJudge == true)
+                            {
+                                <li class="clearfix">
+                                    <div class="message-data align-right">
+                                        <span class="message-data-name">کاربر</span> <i class="fa fa-circle me"></i>
+                                    </div>
+                                    <div class="message me-message float-right"> @msg </div>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <div class="message-data-name">
+                                        <span class="message-data-name"><i class="fa fa-circle you"></i>کارشناس آزمایشگاه</span>
+                                    </div>
+                                    <div class="message you-message"> @msg </div>
+                                </li>
+                            }
+                        }
+                    }
+                    <li class="clearfix">
+                        <div class="message-data align-right">
+                            <span class="message-data-name">مدیریت پیج</span> <i class="fa fa-circle me"></i>
+                        </div>
+                        <div class="message me-message float-right"> خوش آمدید منتظر حضور دکتر بمانید </div>
+                    </li>
+                </div>
+
+
+            </ul>
+
+        </div> <!-- end chat-history -->
+
+    </div> <!-- end chat -->
+</div>

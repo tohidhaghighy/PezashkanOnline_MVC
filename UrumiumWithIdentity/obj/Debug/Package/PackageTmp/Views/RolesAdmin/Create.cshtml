@@ -1,0 +1,43 @@
+﻿@model IdentitySample.Models.RoleViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+<h3 class="text-center" style="padding:20px;">ایجاد نقش جدید</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group row">
+            <div class="col-md-2">
+                <p class="text-center">نقش</p>
+
+            </div>
+            <div class="col-md-8">
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="ایجاد نقش جدید" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div style="margin-right:50px;">
+    @Html.ActionLink("بازگشت", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

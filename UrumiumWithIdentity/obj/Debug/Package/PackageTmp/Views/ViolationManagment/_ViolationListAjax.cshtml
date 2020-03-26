@@ -1,0 +1,49 @@
+﻿@model List<UrumiumMVC.ViewModel.EntityViewModel.ViolationViewModel.ViolationViewModel>
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+            
+            <td class="text-center" style="padding:10px;">
+                <a class="btn btn-default btn-xs" onclick="addanswer(@item.Id)">
+                    <i class="ion ion-edit"></i>
+                </a>
+            </td>
+            <td class="text-center" style="padding:10px;">@item.Number</td>
+            <td class="text-center" style="padding:10px;">@item.TypePm</td>
+            <td class="text-center" style="padding:10px;">@item.IllnessDescription</td>
+            <td class="text-center" style="padding:10px;">@{
+                if (item.AdminDescription==true)
+	{
+		<p>@item.AdminAnswer </p> }
+                else
+                {
+                    <p>کد معتبر نیست </p>
+                }
+            }</td>
+            <td class="text-center" style="padding:10px;">
+                @{
+                    if (item.AdminDescription == true)
+                    {
+                        <p data-placement="top" data-toggle="tooltip" title="مشاهده نسخه">
+                            <a class="btn btn-danger btn-xs" onclick="shownoskhe(@item.VisitId,@item.IllnessId,@item.DoctorId)">
+                                <i class="ion ion-ios-filing"></i>
+                            </a>
+                        </p>
+                    }
+                }
+               
+            </td>
+            <td class="text-center" style="padding:10px;">
+                @{
+                    if (item.AdminDescription == true)
+                    {
+                        <p data-placement="top" data-toggle="tooltip" title="مشاهده چت"><a class="btn btn-warning btn-xs" onclick="showchat(@item.VisitId,@item.IllnessId,@item.DoctorId)"><i class="ion ion-ios-world"></i></a></p>
+                    }
+                }
+            
+            </td>
+        </tr>
+                    }
+
+}

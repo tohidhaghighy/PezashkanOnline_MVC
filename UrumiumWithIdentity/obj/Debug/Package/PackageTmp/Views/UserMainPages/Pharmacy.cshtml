@@ -1,0 +1,109 @@
+﻿@model UrumiumMVC.ViewModel.EntityViewModel.PharmacyViewModel.PharmacyViewModel
+@{
+    ViewBag.Title = "Pharmacy";
+    Layout = "~/Views/Shared/_ManagmentLayoutPharmacy.cshtml";
+}
+
+<h3 class="text-center" style="padding-top:50px;color:green;">
+    به پنل داروخانه خوش آمدید
+</h3>
+
+<hr />
+@using (Html.BeginForm("UpdateItemClient", "PharmacyManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+<div class="row" style="margin-top:10px;margin-bottom:50px;">
+    <div class="container">
+        <input type="number" style="display:none;" name="pharmacyid" id="pharmacyid" value="@Model.Pharmacies.Id" />
+        <input type="text" style="display:none;" name="id" id="id" value="@Model.Pharmacies.Userid" />
+        <div class="row">
+            @{
+                if (Model.Pharmacies.Image == "" || Model.Pharmacies.Image == null)
+                {
+                    <img src="~/uploads/defaultuser.png" style="width:150px; height:150px;" class="center-block text-center img-circle" />
+                }
+                else
+                {
+                    <img src="~/uploads/Pharmacy/@Model.Pharmacies.Image" style="width:150px; height:150px;" class="center-block text-center img-circle" />
+                }
+            }
+
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">عکس داروخانه</span>
+                <input type="file" name="fileupdate" id="fileupdate" class="form-control" placeholder="عکس را انتخاب کنید " />
+            </div>
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">نام داروخانه</span>
+                <input type="text" name="name" placeholder="نام را وارد کنید " class="form-control" value="@Model.Pharmacies.Name" />
+            </div>
+        </div>
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">ادرس داروخانه</span>
+                <input type="text" name="address" placeholder="ادرس را وارد کنید " class="form-control" value="@Model.Pharmacies.Address" />
+            </div>
+        </div>
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">توضیحات داروخانه</span>
+                <textarea type="text" name="description" placeholder="توضیحات را وارد کنید " rows="10" class="form-control">@Model.Pharmacies.Description</textarea>
+            </div>
+        </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+            <div class="input-group">
+                <span class="input-group-addon">استان را انتخاب کنید</span>
+                <select class="form-control" id="cmbstate" name="cmbstate" onchange="changecityvalue()">
+                    @{
+                        foreach (var item in Model.States)
+                        {
+                            <option value="@item.Id" class="text-center">@item.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row center-block text-center" style="margin-top:10px;width:60%;">
+        <div class="input-group">
+            <span class="input-group-addon">شهر را انتخاب کنید</span>
+            <div id="citylistview">
+
+            </div>
+        </div>
+    </div>
+
+        <div class="row center-block text-center" style="margin-top:10px;width:60%;margin-bottom:100px;">
+            <button class="btn btn-success center-block">اپدیت اطلاعات</button>
+        </div>
+
+    </div>
+                    }
+
+<script>
+    function changecityvalue() {
+        var e = document.getElementById("cmbstate");
+        var stateid = e.options[e.selectedIndex].value;
+        $.ajax({
+            type: "Post",
+            url: '/DoctorManagment/ChangeComboItemUpdate',
+            data: { stateid: stateid },
+            success: function (data) {
+                if (data.success == true) {
+                    $('#citylistview').empty();
+                    $('#citylistview').append(data.View);
+                }
+                else {
+                    swal("مشکل سرور", "مشکلی در حذف ایجاد شد", "error");
+                }
+
+            }
+        });
+    }
+</script>

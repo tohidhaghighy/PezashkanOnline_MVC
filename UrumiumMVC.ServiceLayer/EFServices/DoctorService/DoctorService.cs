@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UrumiumMVC.Common.Massage;
 using UrumiumMVC.DomainClasses.Entities.Doctor;
+using UrumiumMVC.DomainClasses.Entities.Nurse;
 using UrumiumMVC.DomainClasses.Entities.Visit;
 using UrumiumMVC.ServiceLayer.Contract.DoctorInterface;
 using UrumiumMVC.ViewModel.EntityViewModel.DoctorViewModel;
@@ -22,6 +23,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
         private readonly IUnitOfWork _unitOfWork;
         private readonly IDbSet<Doctor> _Doctor;
         private readonly IDbSet<VisitTime> _VisitTime;
+        private readonly IDbSet<Nurse> _Nurse;
         private readonly IDbSet<DoctorMoarefCode> _DoctorMoarefCode;
         private readonly MapperConfiguration _configuration;
         private readonly IMapper _mapper;
@@ -35,6 +37,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
             _Doctor = _unitOfWork.Set<Doctor>();
             _VisitTime = _unitOfWork.Set<VisitTime>();
             _DoctorMoarefCode = _unitOfWork.Set<DoctorMoarefCode>();
+            _Nurse = _unitOfWork.Set<Nurse>();
         }
 
         public async Task<bool> AddDoctor(string Name,string Family, string Description, int CityId, string Image,int Cost,Boolean SpetialDoctor,string Userid,int Groupid)
@@ -677,10 +680,25 @@ namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
                 var finddoc = await _Doctor.FirstOrDefaultAsync(a => a.BusinessKey == Code);
                 if (finddoc!=null)
                 {
+                    //if type==1 doctor type ast else type==2 nurse type ast
                     _DoctorMoarefCode.Add(new DoctorMoarefCode()
                     {
                         Id_Doctor_Main = finddoc.Id,
-                        Id_Doctor_Zir = ZirDoctorId
+                        Id_Doctor_Zir = ZirDoctorId,
+                        type=1
+                    });
+                    await _unitOfWork.SaveChangesAsync();
+                    return true;
+                }
+                else if (finddoc==null)
+                {
+                    var findnurse = await _Nurse.FirstOrDefaultAsync(a => a.BusinessKey == Code);
+                    //if type==1 doctor type ast else type==2 nurse type ast
+                    _DoctorMoarefCode.Add(new DoctorMoarefCode()
+                    {
+                        Id_Doctor_Main = findnurse.Id,
+                        Id_Doctor_Zir = ZirDoctorId,
+                        type = 2
                     });
                     await _unitOfWork.SaveChangesAsync();
                     return true;
@@ -694,6 +712,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
             }
         }
 
+      
 
         public async Task<int> ListDoctorMoaref(int doctorid)
         {
@@ -802,6 +821,7 @@ namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
             }
         }
 
+
         public async Task<List<Doctorlistmoaref>> ListStringDoctorMoarefWithSubsetinfo(int doctorid)
         {
             List<Doctorlistmoaref> allmoareflist = new List<Doctorlistmoaref>();
@@ -908,8 +928,6 @@ namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
 
         }
 
-
-
         //web service zirmajmoee
 
         public async Task<List<Doctorlistmoaref>> ListStringDoctorMoarefzirmajmoee(int doctorid,string code)
@@ -979,8 +997,6 @@ namespace UrumiumMVC.ServiceLayer.EFServices.DoctorService
                 return null;
             }
         }
-
-
 
 
     }

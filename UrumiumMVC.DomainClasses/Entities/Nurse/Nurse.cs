@@ -17,6 +17,7 @@ namespace UrumiumMVC.DomainClasses.Entities.Nurse
         public string Mobile { get; set; }
         public string CodeActiveUse { get; set; }
         public Boolean Is_Use_CodeValue { get; set; }
+        public string BusinessKey { get; set; }
         public string Password { get; set; }
     }
 }

@@ -330,6 +330,18 @@ namespace UrumiumWithIdentity.Controllers
                     }
                 }
             }
+            else if (type==5)
+            {
+                if (await _nurseservice.CheckLogin(mobile,password))
+                {
+                    var findsms = await _nurseservice.GetNurseInfowithmobile(mobile);
+                    if (findsms!=null)
+                    {
+                        sends.SendSmsFunction(mobile, findsms.CodeActiveUse);
+                        return Json("true");
+                    }
+                }
+            }
             return Json("");
         }
 
@@ -404,6 +416,24 @@ namespace UrumiumWithIdentity.Controllers
                         if (findsms.ActiveCode == code)
                         {
                             if (await _pharmacyservice.UpdateActivePharmacyuser(mobile))
+                            {
+                                return Json("true");
+                            }
+                        }
+
+                    }
+                }
+            }
+            else if (type == 5)
+            {
+                if (await _nurseservice.CheckLogin(mobile, password))
+                {
+                    var findsms = await _nurseservice.GetNurseInfowithmobile(mobile);
+                    if (findsms != null)
+                    {
+                        if (findsms.CodeActiveUse == code)
+                        {
+                            if (await _nurseservice.UpdateActiveNurseuser(mobile))
                             {
                                 return Json("true");
                             }
@@ -784,8 +814,6 @@ namespace UrumiumWithIdentity.Controllers
             }
             return Json(null);
         }
-
         
-
     }
 }

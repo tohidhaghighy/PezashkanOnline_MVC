@@ -1,0 +1,77 @@
+﻿@model UrumiumMVC.DomainClasses.Entities.Setting.CostsPersend
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManagmentLayout.cshtml";
+}
+
+<h2 class="text-center" style="padding:20px;">مدیریت درصد هزینه ها</h2>
+
+<div class="row" style="padding-left:100px;padding-right:100px;">
+    @using (Html.BeginForm("AddCost", "CostPersendManagment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                <div class="form-group">
+                    <p> درصد از هر ویزیت:</p>
+                    @{
+                        if (Model != null)
+                        {
+                            <input type="number" class="form-control" value="@Model.PersendPerVisit" placeholder="درصد از هر ویزیت را وارد کنید" id="PersendPerVisit" name="PersendPerVisit" />
+                        }
+                        else
+                        {
+                            <input type="number" class="form-control" value="" placeholder="درصد از هر ویزیت را وارد کنید" id="PersendPerVisit" name="PersendPerVisit" />
+                        }
+                    }
+                    
+                </div>
+
+                <div class="form-group">
+                    <p> درصد از هر زیر مجموعه :</p>
+                    @{
+                        if (Model != null)
+                        {
+                            <input type="number" class="form-control" value="@Model.ZirMajmoeVisitDoctor" placeholder="درصد از هر زیر مجموعه دکتر را وارد کنید" id="ZirMajmoeVisitDoctor" name="ZirMajmoeVisitDoctor" />
+                        }
+                        else
+                        {
+                            <input type="number" class="form-control" value="" placeholder="درصد از هر زیر مجموعه دکتر را وارد کنید" id="ZirMajmoeVisitDoctor" name="ZirMajmoeVisitDoctor" />
+                        }
+                    }
+
+                    
+                </div>
+                <div class="form-group">
+                    <p> هزینه کارشناس ازمایشگاه:</p>
+                    @{
+                        if (Model != null)
+                        {
+                            <input type="number" class="form-control" value="@Model.CostJudgeVisit" placeholder="هزینه کارشناس ازمایشگاه را وارد کنید" id="CostJudgeVisit" name="CostJudgeVisit" />
+                        }
+                        else
+                        {
+                            <input type="number" class="form-control" value="" placeholder="هزینه کارشناس ازمایشگاه را وارد کنید" id="CostJudgeVisit" name="CostJudgeVisit" />
+                        }
+                    }
+
+
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="btnSubmit" class="btn btn-success btn-block" value="ثبت تغییرات" />
+                </div>
+            </div>
+
+
+
+        </div>
+
+    }
+</div>
+
+
+
+
+
+

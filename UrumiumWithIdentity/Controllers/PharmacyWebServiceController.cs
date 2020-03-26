@@ -11,6 +11,9 @@ using UrumiumMVC.ServiceLayer.Contract.VisitInterface;
 using UrumiumMVC.ServiceLayer.Contract.IllnessInterface;
 using UrumiumMVC.ViewModel.EntityViewModel.PharmacyMassage;
 using UrumiumMVC.ServiceLayer.Contract.MassagePharmacyInterface;
+using UrumiumMVC.DomainClasses.Entities.Pharmacy;
+using UrumiumMVC.Common.TimeConverter;
+using UrumiumMVC.ServiceLayer.EFServices.PharmacyService;
 
 namespace UrumiumWithIdentity.Controllers
 {
@@ -20,9 +23,11 @@ namespace UrumiumWithIdentity.Controllers
         IVisitService _visitservices;
         IIllnessService _illnessservice;
         IMassagePharmacyService _pharmacymassageservice;
-        public PharmacyWebServiceController(IPharmacyService pharmacyservice, IVisitService visitservices, IIllnessService illnessservice, IMassagePharmacyService pharmacymassageservice)
+        IPharmacyIllnessService _pharmacyillness;
+        public PharmacyWebServiceController(IPharmacyService pharmacyservice,PharmacyIllnessMassageService messageservice, IVisitService visitservices, IIllnessService illnessservice, IMassagePharmacyService pharmacymassageservice)
         {
             _pharmacyservice = pharmacyservice;
+            _pharmacyillness = messageservice;
             _visitservices = visitservices;
             _illnessservice = illnessservice;
             _pharmacymassageservice = pharmacymassageservice;
@@ -127,5 +132,83 @@ namespace UrumiumWithIdentity.Controllers
             return Json(await _visitservices.ShowNoskheToPharmacy(visitid));
         }
 
+        [System.Web.Http.HttpPost]
+        public async Task<ActionResult> Addillnessmassage(string text, string image, string mobile)
+        {
+            if (image != "")
+            {
+                string imageillness = Guid.NewGuid().ToString() + ".jpg";
+                string imgillnessiamge = Path.Combine(Server.MapPath("~/uploads/Pharmacy/"), imageillness);
+                byte[] imageillnessBytes = Convert.FromBase64String(image);
+                System.IO.File.WriteAllBytes(imgillnessiamge, imageillnessBytes);
+
+                var findillness = await _illnessservice.GetIllnessWithMobile(mobile);
+                if (findillness != null)
+                {
+                    await _pharmacyillness.AddPharmacyIllness(new Illness_Pharmacy_Massage()
+                    {
+                        IllnessId = findillness.Id,
+                        Image = imageillness,
+                        Text = text
+                    });
+                    return Json("true");
+                }
+            }
+            return Json("false");
+        }
+
+        [System.Web.Http.HttpPost]
+        public async Task<ActionResult> AddAnswerillnessmassage(int id,string text)
+        {
+            if (await _pharmacyillness.AddAnswer(text, id))
+            {
+                return Json("true");
+            }
+            return Json("false");
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetAllillnessmassage(string mobile)
+        {
+            var alllist = new List<PharmacyIllnessMassage>();
+            var findillness = await _illnessservice.GetIllnessWithMobile(mobile);
+            if (findillness != null)
+            {
+                Converter convert = new Converter();
+                var findmassage = await _pharmacyillness.GetAllIllness(findillness.Id);
+                foreach (var item in findmassage)
+                {
+                    var one = new PharmacyIllnessMassage();
+                    one.Id = item.Id;
+                    one.Answer = item.Answer;
+                    one.IllnessId = item.IllnessId;
+                    one.Image = item.Image;
+                    one.Text = item.Text;
+                    one.Time = convert.GetPersianDate(item.Time);
+                    alllist.Add(one);
+                }
+            }
+            return Json(alllist, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetAllmassage()
+        {
+            Converter convert = new Converter();
+            var alllist = new List<PharmacyIllnessMassage>();
+            var findillness = await _pharmacyillness.GetAll();
+            foreach (var item in findillness)
+            {
+                var one = new PharmacyIllnessMassage();
+                one.Id = item.Id;
+                one.Answer = item.Answer;
+                one.IllnessId = item.IllnessId;
+                one.Image = item.Image;
+                one.Text = item.Text;
+                one.Time = convert.GetPersianDate(item.Time);
+                alllist.Add(one);
+            }
+            return Json(alllist, JsonRequestBehavior.AllowGet);
+        }
     }
 }
